@@ -1,5 +1,5 @@
 package stepdefinitions;
 
-public class Registration {
+public class Tree {
 
 }
