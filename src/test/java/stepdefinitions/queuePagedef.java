@@ -58,7 +58,6 @@ public class queuePagedef {
 	  
 	}
 
-	
 	@When("The user clicks Implementations using collections.deque link in Python page")
 	public void the_user_clicks_implementations_using_collections_deque_link_in_python_page() {
 	    // Write code here that turns the phrase above into concrete actions
