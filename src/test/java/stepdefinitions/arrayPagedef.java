@@ -1,5 +1,5 @@
 package stepdefinitions;
 
-public class Tree {
+public class arrayPagedef {
 
 }
