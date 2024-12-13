@@ -1,6 +1,6 @@
 Feature: Queue
  
-
+Background: The user sign in to dsAlgo Portal 
  
   Scenario: Verify that user is able to navigate to queue data structure page
     Given The user is in the Home page after Sign in
@@ -72,7 +72,3 @@ Feature: Queue
     Given The user is in the Queue page after Sign in
     When The user clicks Practice Questions link in Python page
 	  Then The user should be redirected to Practice Questions page
-	  
-	
-	  
-	  

@@ -8,12 +8,12 @@ Background: The user sign in to dsAlgo Portal
    
     When The user clicks the Getting Started button in Stack Panel 
  		When The user select stack item from the drop down menu
-    Then The user be directed to Stack Data Structure Page
+    Then The user should be directed to Stack Data Structure Page
 
   Scenario: Verify that user is able to navigate to Operations in stack page
     Given The user is in the Stack page after Sign in
     When The user clicks Operations in Stack link 
- 		Then The user be directed to Operations in Stack Page
+ 		Then The user should be directed to Operations in Stack Page
  		
  	Scenario: Verify that user is able to navigate to try Editor page for Operations in Stack page
  		Given The user is on the Operations in Stack page
