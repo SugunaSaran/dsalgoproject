@@ -29,7 +29,11 @@
     <version>7.20.1</version>
 </dependency>
 
-
+<dependency>
+    <groupId>net.java.dev.jna</groupId>
+    <artifactId>jna</artifactId>
+    <version>5.10.0</version> <!-- Make sure to use a compatible version -->
+</dependency>
 
   </dependencies>
 </project>
