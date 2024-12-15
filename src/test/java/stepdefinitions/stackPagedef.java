@@ -6,11 +6,6 @@ import io.cucumber.java.en.When;
 
 public class stackPagedef {
 	
-	@Given("The user is in the Home page after Sign in")
-	public void the_user_is_in_the_home_page_after_sign_in() {
-	    // Write code here that turns the phrase above into concrete actions
-	  
-	}
 
 	@When("The user clicks the Getting Started button in Stack Panel")
 	public void the_user_clicks_the_getting_started_button_in_stack_panel() {
@@ -24,7 +19,7 @@ public class stackPagedef {
 	  
 	}
 
-	@Then("The user be directed to Stack Data Structure Page")
+
 	public void the_user_be_directed_to_stack_data_structure_page() {
 	    // Write code here that turns the phrase above into concrete actions
 	  
@@ -42,7 +37,7 @@ public class stackPagedef {
 	  
 	}
 
-	@Then("The user be directed to Operations in Stack Page")
+
 	public void the_user_be_directed_to_operations_in_stack_page() {
 	    // Write code here that turns the phrase above into concrete actions
 	  
@@ -180,7 +175,6 @@ public class stackPagedef {
 	  
 	}
 
-
-
-
 }
+
+
