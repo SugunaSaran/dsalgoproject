@@ -1,7 +1,8 @@
 Feature: Array
 
 Background: The user sign in to dsAlgo Portal
-Given The user is in the home page after sign in
+Given The user is in the home page after sign in 
+
 Scenario: Verify that user is able to navigate to Array data structure page
 Given The user is in the home page after sign in 
 When The user clicks the Getting Started button in Array panel
