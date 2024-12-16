@@ -1,5 +1,7 @@
 package Pages;
 
-public class arrayPage {
+import DriverManager.DriverFactory;
+
+public class arrayPage extends DriverFactory{
 
 }

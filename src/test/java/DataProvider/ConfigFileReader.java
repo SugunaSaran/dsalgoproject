@@ -8,7 +8,7 @@ import java.util.Properties;
 public class ConfigFileReader {
 	
 	private Properties properties;
-	private final String propertyFilePath= "configs//config.properties";
+	private final String propertyFilePath= "src/test/resources/configs/config.properties";
 
 	
 	public ConfigFileReader(){
@@ -29,10 +29,8 @@ public class ConfigFileReader {
 	}
 	
 	
-	public long getImplicitlyWait() {		
-		String implicitlyWait = properties.getProperty("implicitlyWait");
-		if(implicitlyWait != null) return Long.parseLong(implicitlyWait);
-		else throw new RuntimeException("implicitlyWait not specified in the Configuration.properties file.");		
+	public String getBrowser() {		
+		return properties.getProperty("browser");
 	}
 	
 	public String getApplicationUrl() {
@@ -40,4 +38,16 @@ public class ConfigFileReader {
 		if(url != null) return url;
 		else throw new RuntimeException("url not specified in the Configuration.properties file.");
 	}
+	public String getUserName() {
+		return properties.getProperty("username");
+	}
+	public String getPassword() {
+		return properties.getProperty("password");
+	}
+	public long getImplicitlyWait() {		
+		String implicitlyWait = properties.getProperty("implicitlyWait");
+		if(implicitlyWait != null) return Long.parseLong(implicitlyWait);
+		else throw new RuntimeException("implicitlyWait not specified in the Configuration.properties file.");		
+	}
+	
 }
