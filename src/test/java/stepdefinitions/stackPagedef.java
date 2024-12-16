@@ -44,10 +44,10 @@ public class stackPagedef {
 	}
 
 
+
 	@Then("The user should be directed to Operations in Stack Page")
 	public void the_user_should_be_directed_to_operations_in_stack_page() {
-	    // Write code here that turns the phrase above into concrete actions
-	   
+   
 	}
 
 
