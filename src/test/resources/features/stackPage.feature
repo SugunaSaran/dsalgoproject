@@ -1,7 +1,8 @@
 @tag
 Feature: stack
 
-  Background: The user sign in to dsAlgo Portal
+Background: The user sign in to dsAlgo Portal
+Given  The user is in the Home page after sign-in
 
   @tag1
   Scenario: Verify that user is able to navigate to stack data structure page

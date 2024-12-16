@@ -1,5 +1,6 @@
 package Pages;
 
+
 import org.openqa.selenium.By;
 
 import DriverManager.DriverFactory;
@@ -17,5 +18,3 @@ public class dataStructureIntroductionPage extends DriverFactory  {
 	 }
 
 	
-
-}
