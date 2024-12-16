@@ -1,5 +1,7 @@
 package Pages;
 
-public class dataStructureIntroductionPage {
+import DriverManager.DriverFactory;
+
+public class dataStructureIntroductionPage extends DriverFactory{
 
 }
