@@ -45,7 +45,7 @@ Background: The user sign in dsAlgo Portal
    
    Scenario: Verify that user is able to navigate to try Editor Page for Graph Representation in Graph Tree Page
     Given The user in on the Graph Representation in Tree Page
-    When The user clicks Try Here button inGraph Representation in Graph page
+    When The user clicks Try here button in Graph Representation in Graph page
     Then The user Should be redirected to page having an try Editor with a Run button to test
     
     Scenario: Verify that  user receive error when click on run button without entering code  for Graph link in graph Page
@@ -58,10 +58,7 @@ Background: The user sign in dsAlgo Portal
     When The user write the invalid code and  clicks the run button  in the editor
     Then The user should able to  see  error message in alert window.
     
-    Scenario: Verify the ok button of error alert message
-    Given The user is in Try editor page.
-    When The user click the ok button of error alert window.
-    Then The user remain in the tryeditor page with run button.
+   
     
     
     

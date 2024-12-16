@@ -14,8 +14,3 @@ import io.cucumber.testng.CucumberOptions.SnippetType;
 public class TreePageRunner extends AbstractTestNGCucumberTests{ 
 
 }
-
-
-public class TreePageRunner {
-
-}

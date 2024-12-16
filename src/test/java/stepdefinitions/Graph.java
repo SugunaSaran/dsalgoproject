@@ -136,15 +136,11 @@ public class Graph {
 	    
 	}
 
-	@When("The user clicks Try Here button inGraph Representation in Graph page")
-	public void the_user_clicks_try_here_button_in_graph_representation_in_graph_page() {
-	    // Write code here that turns the phrase above into concrete actions
-	}
+	
 
-	@Then("The user remain in the tryeditor page with run button.")
-	public void the_user_remain_in_the_tryeditor_page_with_run_button() {
-	    // Write code here that turns the phrase above into concrete actions
+	
 	  
-	}
+	
+}
 
 
