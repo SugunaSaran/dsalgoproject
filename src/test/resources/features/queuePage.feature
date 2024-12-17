@@ -1,6 +1,7 @@
 Feature: Queue
  
 Background: The user sign in to dsAlgo Portal 
+Given  The user is in the Home page after sign-in
  
   Scenario: Verify that user is able to navigate to queue data structure page
     Given The user is in the Home page after Sign in
