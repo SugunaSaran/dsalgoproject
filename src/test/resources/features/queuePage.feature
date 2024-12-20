@@ -1,3 +1,4 @@
+@queuepage
 Feature: Queue
  
 Background: The user sign in to dsAlgo Portal 

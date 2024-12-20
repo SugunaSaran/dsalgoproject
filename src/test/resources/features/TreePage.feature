@@ -2,7 +2,6 @@
 @tag
 Feature: Tree
 
- 
 Background: The user sign in to dsAlgo Portal 
 Given  The user is in the Home page after sign-in
 @tag1
@@ -105,9 +104,7 @@ Given  The user is in the Home page after sign-in
     Given The user is in the tryEditor page
     When The user write the valid code in Editor and click the Run button
 	  Then The user should able to see output in the console
-	  
-	  
-	  
+ 
 	  
 	  Scenario: Verify that user is able to navigate to Tree Traversals link in python page
     Given The user is in the Tree Traversals after Sign in
@@ -326,3 +323,4 @@ Given  The user is in the Home page after sign-in
 	  Then The user should be redirected to Practice Questions page
 	  
 	
+
