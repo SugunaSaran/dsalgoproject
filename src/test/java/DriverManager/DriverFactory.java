@@ -10,7 +10,7 @@ import DataProvider.ConfigFileReader;
 
 public class DriverFactory {
 	public static WebDriver driver;
-	static ConfigFileReader configReader;
+	public static ConfigFileReader configReader;
 	public DriverFactory()
 	{
 		configReader=new ConfigFileReader();

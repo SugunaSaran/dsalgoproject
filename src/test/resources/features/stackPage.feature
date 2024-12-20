@@ -1,14 +1,12 @@
-@tag
+@stackpage
 Feature: stack
 
 Background: The user sign in to dsAlgo Portal
 Given  The user is in the Home page after sign-in
 
-  @tag1
+
   Scenario: Verify that user is able to navigate to stack data structure page
-    Given The user is in the Home page after Sign in
     When The user clicks the Getting Started button in Stack Panel
-    When The user select stack item from the drop down menu
     Then The user should be directed to Stack Data StructurePage
 
   Scenario: Verify that user is able to navigate to Operations in stack page

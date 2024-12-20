@@ -12,18 +12,4 @@ public class dataStructureIntroductionPage extends DriverFactory  {
 	//locators
 	By lnk_TimeComplexity =By.xpath("//a[@href='time-complexity']");
 
-	//Action Methods
-
-    public void navigate_arraysinPythonPage() {
-		
-	 }
-
-	
-=======
-	public void navigate_arraysinPythonPage() {
-
-	}
-}
-
-
 
