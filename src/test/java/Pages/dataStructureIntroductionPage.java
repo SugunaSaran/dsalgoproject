@@ -14,15 +14,10 @@ public class dataStructureIntroductionPage extends DriverFactory  {
 
 	//Action Methods
 
-    public void navigate_arraysinPythonPage() {
-		
-	 }
-
-	
-=======
-	public void navigate_arraysinPythonPage() {
-
-	}
+    public void navigate_time_complexity()
+    {
+    	
+    }
 }
 
 
