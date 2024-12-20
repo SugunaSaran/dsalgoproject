@@ -1,6 +1,7 @@
 Feature: Linked List
 
 Background: The user sign in to dsAlgo Portal
+Given The user is in the home page after sign in 
 
 Scenario: Verify that user is able to navigate to Linked List structure page
 Given The user is in the home page after sign in 
