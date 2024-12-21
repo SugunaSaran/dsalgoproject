@@ -7,15 +7,11 @@ import io.cucumber.java.en.When;
 public class arrayPagedef {
 	@Given("The user is in the home page after sign in")
 	public void the_user_is_in_the_home_page_after_sign_in() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
+	    	}
 
 	@Given("The user is in the Array page")
 	public void the_user_is_in_the_array_page() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
+	    	}
 
 
 	@When("The user clicks the Getting Started button in Array panel")
@@ -29,39 +25,27 @@ public class arrayPagedef {
 	   	}
 	@Given("The user is in the Array page after Sign in")
 	public void the_user_is_in_the_array_page_after_sign_in() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
+	    	}
 	@When("The user clicks Arrays in Python link")
 	public void the_user_clicks_arrays_in_python_link() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
+	    	}
 	@Then("The user should be redirected to Arrays in Python page")
 	public void the_user_should_be_redirected_to_arrays_in_python_page() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
+	    	}
 
 
 	@Given("The user is on the Arrays in Python page")
 	public void the_user_is_on_the_arrays_in_python_page() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
+	    	}
 	@When("The user clicks Try Here button in Arrays in Python page")
 	public void the_user_clicks_try_here_button_in_arrays_in_python_page() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
+	    	}
 
 
 
 @Then("The user should not get any error message in alert window")
 public void the_user_should_not_get_any_error_message_in_alert_window() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
+    }
 
 @When("The user clicks Arrays using List link")
 public void the_user_clicks_arrays_using_list_link() {
