@@ -13,3 +13,13 @@ public class dataStructureIntroductionPage extends DriverFactory  {
 	By lnk_TimeComplexity =By.xpath("//a[@href='time-complexity']");
 
 
+	//Action Methods
+
+    public void navigate_time_complexity()
+    {
+    	
+    }
+}
+
+
+

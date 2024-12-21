@@ -6,6 +6,7 @@ import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 
 public class DsalgoHooks extends DriverFactory {
+
 	
 		@Before
 		public void beforeScenario(Scenario scenario)
@@ -23,7 +24,5 @@ public class DsalgoHooks extends DriverFactory {
 			System.out.println("is Failed? "+failed);
 			driver.quit();
 		}
-		
-
-	}
+		}
 
