@@ -12,7 +12,6 @@ import io.cucumber.testng.CucumberOptions;
 	    tags="@stackpage"
 	)
 
-
 public class TestRunner extends AbstractTestNGCucumberTests {
 	
 }
