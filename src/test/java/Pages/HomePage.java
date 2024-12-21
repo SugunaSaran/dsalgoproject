@@ -6,8 +6,6 @@ import DriverManager.DriverFactory;
 
 public class HomePage extends DriverFactory{
 	public HomePage() {
-		super();
-		initialization();
 		By getStartedBtn=By.className("btn");
 		By loginBtn=By.xpath("//a[@href='/login']");
 		driver.findElement(getStartedBtn).click();
