@@ -16,7 +16,7 @@ public class HomePage extends DriverFactory{
 	
 	By stack=By.xpath("//a[@href='stack']");
 	By queue=By.xpath("//a[@href='queue']");
-	By datastructuresLink=By.xpath("//a[text()='Data Structures']");
+	By datastructuresLink=By.xpath("//*[@id=\"navbarCollapse\"]/div[1]/div/a");
 	By stackdropdown=By.xpath("//a[@href='/stack']");
 	By queuedropdown=By.xpath("//a[@href='/queue']");
 	
