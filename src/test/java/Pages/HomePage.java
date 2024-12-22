@@ -6,8 +6,6 @@ import DriverManager.DriverFactory;
 
 public class HomePage extends DriverFactory{
 	public HomePage() {
-		super();
-		initialization();
 		By getStartedBtn=By.className("btn");
 		By loginBtn=By.xpath("//a[@href='/login']");
 		driver.findElement(getStartedBtn).click();
@@ -18,7 +16,7 @@ public class HomePage extends DriverFactory{
 	
 	By stack=By.xpath("//a[@href='stack']");
 	By queue=By.xpath("//a[@href='queue']");
-	By datastructuresLink=By.xpath("//a[text()='Data Structures']");
+	By datastructuresLink=By.xpath("//*[@id=\"navbarCollapse\"]/div[1]/div/a");
 	By stackdropdown=By.xpath("//a[@href='/stack']");
 	By queuedropdown=By.xpath("//a[@href='/queue']");
 	By btn_ArraygetStarted=By.xpath("//a[@href='array']");
