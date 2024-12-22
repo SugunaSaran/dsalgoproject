@@ -8,8 +8,6 @@ import DriverManager.DriverFactory;
 public class stackPage extends DriverFactory{
 	public stackPage() {
 		super();
-		HomePage hp=new HomePage();
-		hp.clickStackLink();
 	}
 
 	By operationsInStack=By.xpath("//a[@href='operations-in-stack']");
