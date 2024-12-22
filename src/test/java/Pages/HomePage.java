@@ -19,6 +19,7 @@ public class HomePage extends DriverFactory{
 	By datastructuresLink=By.xpath("//*[@id=\"navbarCollapse\"]/div[1]/div/a");
 	By stackdropdown=By.xpath("//a[@href='/stack']");
 	By queuedropdown=By.xpath("//a[@href='/queue']");
+	By btn_ArraygetStarted=By.xpath("//a[@href='array']");
 	
 	public void clickStackLink() {
 		driver.findElement(stack).click();
@@ -37,5 +38,10 @@ public class HomePage extends DriverFactory{
 		driver.findElement(datastructuresLink).click();
 		driver.findElement(queuedropdown).click();
 	}
+	public void click_btn_Arraygetstarted()
+	{
+		driver.findElement(btn_ArraygetStarted).click();
+	}
+
 	
 }
