@@ -10,7 +10,7 @@ import io.cucumber.testng.CucumberOptions;
 
 	    glue = {"stepdefinitions","hooks"},
 	    
-	    tags="@logintag" )
+	    tags="@ammu" )
 
 public class TestRunner extends AbstractTestNGCucumberTests {
 
