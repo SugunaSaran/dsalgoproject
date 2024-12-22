@@ -56,12 +56,27 @@ public class queuePagedef {
 	public void the_user_clicks_the_try_editor_button_in_subpages_of_queue() {
 		qp.checkTryEditorLink();
 	}
+	
+	@Then("The user should be redirected to a page having an try Editor with a Run button to test in queue page")
+	public void the_user_should_be_redirected_to_a_page_having_an_try_editor_with_a_run_button_to_test_in_queue_page() {
+	    Assert.assertEquals(hp.validatePageTitle(), "Assessment");
+	  
+	}
 	@Given("The user is in the tryEditor page of corresponding {string} page in queue data structure")
 	public void the_user_is_in_the_try_editor_page_of_corresponding_page_in_queue_data_structure(String string) {
 		hp.clickQueueFromDropDown();
 		qp.checkQueuePageLink(string);
 		qp.checkTryEditorLink();
 	}
+	@When("The user clicks the Run button without entering the code in the Editor in queue page")
+	public void the_user_clicks_the_run_button_without_entering_the_code_in_the_editor_in_queue_page() {
+	  tp.checkCode(" ");
+	 
+	 }
+	@Then("The user should not see any error message or output in the Editor of queue page")
+	public void the_user_should_not_see_any_error_message_or_output_in_the_Editor_of_queue_page() {
+		 Assert.assertEquals(false,tp.isAlertPresent());
+	 }
 
 	@Given("The user is in the tryEditor page of {string} of Queue Page")
 	public void the_user_is_in_the_try_editor_page_of_subpages_of_queue_page(String string) {

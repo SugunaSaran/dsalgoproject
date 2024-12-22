@@ -16,8 +16,8 @@ public class stackPagedef {
 	stackPage sp=new stackPage();
 	TryEditorPage tp=new TryEditorPage();
 	//Scenario: Verify that user is able to navigate to stack data structure page
-	@Given("The user is in the Home page after sign-in")
-	public void the_user_is_in_the_home_page_after_sign_in() {
+	@Given("The user is in the Home page after sign-in for stack")
+	public void the_user_is_in_the_home_page_after_sign_in_for_stack() {
 	    hp=new HomePage();
 	 }
 	
@@ -28,7 +28,7 @@ public class stackPagedef {
 
 	@Then("The user should be directed to Stack Data StructurePage")
 	public void the_user_should_be_directed_to_stack_data_structure_page() {
-	    Assert.assertEquals("Stack", hp.validatePageTitle());
+	    Assert.assertEquals(hp.validatePageTitle(),"Stack");
 	   
 	}
 

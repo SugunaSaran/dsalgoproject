@@ -23,7 +23,7 @@ Given  The user is in the Home page after sign-in for queue
 	  Scenario Outline: Verify that user is able to navigate to the tryEditor of sub links of queue page
     Given The user is in the <links> page in queue page
     When The user clicks the tryEditor button in subpages of queue
-	  Then The user should be redirected to a page having an try Editor with a Run button to test
+	  Then The user should be redirected to a page having an try Editor with a Run button to test in queue page
 	  Examples:
 	  |links|
 	  |"implementation-lists"|
@@ -33,8 +33,8 @@ Given  The user is in the Home page after sign-in for queue
 	  
 	  Scenario Outline: Verify that user does not receives any error when click on Run button without entering code for different page of queue data structure
     Given The user is in the tryEditor page of corresponding <links> page in queue data structure
-    When The user clicks the Run button without entering the code in the Editor
-    Then The user should not see any error message or output
+    When The user clicks the Run button without entering the code in the Editor in queue page
+    Then The user should not see any error message or output in the Editor of queue page
     Examples:
 	  |links|
 	  |"implementation-lists"|

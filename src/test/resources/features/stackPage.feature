@@ -1,8 +1,8 @@
 @stackpage
 Feature: stack
 
-Background: The user sign in to dsAlgo Portal
-Given  The user is in the Home page after sign-in
+Background: The user sign in to dsAlgo Portal for stack
+Given  The user is in the Home page after sign-in for stack
 
 
   Scenario: Verify that user is able to navigate to stack data structure page
