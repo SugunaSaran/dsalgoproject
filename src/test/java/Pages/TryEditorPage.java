@@ -1,8 +1,10 @@
 package Pages;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoAlertPresentException;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
 import DriverManager.DriverFactory;
 
 public class TryEditorPage extends DriverFactory{
@@ -12,31 +14,33 @@ public class TryEditorPage extends DriverFactory{
 	By outputText=By.xpath("//*[@id='output']");
 
 	public void checkCode(String code) {
-		   driver.findElement(textArea).sendKeys(code);
+		if(code!=" ") {
+		WebElement textEditor = driver.findElement(textArea);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", textEditor);
+		textEditor.sendKeys(code);
+		}
+		   //driver.findElement(textArea).sendKeys(code);
 			driver.findElement(runBtn).click();
-			validateOutput();
-	}
+		}
 	public String validateOutput() {
-		if (isAlertPresent(driver)) {
-			// Alert is present, handle it
-			Alert alert = driver.switchTo().alert();
-			String alertText=alert.getText();
-			System.out.println("Alert Text: " + alertText);
-			alert.accept();  // Or alert.dismiss() depending on the action you want to take
-			return alertText;
-			
-		} else {
-			System.out.println(driver.findElement(outputText).getText());
+			if(!isAlertPresent()) {
+			//System.out.println(driver.findElement(outputText).getText());
 			return driver.findElement(outputText).getText();
 		}
+			else
+				return " ";
 
 	}
-	public static boolean isAlertPresent(WebDriver driver) {
+	public void acceptAlert() {
+		Alert alert = driver.switchTo().alert();
+		alert.accept();
+	}
+	public boolean isAlertPresent() {
 		try {
-			driver.switchTo().alert();  // Try to switch to the alert
-			return true;  // Alert is present
+			driver.switchTo().alert();  
+			return true; 
 		} catch (NoAlertPresentException e) {
-			return false;  // No alert is present
+			return false;  
 		}
 	}
 }
