@@ -9,9 +9,8 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
 	    features = "src/test/resources/features",
 	    glue = {"stepdefinitions","hooks"},
-	    tags="@stackpage"
+	    tags="@stackpage or @queuepage"
 	)
-
 
 public class TestRunner extends AbstractTestNGCucumberTests {
 	
