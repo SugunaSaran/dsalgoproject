@@ -1,3 +1,4 @@
+@linklisttag
 Feature: Linked List
 
 Background: The user sign in to dsAlgo Portal

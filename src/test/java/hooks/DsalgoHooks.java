@@ -25,6 +25,7 @@ public class DsalgoHooks extends DriverFactory {
 		System.out.println("is Failed? "+failed);
 		driver.quit();
 	}
-
-
 }
+
+	
+		

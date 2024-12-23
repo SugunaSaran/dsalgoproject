@@ -9,26 +9,31 @@ public class arrayPracticeQuestionsPage extends DriverFactory{
 	public arrayPracticeQuestionsPage () {
 		super(); 
 	}
-	
-//Locators
-	
-	By lnk_SearchtheArray =By.xpath("//a[@href='/question/1']");
-	By lnk_MaxConsecutiveOnes =By.xpath("//a[@href='/question/2']");
-	By lnk_FindNumberswithEvenNumbersofDigits =By.xpath("//a[@href='/question/3']");
-	By lnk_SquaresofaSortedArray =By.xpath("//a[@href='/question/4']");
+	//locators
+	By lnk_SearchtheArray=By.xpath("//a[text()='Search the array']");
+	By lnk_MaxConsecutiveOnes=By.xpath("//a[text()='Max Consecutive Ones']");
+	By lnk_FindNumbers=By.xpath("//a[text()='Find Numbers with Even Number of Digits']");
+	By lnk_SquaresofaSortedArray=By.xpath("//a[text()='Squares of  a Sorted Array']");
 	
 	//Action Methods
-    public void navigate_searchtheArrayPage() {
-		
+	public void click_searchthearray()
+	{
+		driver.findElement(lnk_SearchtheArray).click();
 	}
-    public void navigate_MaxConsecutiveOnesPage() {
-		
+	public void click_max()
+	{
+		driver.findElement(lnk_MaxConsecutiveOnes).click();
 	}
-    public void navigate_FindNumberswithEvenNumbersofDigitsPage() {
-		
+	public void click_findnumbers()
+	{
+		driver.findElement(lnk_FindNumbers).click();
 	}
-   public void navigate_SquresofaSortedArray() {
-		
-	}
-   
+	public void click_squares()
+	{
+		driver.findElement(lnk_SquaresofaSortedArray).click();
+	
+	
 }
+}
+   
+
