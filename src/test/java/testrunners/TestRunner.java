@@ -8,12 +8,12 @@ import io.cucumber.testng.CucumberOptions;
 
 	    
 
-	    features = "src/test/resources/features/dataStructuresIntroductionPage.feature",
+	    features = "src/test/resources/features/ArrayLogin.feature",
 
 	  
 
 	    glue = {"stepdefinitions","hooks"},
-	    tags="@data"
+	    tags="@Array"
 	   
 
 	            )
