@@ -7,13 +7,13 @@ import io.cucumber.testng.CucumberOptions;
 
 
 @CucumberOptions(
-	    features = "src/test/resources/features/linkedListPage.feature",
+	    features = "src/test/resources/features/Arraypage.feature",
 	  
 
 	    glue = {"stepdefinitions","hooks"},
 	   
 
-	            tags= "@list"
+	            tags= "@Array"
 	            )
 	
 
