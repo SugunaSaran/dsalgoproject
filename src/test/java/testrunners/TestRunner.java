@@ -8,12 +8,12 @@ import io.cucumber.testng.CucumberOptions;
 
 	    
 
-	    features = "src/test/resources/features",
+	    features = "src/test/resources/features/dataStructuresIntroductionPage.feature",
 
 	  
 
 	    glue = {"stepdefinitions","hooks"},
-	    tags="@logintag"
+	    tags="@data"
 	   
 
 	            )
