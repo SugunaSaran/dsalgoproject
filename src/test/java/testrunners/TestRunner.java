@@ -7,20 +7,18 @@ import io.cucumber.testng.CucumberOptions;
 
 
 @CucumberOptions(
-	    features = "src/test/resources/features",
-	    glue = {"stepdefinitions","hooks"},
+	    features = "src/test/resources/features/linkedListPage.feature",
+	  
 
-	    
+	    glue = {"stepdefinitions","hooks"},
+	   
+
+	            tags= "@list"
+	            )
 	
 
 public class TestRunner extends AbstractTestNGCucumberTests {
-=======
-         tags= "@logintag"
-	    )
-	 
 
 
 	    
- class TestRunner extends AbstractTestNGCucumberTests {
-	
-}
+	}
