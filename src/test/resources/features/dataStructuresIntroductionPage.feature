@@ -1,11 +1,7 @@
 Feature: Data Structures-Introduction
 
 Background:
-   When User Clicks Get Started button
-    And User clicks on the signin link
-    And User enters the username as passionate_coders
-    And User enters the password as pa$$word123
-    When user clicks the login button
+Given The user is in the home page after sign-in.
 
 Scenario: Verify that user is able to navigate to Data Structures-Introduction page
 

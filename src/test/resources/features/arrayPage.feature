@@ -1,11 +1,7 @@
-@Array
+
 Feature: Array
 Background:
-    When User Clicks Get Started button
-    And User clicks on the signin link
-    And User enters the username as passionate_coders
-    And User enters the password as pa$$word123
-    When user clicks the login button
+ Given The user is in the home page after sign-in.   
 
 
 Scenario: Verify that user is able to navigate to Array page
@@ -27,7 +23,7 @@ Scenario: Verify that user is able to navigate to Array page
     Given The user is in the tryEditor page-Array
     When The user clicks the Run button without entering the code in the Editor-Array
     Then The user should not get any error message in alert window-Array
-
+@Ammu
   Scenario Outline: Verify that user receives error for invalid python code for Arrays in Python page
     Given The user is in the tryEditor page-Array
     When The user write the "<invalid_code>" in Editor and click the Run button-Array
