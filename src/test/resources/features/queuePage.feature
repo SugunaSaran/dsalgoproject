@@ -10,15 +10,14 @@ Given  The user is in the Home page after sign-in for queue
    
   Scenario Outline: Verify that user is able to navigate to the sub links of queue page
     Given The user is in the Queue page after Sign in
-    When The user clicks the following <links> in queue page
-	  Then The user should be redirected to <corresponding> page in queue data structure
+    When The user clicks the following "<sheetName>" and <rowNumber> in queue page
+	  Then The user should be redirected to "<sheetName>" and <rowNumber> page in queue data structure
 	  Examples:
-	  |links|corresponding|
-	  |"implementation-lists"|"Implementation of Queue in Python"|
-	  |"implementation-collections.deque"|"Implementation using collections.deque"|
-	  |"implementation-array"|"Implementation using array"|
-	  |"queue operations"|"Queue Operations"|
-	  |"practice questions"|"Practice Questions"|
+	  |sheetName|rowNumber|
+	  |Sheet1|0|
+	  |Sheet1|1|
+	  |Sheet1|2|
+	  |Sheet1|3|
 	  
 	  Scenario Outline: Verify that user is able to navigate to the tryEditor of sub links of queue page
     Given The user is in the <links> page in queue page
@@ -79,4 +78,6 @@ Given  The user is in the Home page after sign-in for queue
 	  |"implementation-collections.deque"|"print('hello')"|"hello"|
 	  |"implementation-array"|"print('welcome to programming')"|"welcome to programming"|
 	  |"queue operations"|"print('system.out.println')"|"system.out.println"|
-
+	  
+	  
+	 

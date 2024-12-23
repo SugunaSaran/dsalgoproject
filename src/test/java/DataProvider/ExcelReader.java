@@ -1,39 +1,62 @@
 package DataProvider;
 import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 
 public class ExcelReader {
-	public static Object[][] readExcelData(String filePath, String sheetName) throws IOException {
-        FileInputStream file = new FileInputStream(new File(filePath));
-        Workbook workbook = WorkbookFactory.create(file);
-        Sheet sheet = workbook.getSheet(sheetName);
-        
-        Iterator<Row> rowIterator = sheet.iterator();
-        int rowCount = 0;
-        int columnCount = sheet.getRow(0).getPhysicalNumberOfCells();
-        
-        // Count rows
-        while (rowIterator.hasNext()) {
-            rowIterator.next();
-            rowCount++;
-        }
+	public static int totalRow;
 
-        Object[][] data = new Object[rowCount - 1][columnCount];
-        rowIterator = sheet.iterator();
-        int i = 0;
-        rowIterator.next(); 
+	public List<Map<String, String>> getData(String excelFilePath, String sheetName)
+			throws InvalidFormatException, IOException {
 
-        while (rowIterator.hasNext()) {
-            Row row = rowIterator.next();
-            for (int j = 0; j < columnCount; j++) {
-                data[i][j] = row.getCell(j).toString();
-            }
-            i++;
-        }
-        workbook.close();
-        return data;
-    }
+		Workbook workbook = WorkbookFactory.create(new File(excelFilePath));
+		Sheet sheet = workbook.getSheet(sheetName);
+		workbook.close();
+		return readSheet(sheet);
+	}
+
+	private List<Map<String, String>> readSheet(Sheet sheet) {
+
+		Row row;
+		Cell cell;
+
+		totalRow = sheet.getLastRowNum();
+
+		List<Map<String, String>> excelRows = new ArrayList<Map<String, String>>();
+
+		for (int currentRow = 1; currentRow <= totalRow; currentRow++) {
+
+			row = sheet.getRow(currentRow);
+
+			int totalColumn = row.getLastCellNum();
+
+			LinkedHashMap<String, String> columnMapdata = new LinkedHashMap<String, String>();
+
+			for (int currentColumn = 0; currentColumn < totalColumn; currentColumn++) {
+
+				cell = row.getCell(currentColumn);
+
+				String columnHeaderName = sheet.getRow(sheet.getFirstRowNum()).getCell(currentColumn)
+						.getStringCellValue();
+
+				columnMapdata.put(columnHeaderName, cell.getStringCellValue());
+			}
+
+			excelRows.add(columnMapdata);
+		}
+
+		return excelRows;
+	}
+
+	public int countRow() {
+
+		return totalRow;
+	}
 }
