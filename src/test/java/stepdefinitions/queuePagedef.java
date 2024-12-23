@@ -1,8 +1,12 @@
 package stepdefinitions;
+import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.testng.Assert;
 
+import DataProvider.ExcelReader;
 import Pages.HomePage;
 import Pages.QueuePage;
 import Pages.TryEditorPage;
@@ -36,16 +40,22 @@ public class queuePagedef {
 	public void the_user_is_in_the_queue_page_after_sign_in() {
 		hp.clickQueueFromDropDown();
 	}
-
-	@When("The user clicks the following {string} in queue page")
-	public void the_user_clicks_the_following_in_queue_page(String string) {
-		qp.checkQueuePageLink(string);
+	
+	@When("The user clicks the following {string} and {int} in queue page")
+	public void the_user_clicks_the_following_and_in_queue_page(String string,Integer int1) throws IOException, InvalidFormatException {
+	    ExcelReader reader=new ExcelReader();
+	    List<Map<String, String>> data = reader.getData("src/test/resources/ExcelData/QueuePageLinks.xls", "Sheet1");
+	    String pageName=data.get(int1).get("links");
+	    qp.checkQueuePageLink(pageName);
 	}
-
-	@Then("The user should be redirected to {string} page in queue data structure")
-	public void the_user_should_be_redirected_to_page_in_queue_data_structure(String string) {
-		Assert.assertEquals(hp.validatePageTitle(), string);
+	@Then("The user should be redirected to {string} and {int} page in queue data structure")
+	public void the_user_should_be_redirected_to_and_page_in_queue_data_structure(String string, Integer int1) throws InvalidFormatException, IOException {
+		ExcelReader reader=new ExcelReader();
+	    List<Map<String, String>> data = reader.getData("src/test/resources/ExcelData/QueuePageLinks.xls", "Sheet1");
+	    String expectedPage=data.get(int1).get("Expected Result");
+	    Assert.assertEquals(hp.validatePageTitle(), expectedPage);
 	}
+	
 	@Given("The user is in the {string} page in queue page")
 	public void the_user_is_in_the_page_in_queue_page(String string) {
 		hp.clickQueueFromDropDown();
@@ -122,7 +132,4 @@ public class queuePagedef {
 
 
 
-
 }
-
-
