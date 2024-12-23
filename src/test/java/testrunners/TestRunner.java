@@ -14,7 +14,7 @@ import io.cucumber.testng.CucumberOptions;
 	    tags="@stackpage or @queuepage"
 	   )
 
-public class TestRunner extends AbstractTestNGCucumberTests {
+public class TestRunner extends AbstractTestNGCucumberTests {    
 
 	
 }
