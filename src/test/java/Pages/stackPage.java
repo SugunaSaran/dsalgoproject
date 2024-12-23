@@ -15,34 +15,26 @@ public class stackPage extends DriverFactory{
 	By implementation=By.xpath("//a[@href='implementation']");
 	By applications=By.xpath("//a[@href='stack-applications']");
 	By practice=By.xpath("//a[@href='/stack/practice']");
+	public void checkStackPageLink(String pageName) {
+		if(pageName.equalsIgnoreCase("operations-in-stack"))
+			driver.findElement(operationsInStack).click();
+		else if(pageName.equalsIgnoreCase("implementation"))
+			driver.findElement(implementation).click();
+		else if(pageName.equalsIgnoreCase("applications"))
+			driver.findElement(applications).click();
+		else if(pageName.equalsIgnoreCase("practice-questions"))
+			clickPracticeLink();
+		
+	}
 
-	public void checkOperationsLink() {
-		driver.findElement(operationsInStack).click();
-	}	
 	public void checkTryEditorLink() {
 		By tryeditor=By.xpath("//a[@href='/tryEditor']");
 		Actions act=new Actions(driver);
 		act.moveToElement(driver.findElement(tryeditor)).perform();
 		driver.findElement(tryeditor).click();
 	}
-	public String validatePageLink() {
-		if(driver.getPageSource().trim().isEmpty())
-			return " ";
-		else
-			return driver.getTitle();
-	}
-
-	public void checkImplementationLink() {
-		driver.findElement(implementation).click();
-	}
-	public String validateImplementationLink() {
-		return driver.getTitle();
-	}
-	public void checkApplicationLink() {
-		driver.findElement(applications).click();
-	}
 	public void clickPracticeLink() {
-		checkOperationsLink();
+		driver.findElement(applications).click();
 		driver.findElement(practice).click();
 	}
 
