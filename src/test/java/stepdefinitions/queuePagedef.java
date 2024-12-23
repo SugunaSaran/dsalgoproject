@@ -1,8 +1,10 @@
 package stepdefinitions;
+import java.io.IOException;
 import java.util.List;
 
 import org.testng.Assert;
 
+import DataProvider.ExcelReader;
 import Pages.HomePage;
 import Pages.QueuePage;
 import Pages.TryEditorPage;
@@ -32,20 +34,6 @@ public class queuePagedef {
 	}
 
 
-	@Given("The user is in the Queue page after Sign in")
-	public void the_user_is_in_the_queue_page_after_sign_in() {
-		hp.clickQueueFromDropDown();
-	}
-
-	@When("The user clicks the following {string} in queue page")
-	public void the_user_clicks_the_following_in_queue_page(String string) {
-		qp.checkQueuePageLink(string);
-	}
-
-	@Then("The user should be redirected to {string} page in queue data structure")
-	public void the_user_should_be_redirected_to_page_in_queue_data_structure(String string) {
-		Assert.assertEquals(hp.validatePageTitle(), string);
-	}
 	@Given("The user is in the {string} page in queue page")
 	public void the_user_is_in_the_page_in_queue_page(String string) {
 		hp.clickQueueFromDropDown();
@@ -118,11 +106,9 @@ public class queuePagedef {
 	}
 
 
-
-
-
-
-
 }
+
+
+
 
 
