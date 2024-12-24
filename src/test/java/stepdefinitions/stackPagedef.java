@@ -171,7 +171,5 @@ public class stackPagedef {
 	    Assert.assertEquals(tp.validateOutput(), expectedResult);
 	}
 
-	
-
 
 }
