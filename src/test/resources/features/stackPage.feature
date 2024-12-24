@@ -42,41 +42,41 @@ Given  The user is in the Home page after sign-in for stack
 	  |Sheet1|2|
 	  
 	  Scenario Outline: Verify that user receives error for invalid python code in tryEditor page of stack subpages
-    Given The user is in the tryEditor page of <subpages> of Stack Page
-    When The user clicks the Run button the following <invalidcodes> in the Editor of corresponding sub page of stack
+    Given The user is in the tryEditor page of "<sheetName>" and <rowNumber> of Stack Page
+    When The user clicks the Run button the following "<sheetName>" and <rowNumber> in the Editor of corresponding sub page of stack
     Then The user should see an error message in alert window in corresponding stack Page
     Examples:
-    |subpages|invalidcodes|
-	  |"operations-in-stack"|"system" |
-	  |"operations-in-stack"|"hello" |
-	  |"implementation"|"david"|
-	  |"implementation"|"google"|
-	  |"applications"|"hello"|
-	  |"applications"|"system.out.println"|
-    
-	  Scenario Outline: Verifying the ok button of error alert message in tryEditor Page of <subpages> of Stack page
-    Given The user is in the tryEditor page <subpages> and writes an <invalidcodes> in Editor and click the Run button of corresponding Stack Page
+    |sheetName|rowNumber|
+	  |Sheet2|0|
+	  |Sheet2|1|
+	  |Sheet2|2|
+	  |Sheet2|3|
+	  |Sheet2|4|
+	  
+	  Scenario Outline: Verifying the ok button of error alert message in tryEditor Page of "<sheetName>" and <rowNumber> of Stack page
+    Given The user is in the tryEditor page "<sheetName>" and <rowNumber> and writes an invalidcodes in Editor and click the Run button of corresponding Stack Page
     When The user clicks the ok button of error alert window of that Stack Page
 	  Then The user should remain in the tryEditor page with Run button in corresponding stack Page
 	  Examples:
-	  |subpages|invalidcodes|
-	  |"operations-in-stack"|"system" |
-	  |"operations-in-stack"|"hello" |
-	  |"implementation"|"david"|
-	  |"implementation"|"google"|
-	  |"applications"|"hello"|
-	  |"applications"|"system.out.println"|
+	  |sheetName|rowNumber|
+	  |Sheet2|0|
+	  |Sheet2|1|
+	  |Sheet2|2|
+	  |Sheet2|3|
+	  |Sheet2|4|
+	  
 	  
 	  Scenario Outline: Verify that user receives the output for valid python code in tryEditor page of stack subpages
-    Given The user is in the tryEditor page of <subpages> of Stack Page
-    When The user clicks the Run button the following <validcodes> in the Editor of corresponding sub page of stack
-    Then The user should able to see an <output> in corresponding stack's tryEditor page
+    Given The user is in the tryEditor page of "<sheetName>" and <rowNumber> of Stack Page for valid code
+    When The user clicks the Run button the following "<sheetName>" and <rowNumber> with valid code in the Editor of corresponding sub page of stack
+    Then The user should able to see an "<sheetName>" and <rowNumber> in corresponding stack tryeditor page
     Examples:
-    |subpages|validcodes|output|
-	  |"operations-in-stack"|"print('hi')"|"hi"|
-	  |"implementation"|"print('hello')"|"hello"|
-	  |"implementation"|"print('welcome to programming')"|"welcome to programming"|
-	  |"applications"|"print('system.out.println')"|"system.out.println"|
+    |sheetName|rowNumber|
+	  |Sheet3|0|
+	  |Sheet3|1|
+	  |Sheet3|2|
+	  |Sheet3|3|
 	  
-	 
+	  
+    
 	 
