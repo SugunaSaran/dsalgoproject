@@ -44,6 +44,12 @@ public String getBrowser() {
 	public String getPassword() {
 		return properties.getProperty("password");
 	}
+	public String getStackDataPath() {
+		return properties.getProperty("stackPageExcelPath");
+	}
+	public String getQueueDataPath() {
+		return properties.getProperty("queuePageExcelPath");
+	}
 	public long getImplicitlyWait() {		
 		String implicitlyWait = properties.getProperty("implicitlyWait");
 		if(implicitlyWait != null) return Long.parseLong(implicitlyWait);
