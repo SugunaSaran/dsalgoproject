@@ -1,12 +1,7 @@
 Feature: Linked List
 
   Background: 
-    When User Clicks Get Started button
-    And User clicks on the signin link
-    And User enters the username as passionate_coders
-    And User enters the password as pa$$word123
-    When user clicks the login button
-
+Given The user is in the home page after sign-in.
   Scenario: Verify that user is able to navigate to Linked List structure page
     When The user clicks the Getting Started button in Linked List panel
     When The user selects linked list item from the drop down menu

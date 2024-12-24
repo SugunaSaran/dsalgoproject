@@ -7,10 +7,13 @@ import io.cucumber.testng.CucumberOptions;
 
 
 @CucumberOptions(
+
 	    features = "src/test/resources/features",
 	     glue = {"stepdefinitions","hooks"},
-	     tags= "@stackpage"
-	            )
+	     tags="@Array"
+	   
+
+            )
 	
 
 public class TestRunner extends AbstractTestNGCucumberTests {    
