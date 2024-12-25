@@ -20,7 +20,10 @@ public class HomePage extends DriverFactory{
 	By stackdropdown=By.xpath("//a[@href='/stack']");
 	By queuedropdown=By.xpath("//a[@href='/queue']");
 	By btn_ArraygetStarted=By.xpath("//a[@href='array']");
-	
+    By Graph=By.xpath("//a[@href='Graph']");
+	By Graphdropdown=By.xpath("//a[@href='/Graph']");
+	By Tree=By.xpath("//a[@href='Tree']");
+	By treedropdown=By.xpath("//a[@href='/tree']");
 	public void clickStackLink() {
 		driver.findElement(stack).click();
 	}
@@ -43,5 +46,21 @@ public class HomePage extends DriverFactory{
 		driver.findElement(btn_ArraygetStarted).click();
 	}
 
+	public void clickGraphLink() {
+		driver.findElement(Graph).click();
+	}
 	
+	public void clickGraphFromDropDown() {
+		driver.findElement(datastructuresLink).click();
+		driver.findElement(Graphdropdown).click();
+	}
+	public void clickTreeLink() {
+		driver.findElement(Tree).click();
+	}
+	
+	public void clickTreeFromDropDown() {
+		driver.findElement(datastructuresLink).click();
+		driver.findElement(treedropdown).click();
+	}
+
 }

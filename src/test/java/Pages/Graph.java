@@ -5,8 +5,8 @@ import DriverManager.DriverFactory;
 public class Graph extends DriverFactory {
 	public Graph() {
 		super();
-		HomeGraph G=new HomeGraph();
-		G.clickGraphLink();
+		HomePage hp=new HomePage();
+		hp.clickGraphLink();
 	}
 	By Graph=By.xpath("//a[@href='Graph']");
 	By GraphRepresentation=By.xpath("//a[@href='Graph Representation']");
