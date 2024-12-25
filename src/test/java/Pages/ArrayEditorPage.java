@@ -31,14 +31,7 @@ public class ArrayEditorPage extends DriverFactory{
 	actions.perform();
 	actions.moveToElement(driver.findElement(def)).sendKeys(Keys.BACK_SPACE).perform();
 	actions.moveToElement(driver.findElement(def)).sendKeys(code).perform();
-
-			
-		
-		
-		 
-	   
-		       		
-	 }
+}
 	    public void click_run() {
 	    	driver.findElement(btn_run).click();
 			
