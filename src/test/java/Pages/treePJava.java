@@ -1,3 +1,5 @@
+
+
 package Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.interactions.Actions;
@@ -73,7 +75,6 @@ public void checkTypesofBinaryTreesLink() {
 
 }
 
-<<<<<<< HEAD
 public void checkImplementationinPythonLink() {
 	driver.findElement(ImplementationinPython).click();
 }
@@ -100,25 +101,3 @@ public void clickPracticeLink() {
 	
 }
 }
-
-	
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-=======
->>>>>>> bd497cdddf17c7812a5b93f06d6397980d595703
-
-
-
-
