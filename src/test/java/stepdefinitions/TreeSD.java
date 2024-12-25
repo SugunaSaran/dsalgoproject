@@ -7,6 +7,7 @@ import Pages.treePJava;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+<<<<<<< HEAD:src/test/java/stepdefinitions/TreeSD.java
 public abstract class TreeSD {
 	HomePage hp;
     treePJava DD=new treePJava();
@@ -1053,6 +1054,10 @@ public abstract class TreeSD {
 			}
 				
 			
+=======
+public class TreePage {
+}
+>>>>>>> bd497cdddf17c7812a5b93f06d6397980d595703:src/test/java/stepdefinitions/TreePage.java
 			
 			
 			

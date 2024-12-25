@@ -1,10 +1,18 @@
 
+
 package stepdefinitions;
 import Pages.HomePage;
 import Pages.TryEditorPage;
 import Pages.stackPage;
 
+import java.io.IOException;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.testng.Assert;
+
+import DataProvider.ExcelReader;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -15,283 +23,153 @@ public class stackPagedef {
 	HomePage hp;
 	stackPage sp=new stackPage();
 	TryEditorPage tp=new TryEditorPage();
-	//Scenario: Verify that user is able to navigate to stack data structure page
+	String excelDataPath=sp.getExcelPath();
 	@Given("The user is in the Home page after sign-in for stack")
 	public void the_user_is_in_the_home_page_after_sign_in_for_stack() {
 	    hp=new HomePage();
-	 }
-	
-	@When("The user clicks the Getting Started button in Stack Panel")
-	public void the_user_clicks_the_getting_started_button_in_stack_panel() {
-	   hp.clickStackLink();
-	 }
-
-	@Then("The user should be directed to Stack Data StructurePage")
-	public void the_user_should_be_directed_to_stack_data_structure_page() {
-	    Assert.assertEquals(hp.validatePageTitle(),"Stack");
-	   
 	}
 
+	@When("The user selects stack item by clicking the Getting Started Link")
+	public void the_user_selects_stack_item_by_clicking_the_getting_started_link() {
+	    hp.clickStackLink();
+	}
 
-	// Scenario: Verify that user is able to navigate to Operations in stack page
+	@Then("The user should be directed to stack Data Structure Page")
+	public void the_user_should_be_directed_to_stack_data_structure_page() {
+	    Assert.assertEquals(hp.validatePageTitle(), "Stack");
+	}
+
 	@Given("The user is in the Stack page after Sign in")
 	public void the_user_is_in_the_stack_page_after_sign_in() {
-		hp.clickStackLink();
-	  
-	}
-
-	@When("The user clicks Operations in Stack link")
-	public void the_user_clicks_operations_in_stack_link() {
-	   sp.checkOperationsLink();
-	  
-	}
-
-	@Then("The user should be directed to Operations in Stack Page")
-	public void the_user_should_be_directed_to_operations_in_stack_page() {
-		Assert.assertEquals("Operations in Stack", sp.validatePageLink());
-	}
-	
-	//Scenario: Verify that user is able to navigate to try Editor page for Operations in Stack page
-	@Given("The user is on the Operations in Stack page")
-	public void the_user_is_on_the_operations_in_stack_page() {
 	    hp.clickStackLink();
-	    sp.checkOperationsLink();
-	  
 	}
 
-	@When("The user clicks Try Here button in Operations in Stack page")
-	public void the_user_clicks_try_here_button_in_operations_in_stack_page() {
-	   sp.checkTryEditorLink();
-	  
+	@When("The user clicks the following {string} and {int} in stack page")
+	public void the_user_clicks_the_following_and_in_stack_page(String string, Integer int1) throws InvalidFormatException, IOException {
+		ExcelReader reader=new ExcelReader();
+	    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet1");
+	    String pageName=data.get(int1).get("Links");
+	    sp.checkStackPageLink(pageName);
 	}
 
-	@Then("The user should be redirected to a page having an try Editor with a Run button to test")
-	public void the_user_should_be_redirected_to_a_page_having_an_try_editor_with_a_run_button_to_test() {
-	    Assert.assertEquals(sp.validatePageLink(), "Assessment");
-	  
+	@Then("The user should be redirected to {string} and {int} page in stack data structure")
+	public void the_user_should_be_redirected_to_and_page_in_stack_data_structure(String string, Integer int1) throws InvalidFormatException, IOException {
+		ExcelReader reader=new ExcelReader();
+	    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet1");
+	    String expectedPage=data.get(int1).get("Expected Result");
+	    Assert.assertEquals(hp.validatePageTitle(), expectedPage);
 	}
 
-	@Given("The user is in the tryEditor page")
-	public void the_user_is_in_the_try_editor_page() {
+	@Given("The user is in the {string} and {int} page in stack page")
+	public void the_user_is_in_the_and_page_in_stack_page(String string, Integer int1) throws InvalidFormatException, IOException {
+		ExcelReader reader=new ExcelReader();
+	    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet1");
+	    String pageName=data.get(int1).get("Links");
 	    hp.clickStackLink();
-	    sp.checkOperationsLink();
-	    sp.checkTryEditorLink();
-	  }
-
-	@When("The user clicks the Run button without entering the code in the Editor")
-	public void the_user_clicks_the_run_button_without_entering_the_code_in_the_editor() {
-	  tp.checkCode(" ");
-	 
-	 }
-
-	@Then("The user should not see any error message or output")
-	public void the_user_should_not_see_any_error_message_or_output() {
-		 Assert.assertEquals(false,tp.isAlertPresent());
-	 }
-
-@When("The user write the invalid code in Editor and click the Run button")
-	public void the_user_write_the_invalid_code_in_editor_and_click_the_run_button() {
-		tp.checkCode("system.out.println");
-	  
+	    sp.checkStackPageLink(pageName);
 	}
 
-	@Then("The user should able to see an error message in alert window")
-	public void the_user_should_able_to_see_an_error_message_in_alert_window() {
-	    Assert.assertEquals(true, tp.isAlertPresent());
-	  
-	}
-	//Scenario: Verify that user receives error for invalid python code for Operations in Stack page
-	@Given("The user is in the tryEditor page and writes an invalid code in Editor and click the Run Button")
-	public void the_user_is_in_the_try_editor_page_and_writes_an_invalid_code_in_editor_and_click_the_run_button() {
-		 	hp.clickStackLink();
-		    sp.checkOperationsLink();
-		    sp.checkTryEditorLink();
-		    tp.checkCode("system");
-		    }
-	
-	@When("The user clicks the ok button of error alert window")
-	public void the_user_clicks_the_ok_button_of_error_alert_window() {
-	   tp.acceptAlert();	  
-	}
-
-	@Then("The user should remain in the tryEditor page with Run button")
-	public void the_user_should_remain_in_the_try_editor_page_with_run_button() {
-		 Assert.assertEquals(sp.validatePageLink(), "Assessment");
-	  
-	}
-	//
-	@When("The user write the valid code in Editor and click the Run button")
-	public void the_user_write_the_valid_code_in_editor_and_click_the_run_button() {
-		tp.checkCode("print('hi')");
-	  
-	}
-
-	@Then("The user should able to see output in the console")
-	public void the_user_should_able_to_see_output_in_the_console() {
-		Assert.assertEquals(tp.validateOutput(), "hi");
-	}
-
-	@When("The user clicks implementation link")
-	public void the_user_clicks_implementation_link() {
-	    sp.checkImplementationLink();
-	  
-	}
-
-	@Then("The user be directed to implementation Page")
-	public void the_user_be_directed_to_implementation_page() {
-	    Assert.assertEquals(sp.validatePageLink(), "Implementation");
-	  
-	}
-
-	@Given("The user is on the implementation page")
-	public void the_user_is_on_the_implementation_page() {
-		hp.clickStackLink();
-	    sp.checkImplementationLink();
-	  
-	}
-
-	@When("The user clicks Try Here button in implementation page")
-	public void the_user_clicks_try_here_button_in_implementation_page() {
-	    sp.checkTryEditorLink();
-	  
-	}
-	
-	@When("The user clicks applications link")
-	public void the_user_clicks_applications_link() {
-	    sp.checkApplicationLink();
-	}
-
-	@Then("The user be directed to application Page")
-	public void the_user_be_directed_to_application_page() {
-		Assert.assertEquals(sp.validatePageLink(), "Applications");  
-	}
-
-	@Given("The user is on the application page")
-	public void the_user_is_on_the_application_page() {
-	    hp.clickStackLink();
-	    sp.checkApplicationLink();
-	  
-	}
-
-	@When("The user clicks Try Here button in application page")
-	public void the_user_clicks_try_here_button_in_application_page() {
-	   sp.checkTryEditorLink();
-	  
-	}
-
-	@When("The user clicks Practice Questions link")
-	public void the_user_clicks_practice_questions_link() {
-	    sp.clickPracticeLink();
-	  
-	}
-
-	@Then("The user should be directed to practice Page")
-	public void the_user_be_directed_to_practice_page() {
-		Assert.assertEquals(sp.validatePageLink(), "Practice Questions");  
-	}
-	@Given("The user is in the tryEditor page in Implementation page")
-	public void the_user_is_in_the_try_editor_page_in_implementation_page() {
-	    hp.clickStackLink();
-	    sp.checkImplementationLink();
+	@When("The user clicks the tryEditor button in subpages of stack")
+	public void the_user_clicks_the_try_editor_button_in_subpages_of_stack() {
 	    sp.checkTryEditorLink();
 	}
 
-	@When("The user clicks the Run button without entering the code in the Editor of Implementation page")
-	public void the_user_clicks_the_run_button_without_entering_the_code_in_the_editor_of_implementation_page() {
-	   tp.checkCode(" ");
+	@Then("The user should be redirected to a page having an try Editor with a Run button to test in stack page")
+	public void the_user_should_be_redirected_to_a_page_having_an_try_editor_with_a_run_button_to_test_in_stack_page() {
+	    Assert.assertEquals(hp.validatePageTitle(), "Assessment");
 	}
 
-	@Then("The user should not see any error message or output in Implementation page text Editor")
-	public void the_user_should_not_see_any_error_message_or_output_in_implementation_page_text_editor() {
-	    Assert.assertEquals(false, tp.isAlertPresent());
-	}
-
-	@When("The user write the invalid code in Editor and click the Run button of Implementation page")
-	public void the_user_write_the_invalid_code_in_editor_and_click_the_run_button_of_implementation_page() {
-	    tp.checkCode("system.out");
-	}
-
-	@Then("The user should able to see an error message in alert window in Implementation page text Editor")
-	public void the_user_should_able_to_see_an_error_message_in_alert_window_in_implementation_page_text_editor() {
-	    Assert.assertEquals(true, tp.isAlertPresent());
-	}
-
-	@Given("The user is in the tryEditor page and writes an invalid code in Editor and click the Run button in Implementation page")
-	public void the_user_is_in_the_try_editor_page_and_writes_an_invalid_code_in_editor_and_click_the_run_button_in_implementation_page() {
+	@Given("The user is in the tryEditor page of corresponding {string} and {int} page in stack data structure")
+	public void the_user_is_in_the_try_editor_page_of_corresponding_and_page_in_stack_data_structure(String string, Integer int1) throws InvalidFormatException, IOException {
+		ExcelReader reader=new ExcelReader();
+	    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet1");
+	    String pageName=data.get(int1).get("Links");
 	    hp.clickStackLink();
-	    sp.checkImplementationLink();
-	    sp.checkTryEditorLink();
-	    tp.checkCode("system.out");
-	}
-
-	@Then("The user should remain in the tryEditor page with Run button of Implementation page")
-	public void the_user_should_remain_in_the_try_editor_page_with_run_button_of_implementation_page() {
-	     Assert.assertEquals(sp.validatePageLink(), "Assessment");
-	   
-	}
-
-	@When("The user write the valid code in Editor and click the Run button of Implementation page")
-	public void the_user_write_the_valid_code_in_editor_and_click_the_run_button_of_implementation_page() {
-	    tp.checkCode("print('hello')");
-	}
-
-	@Then("The user should able to see output in the console of Implementation page")
-	public void the_user_should_able_to_see_output_in_the_console_of_implementation_page() {
-	    Assert.assertEquals(tp.validateOutput(), "hello");
-	}
-
-	@Given("The user is in the tryEditor page of applications page")
-	public void the_user_is_in_the_try_editor_page_of_applications_page() {
-	    hp.clickStackLink();
-	    sp.checkApplicationLink();
+	    sp.checkStackPageLink(pageName);
 	    sp.checkTryEditorLink();
 	}
 
-	@When("The user clicks the Run button without entering the code in the Editor in applications page")
-	public void the_user_clicks_the_run_button_without_entering_the_code_in_the_editor_in_applications_page() {
+	@When("The user clicks the Run button without entering the code in the Editor in stack page")
+	public void the_user_clicks_the_run_button_without_entering_the_code_in_the_editor_in_stack_page() {
 	    tp.checkCode(" ");
 	}
 
-	@Then("The user should not see any error message or output in try Editor of applications page")
-	public void the_user_should_not_see_any_error_message_or_output_in_try_editor_of_applications_page() {
-		Assert.assertEquals(false, tp.isAlertPresent());
+	@Then("The user should not see any error message or output in the Editor of stack page")
+	public void the_user_should_not_see_any_error_message_or_output_in_the_editor_of_stack_page() {
+	    Assert.assertEquals(tp.isAlertPresent(), false);
+	}
+	
+
+	@Given("The user is in the tryEditor page of {string} and {int} of Stack Page")
+	public void the_user_is_in_the_try_editor_page_of_and_of_stack_page(String string, Integer int1) throws InvalidFormatException, IOException {
+	    hp.clickStackLink();
+	    ExcelReader reader=new ExcelReader();
+	    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet2");
+	    String pageName=data.get(int1).get("Links");
+	    sp.checkStackPageLink(pageName);
+	    sp.checkTryEditorLink();
+	    }
+
+
+	@When("The user clicks the Run button the following {string} and {int} in the Editor of corresponding sub page of stack")
+	public void the_user_clicks_the_run_button_the_following_and_in_the_editor_of_corresponding_sub_page_of_stack(String string, Integer int1) throws InvalidFormatException, IOException {
+		ExcelReader reader=new ExcelReader();
+	    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet2");
+	    String invalidCode=data.get(int1).get("InvalidCode");
+	    tp.checkCode(invalidCode);
 	}
 
-	@When("The user write the invalid code in Editor and click the Run button in applications page")
-	public void the_user_write_the_invalid_code_in_editor_and_click_the_run_button_in_applications_page() {
-		tp.checkCode("system.out");
+	@Then("The user should see an error message in alert window in corresponding stack Page")
+	public void the_user_should_see_an_error_message_in_alert_window_in_corresponding_stack_page() {
+		Assert.assertEquals(tp.isAlertPresent(), true);
 	}
 
-	@Then("The user should able to see an error message in alert window of applications page")
-	public void the_user_should_able_to_see_an_error_message_in_alert_window_of_applications_page() {
-		Assert.assertEquals(true, tp.isAlertPresent());
+	@Given("The user is in the tryEditor page {string} and {int} and writes an invalidcodes in Editor and click the Run button of corresponding Stack Page")
+	public void the_user_is_in_the_try_editor_page_and_and_writes_an_invalidcodes_in_editor_and_click_the_run_button_of_corresponding_stack_page(String string, Integer int1) throws InvalidFormatException, IOException {
+	    hp.clickStackLink();
+	    ExcelReader reader=new ExcelReader();
+	    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet2");
+	    String pageName=data.get(int1).get("Links");
+	    String invalidCode=data.get(int1).get("InvalidCode");
+	    sp.checkStackPageLink(pageName);
+	    sp.checkTryEditorLink();
+	    tp.checkCode(invalidCode);
 	}
 
-	@Given("The user is in the tryEditor page and writes an invalid code in Editor and click the Run button of applications page")
-	public void the_user_is_in_the_try_editor_page_and_writes_an_invalid_code_in_editor_and_click_the_run_button_of_applications_page() {
-		    hp.clickStackLink();
-		    sp.checkApplicationLink();
-		    sp.checkTryEditorLink();
-		    tp.checkCode("system.out");
+	@When("The user clicks the ok button of error alert window of that Stack Page")
+	public void the_user_clicks_the_ok_button_of_error_alert_window_of_that_stack_page() {
+	   tp.acceptAlert();
 	}
 
-	@Then("The user should remain in the tryEditor page with Run button of applications page")
-	public void the_user_should_remain_in_the_try_editor_page_with_run_button_of_applications_page() {
-		Assert.assertEquals(sp.validatePageLink(), "Assessment");
+	@Then("The user should remain in the tryEditor page with Run button in corresponding stack Page")
+	public void the_user_should_remain_in_the_try_editor_page_with_run_button_in_corresponding_stack_page() {
+	    Assert.assertEquals(hp.validatePageTitle(), "Assessment");
+	}
+	@Given("The user is in the tryEditor page of {string} and {int} of Stack Page for valid code")
+	public void the_user_is_in_the_try_editor_page_of_and_of_stack_page_for_valid_code(String string, Integer int1) throws InvalidFormatException, IOException {
+	    hp.clickStackLink();
+	    ExcelReader reader=new ExcelReader();
+	    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet3");
+	    String pageName=data.get(int1).get("Links");
+	    sp.checkStackPageLink(pageName);
+	    sp.checkTryEditorLink();
+	    }
+	
+	@When("The user clicks the Run button the following {string} and {int} with valid code in the Editor of corresponding sub page of stack")
+	public void the_user_clicks_the_run_button_the_following_and_with_valid_code_in_the_editor_of_corresponding_sub_page_of_stack(String string, Integer int1) throws InvalidFormatException, IOException {
+		ExcelReader reader=new ExcelReader();
+	    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet3");
+	    String validcode=data.get(int1).get("ValidCode");
+	    tp.checkCode(validcode);
 	}
 
-	@When("The user write the valid code in Editor and click the Run button of applications page")
-	public void the_user_write_the_valid_code_in_editor_and_click_the_run_button_of_applications_page() {
-		tp.checkCode("print('applications')");
+	@Then("The user should able to see an {string} and {int} in corresponding stack tryeditor page")
+	public void the_user_should_able_to_see_an_and_in_corresponding_stack_tryeditor_page(String string, Integer int1) throws InvalidFormatException, IOException {
+		ExcelReader reader=new ExcelReader();
+	    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet3");
+	    String expectedResult=data.get(int1).get("Expected Result");
+	    Assert.assertEquals(tp.validateOutput(), expectedResult);
 	}
-
-	@Then("The user should able to see output in the console of applications page")
-	public void the_user_should_able_to_see_output_in_the_console_of_applications_page() {
-	    Assert.assertEquals(tp.validateOutput(), "applications");
-	}
-
-
-
 
 
 }

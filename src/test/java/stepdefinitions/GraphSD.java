@@ -13,6 +13,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class GraphSD {
+<<<<<<< HEAD
 	HomePage hp;
       Graph gp=new Graph();
 	TryEditorPage tp=new TryEditorPage();
@@ -177,4 +178,7 @@ public void the_user_should_able_to_see_output_in_the_conso_graph_representation
 	Assert.assertEquals(tp.validateOutput(), "hi");
 }
 
+=======
+	
+>>>>>>> bd497cdddf17c7812a5b93f06d6397980d595703
 }

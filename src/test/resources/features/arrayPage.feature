@@ -1,18 +1,15 @@
+
 Feature: Array
+Background:
+ Given The user is in the home page after sign-in.   
 
-    Background:
-    When User Clicks Get Started button
-    And User clicks on the signin link
-    And User enters the username as passionate_coders
-    And User enters the password as pa$$word123
-    When user clicks the login button
+
+Scenario: Verify that user is able to navigate to Array page
+    Given The user is in the home page after signin for Array
+    When The user clicks Get Started button in Array panel
+    Then The user should be redirected to Array page
     
-  Scenario: Verify that user is able to navigate to Array data structure page
-    Given The user is in the home page after sign in
-    When The user clicks the Getting Started button in Array panel
-    Then The user should be directed to Array Data Structure Page
-
-  Scenario: Verify that user is able to navigate to Arrays in Python page
+ Scenario: Verify that user is able to navigate to Arrays in Python page
     Given The user is in the Array page
     When The user clicks Arrays in Python link
     Then The user should be redirected to Arrays in Python page
@@ -20,17 +17,17 @@ Feature: Array
   Scenario: Verify that user is able to navigate to try Editor page for Arrays in Python page
     Given The user is on the Arrays in Python page
     When The user clicks Try Here button in Arrays in Python page
-    Then The user should be redirected to a page having an try Editor with a Run button to test
+    Then The user should be redirected to a page having an try Editor with a Run button to test-Array
 
   Scenario: Verify that user does not receive error when click on Run button without entering code for Arrays in Python page
-    Given The user is in the tryEditor page
-    When The user clicks the Run button without entering the code in the Editor
-    Then The user should not get any error message in alert window
-   @ammu
+    Given The user is in the tryEditor page-Array
+    When The user clicks the Run button without entering the code in the Editor-Array
+    Then The user should not get any error message in alert window-Array
+@Ammu
   Scenario Outline: Verify that user receives error for invalid python code for Arrays in Python page
-    Given The user is in the tryEditor page
-    When The user write the "<invalid_code>" in Editor and click the Run button
-    Then The user should able to see an error message in alert window
+    Given The user is in the tryEditor page-Array
+    When The user write the "<invalid_code>" in Editor and click the Run button-Array
+    Then The user should able to see an error message in alert window-Array
 
     Examples: 
       | invalid_code |
@@ -41,8 +38,8 @@ Feature: Array
       | pint hai     |
 
   Scenario Outline: Verify that user is able to see output for valid python code for Arrays in Python page
-    Given The user is in the tryEditor page
-    When The user writes the valid input "<valid_code>" in  python Editor and click the Run button
+    Given The user is in the tryEditor page-Array
+    When The user writes the valid input "<valid_code>" in  python Editor and click the Run button-Array
     Then The user should able to see output in the console
 
     Examples: 
@@ -64,13 +61,13 @@ Feature: Array
     Then The user should be redirected to a page having an try Editor with a Run button to test
 
   Scenario: Verify that user does not receive error when click on Run button without entering code for Arrays Using List page
-    Given The user is in the tryEditor page
-    When The user clicks the Run button without entering the code in the Editor
-    Then The user should not get any error message in alert window
+    Given The user is in the tryEditor page-Array
+    When The user clicks the Run button without entering the code in the Editor-Array
+    Then The user should not get any error message in alert window-Array
 
   Scenario Outline: Verify that user receives error for invalid python code for Arrays Using List page
     Given The user is in the Arrays Using List tryEditor page
-    When The user write the "<invalid_code>" in Editor and click the Run button
+    When The user write the "<invalid_code>" in Editor and click the Run button-Array
     Then The user should able to see an error message in alert window
 
     Examples: 
@@ -83,12 +80,12 @@ Feature: Array
 
   Scenario Outline: Verify that user is able to see output for valid python code for Arrays Using List page
     Given The user is in the Arrays Using List tryEditor page
-    When The user writes the valid input "<valid_code>" in  python Editor and click the Run button
+    When The user writes the valid input "<valid_code>" in  python Editor and click the Run button-Array
     Then The user should able to see output in the console
 
     Examples: 
       | valid_code           |
-      | print \\"hello\\"    |
+      | print \"hello\"    |
       | print \\"java\\"     |
       | print \\"selenium\\" |
       | print \\"cucumber\\" |
@@ -106,12 +103,12 @@ Feature: Array
 
   Scenario: Verify that user does not receive error when click on Run button without entering code for Basic Operations in Lists page
     Given The user is in the Basic Operations in Lists tryEditor page
-    When The user clicks the Run button without entering the code in the Editor
-    Then The user should not get any error message in alert window
+    When The user clicks the Run button without entering the code in the Editor-Array
+    Then The user should not get any error message in alert window-Array
 
   Scenario Outline: Verify that user receives error for invalid python code for Arrays Using List page
     Given The user is in the Basic Operations in Lists tryEditor page
-    When The user write the "<invalid_code>" in Editor and click the Run button
+    When The user write the "<invalid_code>" in Editor and click the Run button-Array
     Then The user should able to see an error message in alert window
 
     Examples: 
@@ -124,7 +121,7 @@ Feature: Array
 
   Scenario Outline: Verify that user is able to see output for valid python code for Basic Operations in Lists page
     Given The user is in the Basic Operations in Lists tryEditor page
-    When The user writes the valid input "<valid_code>" in  python Editor and click the Run button
+    When The user writes the valid input "<valid_code>" in  python Editor and click the Run button-Array
     Then The user should able to see output in the console
 
     Examples: 
@@ -147,12 +144,12 @@ Feature: Array
 
   Scenario: Verify that user does not receive error when click on Run button without entering code for Applications of Array page
     Given The user is in the Applications of Array tryEditor page
-    When The user clicks the Run button without entering the code in the Editor
-    Then The user should not get any error message in alert window
+    When The user clicks the Run button without entering the code in the Editor-Array
+    Then The user should not get any error message in alert window-Array
 
   Scenario Outline: Verify that user receives error for invalid python code for Applications of Array page
     Given The user is in the Applications of Array tryEditor page
-    When The user write the "<invalid_code>" in Editor and click the Run button
+    When The user write the "<invalid_code>" in Editor and click the Run button-Array
     Then The user should able to see an error message in alert window
 
     Examples: 
@@ -165,7 +162,7 @@ Feature: Array
 
   Scenario Outline: Verify that user is able to see output for valid python code for Basic Operations in Lists page
     Given The user is in the Basic Operations in Lists tryEditor page
-    When The user writes the valid input "<valid_code>" in  python Editor and click the Run button
+    When The user writes the valid input "<valid_code>" in  python Editor and click the Run button-Array
     Then The user should able to see output in the console
 
     Examples: 
@@ -178,11 +175,11 @@ Feature: Array
 
   Scenario: Verify that user is able to navigate to Practice Questions page
     Given The user is on the Arrays in Python page
-    When The user clicks Practice Questions link
-    Then The user should be redirected to Practice Questions page
+    When The user clicks Practice Questions link-Array
+    Then The user should be redirected to Practice Questions page-Array
 
   Scenario: Verify that user is able to navigate to Search the array Page from Practice question page
-    Given The user is on the practice question page
+    Given The user is on the practice question page-Array
     When The user clicks Search the Array link
     Then The user should be redirected to search the array editor page
 
@@ -239,7 +236,7 @@ Feature: Array
       | print \\"python \\"  |
 
   Scenario: Verify that user is able to navigate to Max consecutive ones Page from Practice question page
-    Given The user is on the practice question page
+    Given The user is on the practice question page-Array
     When The user clicks Max consecutive ones link
     Then The user should be redirected to Max consecutive ones editor page
 
@@ -296,7 +293,7 @@ Feature: Array
       | print \\"python \\"  |
 
   Scenario: Verify that user is able to navigate to Find Numbers with Even Number of Digits Page from Practice question page
-    Given The user is on the practice question page
+    Given The user is on the practice question page-Array
     When The user clicks Find Numbers with Even Number of Digits link
     Then The user should be redirected to Find Numbers with Even Number of Digits editor page
 
@@ -353,7 +350,7 @@ Feature: Array
       | print \\"python \\"  |
 
   Scenario: Verify that user is able to navigate to Squares of a Sorted Array Page from Practice question page
-    Given The user is on the practice question page
+    Given The user is on the practice question page-Array
     When The user clicks Squares of a Sorted Array link
     Then The user should be redirected to Squares of a Sorted Array editor page
 
@@ -409,3 +406,4 @@ Feature: Array
       | print \\"selenium\\" |
       | print \\"cucumber\\" |
       | print \\"python \\"  |
+    
