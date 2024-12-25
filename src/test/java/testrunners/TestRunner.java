@@ -8,7 +8,7 @@ import io.cucumber.testng.CucumberOptions;
 
 	    
 
-	    features = "src/test/resources/features/ArrayLogin.feature",
+	    features = "src/test/resources/features/arrayPage.feature",
 
 	  
 

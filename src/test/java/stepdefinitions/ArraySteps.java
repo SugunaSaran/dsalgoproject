@@ -6,8 +6,9 @@ package stepdefinitions;
 	import org.testng.Assert;
 
 	import Pages.ArrayEditorPage;
-	import Pages.ArrayHomePage;
-	import Pages.TryEditorArrayPage;
+
+import Pages.HomePage;
+import Pages.TryEditorArrayPage;
 	import Pages.arrayPage;
 	import Pages.arrayPracticeQuestionsPage;
 	import DriverManager.DriverFactory;
@@ -21,7 +22,7 @@ package stepdefinitions;
 		{
 			super();
 		}
-		ArrayHomePage ahp=new ArrayHomePage();
+		HomePage hp=new HomePage();
 	    arrayPage ap=new arrayPage();
 	    TryEditorArrayPage tp=new TryEditorArrayPage();
 	    arrayPracticeQuestionsPage pp=new arrayPracticeQuestionsPage();
@@ -33,7 +34,7 @@ package stepdefinitions;
 	    }
 	    @When("The user clicks Get Started button in Array panel")
 	    public void the_user_clicks_get_started_button_in_array_panel() {
-	    	ahp.click_btn_Arraygetstarted();   
+	    	hp.click_btn_Arraygetstarted();   
 	    	}
 	    @Then("The user should be redirected to Array page")
 	    public void the_user_should_be_redirected_to_array_page() {
@@ -42,7 +43,7 @@ package stepdefinitions;
 	    @Given("The user is in the Array page")
 	    public void the_user_is_in_the_array_page() {
 	    	
-	    	ahp.click_btn_Arraygetstarted();
+	    	hp.click_btn_Arraygetstarted();
 	    }
 
 	    @When("The user clicks Arrays in Python link")
@@ -60,7 +61,7 @@ package stepdefinitions;
 	        }
 	    @Given("The user is on the Arrays in Python page")
 	    public void the_user_is_on_the_arrays_in_python_page() {
-	    	ahp.click_btn_Arraygetstarted();
+	    	hp.click_btn_Arraygetstarted();
 	    	ap.navigate_arraysinPythonPage();
 	    	
 	        }
@@ -76,7 +77,7 @@ package stepdefinitions;
 	        }
 	    @Given("The user is in the tryEditor page-Array")
 	    public void the_user_is_in_the_try_editor_page() {
-	    	ahp.click_btn_Arraygetstarted();
+	    	hp.click_btn_Arraygetstarted();
 	    	ap.navigate_arraysinPythonPage();
 	    	tp.click_tryEditor();
 	        }
@@ -128,7 +129,7 @@ package stepdefinitions;
 	        }
 	    @Given("The user is on the Arrays Using List page")
 	    public void the_user_is_on_the_arrays_using_list_page() {
-	    	ahp.click_btn_Arraygetstarted();
+	    	hp.click_btn_Arraygetstarted();
 	    	ap.navigate_ArraysUsingListPage();
 	        }
 	    @When("The user clicks Try Here button in Arrays Using List page")
@@ -139,7 +140,7 @@ package stepdefinitions;
 	    }
 	    @Given("The user is in the Arrays Using List tryEditor page")
 	    public void the_user_is_in_the_arrays_using_list_try_editor_page() {
-	    	ahp.click_btn_Arraygetstarted();
+	    	hp.click_btn_Arraygetstarted();
 	    	ap.navigate_ArraysUsingListPage();
 	    	tp.click_tryEditor();
 
@@ -156,7 +157,7 @@ package stepdefinitions;
 	        }
 	    @Given("The user is on the Basic Operations in Lists page")
 	    public void the_user_is_on_the_basic_operations_in_lists_page() {
-	    	ahp.click_btn_Arraygetstarted();
+	    	hp.click_btn_Arraygetstarted();
 	    	ap.navigate_BasicOperationsinListsPage();
 	        }
 	    @When("The user clicks Try Here button in Basic Operations in Lists page")
@@ -167,7 +168,7 @@ package stepdefinitions;
 
 	    @Given("The user is in the Basic Operations in Lists tryEditor page")
 	    public void the_user_is_in_the_basic_operations_in_lists_try_editor_page() {
-	    	ahp.click_btn_Arraygetstarted();
+	    	hp.click_btn_Arraygetstarted();
 	    	ap.navigate_BasicOperationsinListsPage();
 	    	tp.click_tryEditor();
 	        }
@@ -181,7 +182,7 @@ package stepdefinitions;
 	        }
 	    @Given("The user is on the Applications of Array page")
 	    public void the_user_is_on_the_applications_of_array_page() {
-	    	ahp.click_btn_Arraygetstarted();
+	    	hp.click_btn_Arraygetstarted();
 	    	ap.navigate_ApplicationsofArrayPage();
 	        }
 	    @When("The user clicks Try Here button in Applications of Array page")
@@ -190,7 +191,7 @@ package stepdefinitions;
 	        }
 	    @Given("The user is in the Applications of Array tryEditor page")
 	    public void the_user_is_in_the_applications_of_array_try_editor_page() {
-	    	ahp.click_btn_Arraygetstarted();
+	    	hp.click_btn_Arraygetstarted();
 	    	ap.navigate_ApplicationsofArrayPage();
 	    	tp.click_tryEditor();
 
@@ -208,7 +209,7 @@ package stepdefinitions;
 	    }
 	    @Given("The user is on the practice question page-Array")
 	    public void the_user_is_on_the_practice_question_page() {
-	        ahp.click_btn_Arraygetstarted();
+	        hp.click_btn_Arraygetstarted();
 	        ap.navigate_arraysinPythonPage();
 	        ap.navigate_PracticeQuestionsPage();
 	    }
@@ -224,7 +225,7 @@ package stepdefinitions;
 	     }
 	    @Given("The user is on the Search the array editor page")
 	    public void the_user_is_on_the_search_the_array_editor_page() {
-	    	ahp.click_btn_Arraygetstarted();
+	    	hp.click_btn_Arraygetstarted();
 	        ap.navigate_arraysinPythonPage();
 	        ap.navigate_PracticeQuestionsPage();
 	        pp.click_searchthearray();
@@ -285,7 +286,7 @@ package stepdefinitions;
 	    }
 	    @Given("The user is on the Max consecutive ones editor page")
 	    public void the_user_is_on_the_max_consecutive_ones_editor_page() {
-	    	ahp.click_btn_Arraygetstarted();
+	    	hp.click_btn_Arraygetstarted();
 	        ap.navigate_arraysinPythonPage();
 	        ap.navigate_PracticeQuestionsPage();
 	        pp.click_max();
@@ -302,7 +303,7 @@ package stepdefinitions;
 	    }
 	    @Given("The user is on the Find Numbers with Even Number of Digits editor page")
 	    public void the_user_is_on_the_find_numbers_with_even_number_of_digits_editor_page() {
-	    	ahp.click_btn_Arraygetstarted();
+	    	hp.click_btn_Arraygetstarted();
 	        ap.navigate_arraysinPythonPage();
 	        ap.navigate_PracticeQuestionsPage();
 	        pp.click_findnumbers();
@@ -319,7 +320,7 @@ package stepdefinitions;
 	    }
 	    @Given("The user is on the Squares of a Sorted Array editor page")
 	    public void the_user_is_on_the_squares_of_a_sorted_array_editor_page() {
-	    	ahp.click_btn_Arraygetstarted();
+	    	hp.click_btn_Arraygetstarted();
 	        ap.navigate_arraysinPythonPage();
 	        ap.navigate_PracticeQuestionsPage();
 	        pp.click_squares();
