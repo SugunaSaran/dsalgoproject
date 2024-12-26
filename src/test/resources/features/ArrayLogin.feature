@@ -5,4 +5,4 @@ Feature:
   Scenario: 
     Login should be success
 
-Given The user is in the home page after sign-in.
+    Given The user is in the home page after sign-in.

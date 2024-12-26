@@ -106,7 +106,7 @@ Given The user is in the home page after sign-in.
 
   Scenario Outline: Verify that user receives error for invalid python code for Types of Linked List page
     Given The user is in the tryEditor page for Types of linked list page
-    When The user clicks the Run button after entering "<invalid code>" in the Editor for list
+    When The user clicks the Run button after entering "<invalid_code>" in the Editor for list
     Then The user should able to see an error message in alert window for list
 
     Examples: 
