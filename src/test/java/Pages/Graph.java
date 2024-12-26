@@ -10,7 +10,7 @@ public class Graph extends DriverFactory {
 		HomePage hp=new HomePage();
 		hp.clickGraphLink();
 	}
-	By Graph=By.xpath("//a[@href='Graph']");
+	
 	By GraphRepresentation=By.xpath("//a[@href='Graph Representation']");
 	By practice=By.xpath("//a[@href='/Graph/practice']");
 	

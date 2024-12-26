@@ -47,6 +47,10 @@ public class HomePage extends DriverFactory{
 	{
 		driver.findElement(btn_ArraygetStarted).click();
 	}
+	public void clickGraphLink() {
+		driver.findElement(Graph).click();
+		
+	}
 
 	
 }

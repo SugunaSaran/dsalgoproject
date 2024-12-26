@@ -14,9 +14,7 @@ public class treePJava extends DriverFactory{
 
 	public treePJava() {
 	this.driver=DriverFactory.getDriver();
-		HomePage hp=new HomePage();
-		hp.clickTreeLink();
-}
+		}
 
 By OverviewofTrees1=By.xpath("//a[@href='Overview of Trees']");
 By Terminologies=By.xpath("//a[@href='Terminologies']");
