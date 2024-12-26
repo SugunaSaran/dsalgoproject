@@ -24,12 +24,6 @@ public class TryEditorPage extends DriverFactory{
 
 	public void checkCode(String code) {
 		if(code!=" ") {
-			/*WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
-			WebElement element = wait.until(ExpectedConditions.elementToBeClickable(textArea));
-			element.sendKeys(code);*/
-		/*WebElement textEditor = driver.findElement(textArea);
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", textEditor);
-		textEditor.sendKeys(code);*/
 			Actions actions=new Actions(driver);
 			WebElement textEditor=driver.findElement(textArea);
 			actions.moveToElement(textEditor).click().sendKeys(code).build().perform();              
