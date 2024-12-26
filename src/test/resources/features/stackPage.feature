@@ -2,7 +2,7 @@
 Feature: Stack
  
 Background: The user sign in to dsAlgo Portal 
-Given  The user is in the Home page after sign-in for stack
+Given  The user is in the home page after sign-in
  
   Scenario: Verify that user is able to navigate to stack data structure page
     When The user selects stack item by clicking the Getting Started Link
@@ -35,7 +35,6 @@ Given  The user is in the Home page after sign-in for stack
     When The user clicks the Run button without entering the code in the Editor in stack page
     Then The user should not see any error message or output in the Editor of stack page
     Examples:
-	  Examples:
 	  |sheetName|rowNumber|
 	  |Sheet1|0|
 	  |Sheet1|1|

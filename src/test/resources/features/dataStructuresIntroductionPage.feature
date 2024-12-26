@@ -1,3 +1,5 @@
+
+@datastructureIntroduction
 Feature: Data Structures-Introduction
 
 Background: The user sign in to dsAlgo Portal
@@ -38,4 +40,3 @@ Scenario: Verify that user is able to navigate to Practice Questions page
 Given The user is in the Time Complexity page 
 When The user clicks Practice Questions link
 Then The user should be redirected to Practice Questions page
-

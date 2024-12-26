@@ -1,3 +1,4 @@
+
 package Pages;
 
 
@@ -33,6 +34,3 @@ public class dataStructureIntroductionPage extends DriverFactory  {
     	driver.findElement(data_practicequestion).click();
     }
 }
-
-
-

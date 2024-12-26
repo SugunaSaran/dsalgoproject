@@ -7,14 +7,14 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
 	    features = "src/test/resources/features",
 	     glue = {"stepdefinitions","hooks"},
-	     tags="@queuepage and @stackpage"
+	     tags="@treepage"
  
            )
 	
 
 public class TestRunner extends AbstractTestNGCucumberTests {    
 	@Override
-    @DataProvider(parallel = false)
+    @DataProvider(parallel = true)
     public Object[][] scenarios() {
         return super.scenarios();
 	    
