@@ -1,13 +1,14 @@
 package Pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 
 import DriverManager.DriverFactory;
 
 public class arrayPracticeQuestionsPage extends DriverFactory{
-	
+	WebDriver driver;
 	public arrayPracticeQuestionsPage () {
-		super(); 
+		this.driver=DriverFactory.getDriver();
 	}
 	//locators
 	By lnk_SearchtheArray=By.xpath("//a[text()='Search the array']");
@@ -36,4 +37,3 @@ public class arrayPracticeQuestionsPage extends DriverFactory{
 }
 }
    
-

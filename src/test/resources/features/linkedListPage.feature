@@ -1,7 +1,8 @@
+@linkedlistpage
 Feature: Linked List
 
   Background: 
-Given The user is in the home page after sign-in.
+Given The user is in the home page after sign-in
   Scenario: Verify that user is able to navigate to Linked List structure page
     When The user clicks the Getting Started button in Linked List panel
     When The user selects linked list item from the drop down menu
@@ -295,4 +296,3 @@ Given The user is in the home page after sign-in.
       | print \\"cucumber\\" |
       | print \\"python \\"  |
       
-         

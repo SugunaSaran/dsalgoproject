@@ -20,15 +20,12 @@ import io.cucumber.java.en.When;
 
 
 public class stackPagedef {
-	HomePage hp;
+	HomePage hp=new HomePage();
 	stackPage sp=new stackPage();
 	TryEditorPage tp=new TryEditorPage();
 	String excelDataPath=sp.getExcelPath();
 	
-	@Given("The user is in the Home page after sign-in for stack")
-	public void the_user_is_in_the_home_page_after_sign_in_for_stack() {
-	    hp=new HomePage();
-	}
+	
 
 	@When("The user selects stack item by clicking the Getting Started Link")
 	public void the_user_selects_stack_item_by_clicking_the_getting_started_link() {

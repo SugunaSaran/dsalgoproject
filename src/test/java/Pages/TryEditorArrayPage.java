@@ -3,10 +3,15 @@ package Pages;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.WebDriver;
 
 import DriverManager.DriverFactory;
 
 public class TryEditorArrayPage extends DriverFactory {
+	WebDriver driver;
+	public TryEditorArrayPage() {
+		this.driver=DriverFactory.getDriver();
+	}
 	//locators
 		By btn_tryEditor=By.xpath("//a[@href=\"/tryEditor\"]");
 		By textArea=By.xpath("//textarea[@tabindex='0']");

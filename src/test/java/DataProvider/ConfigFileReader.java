@@ -49,6 +49,12 @@ public class ConfigFileReader {
 		public String getStackDataPath() {
 			return properties.getProperty("stackPageExcelPath");
 		}
+		public String getTreeDataPath() {
+			return properties.getProperty("treePageExcelPath");
+		}
+		public String getGraphDataPath() {
+			return properties.getProperty("graphPageExcelPath");
+		}
 		public String getQueueDataPath() {
 			return properties.getProperty("queuePageExcelPath");
 		}

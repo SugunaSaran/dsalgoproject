@@ -15,15 +15,10 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class queuePagedef {
-	HomePage hp;
+	HomePage hp=new HomePage();
 	QueuePage qp=new QueuePage();
 	TryEditorPage tp=new TryEditorPage();
 	String excelPath=qp.getExcelPath();
-
-	@Given("The user is in the Home page after sign-in for queue")
-	public void the_user_is_in_the_home_page_after_sign_in() {
-		hp=new HomePage();
-	}
 
 	@When("The user selects queue item from the drop down menu")
 	public void the_user_selects_queue_item_from_the_drop_down_menu() {

@@ -1,4 +1,4 @@
-
+@arraypage
 Feature: Array
 Background:
  Given The user is in the home page after sign-in.   
@@ -23,8 +23,8 @@ Scenario: Verify that user is able to navigate to Array page
     Given The user is in the tryEditor page-Array
     When The user clicks the Run button without entering the code in the Editor-Array
     Then The user should not get any error message in alert window-Array
-@Ammu
-  Scenario Outline: Verify that user receives error for invalid python code for Arrays in Python page
+    
+ Scenario Outline: Verify that user receives error for invalid python code for Arrays in Python page
     Given The user is in the tryEditor page-Array
     When The user write the "<invalid_code>" in Editor and click the Run button-Array
     Then The user should able to see an error message in alert window-Array
@@ -354,7 +354,7 @@ Scenario: Verify that user is able to navigate to Array page
     When The user clicks Squares of a Sorted Array link
     Then The user should be redirected to Squares of a Sorted Array editor page
 
-  @smoke
+  
   Scenario Outline: Verify that user receives error for invalid python code on running Squares of a Sorted Array question
     Given The user is on the Squares of a Sorted Array editor page
     When The user write the "<invalid_code>" in  practice page Editor and Click the Run button

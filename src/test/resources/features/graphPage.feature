@@ -1,79 +1,75 @@
-@tag
+@graphpage
 Feature: Graph
-
-Background: The user sign in to dsAlgo Portal
-Given  The user is in the Home page after sign-in
-
-  @tag1
-  Scenario: Verify that user is able to navigate to Graph data structure page
-    Given The user is in the Home page after Sign in
-    When The user clicks the Getting Started button in Graph Panel
-    When The user select Graph item from the drop down menu
-    Then The user should be directed to Graph Data StructurePage
-    
-   Scenario: Verify that user is able to navigate to graph Page in graph data struture
-    Given The user is in the Graph data structure after Sign in
-    When The user clicks Graph page in graph Data structure
-    Then The user should be directed to Graph Page
-
-  Scenario: Verify that user is able to navigate to try Editor page for Graph page
-    Given The user is on the Graph page
-    When The user clicks Try Here button in Graph page
-    Then The user should be redirected to a page having an try Editor with a Run button to test
-
-  Scenario: Verify that user receives error when click on Run button without entering code for Graph page
-    Given The user is in the tryEditor page
-    When The user clicks the Run button without entering the code in the Editor
-    Then The user should not see any error message or output
-    
-    Scenario: Verify that user receives error for invalid python code for Graph page
-    Given The user is in the tryEditor page
-    When The user write the invalid code in Editor and click the Run button
-    Then The user should able to see an error message in alert window
-
-   Scenario: Verifying the ok button of error alert message
-    Given The user is in the tryEditor page
-    When The user clicks the ok button of error alert window
-    Then The user should remain in the tryEditor page with Run button
-    
-    Scenario: Verify that user is able to see output for valid python code for Graph page
-    Given The user is in the tryEditor page
-    When The user write the valid code in Editor and click the Run button
-    Then The user should able to see output in the console
-    
-    
-    Scenario: Verify that user is able to navigate to Graph Representations Page in graph data struture
-    Given The user is in the Graph data structure after Sign in
-    When The user clicksGraph Representations page in graph Data structure
-    Then The user should be directed to Graph Representations Page
-
-  Scenario: Verify that user is able to navigate to try Editor page for Graph Representations page
-    Given The user is on the Graph Representations page
-    When The user clicks Try Here button in Graph page
-    Then The user should be redirected to a page having an try Editor with a Run button to test
-
-  Scenario: Verify that user receives error when click on Run button without entering code for Graph Representations page
-    Given The user is in the tryEditor page
-    When The user clicks the Run button without entering the code in the Editor
-    Then The user should not see any error message or output
-    
-    Scenario: Verify that user receives error for invalid python code for Graph Representations page
-    Given The user is in the tryEditor page
-    When The user write the invalid code in Editor and click the Run button
-    Then The user should able to see an error message in alert window
-
-   Scenario: Verifying the ok button of error alert message
-    Given The user is in the tryEditor page
-    When The user clicks the ok button of error alert window
-    Then The user should remain in the tryEditor page with Run button
-    
-    Scenario: Verify that user is able to see output for valid python code for Graph page
-    Given The user is in the tryEditor page
-    When The user write the valid code in Editor and click the Run button
-    Then The user should able to see output in the console
-    
-    
-    Scenario: Verify that user is able to navigate to Practice Questions page
-    Given The user is in the Graph page after Sign in
-    When The user clicks Practice Questions link in Python page
-	  Then The user should be redirected to Practice Questions page
+ 
+Background: The user sign in to dsAlgo Portal 
+Given  The user is in the home page after sign-in
+ 
+  Scenario: Verify that user is able to navigate to graph data structure page
+    When The user selects graph item by clicking the Getting Started Link
+    Then The user should be directed to graph Data Structure Page
+   
+  Scenario Outline: Verify that user is able to navigate to the sub links of graph page
+    Given The user is in the graph page after Sign in
+    When The user clicks the following "<sheetName>" and <rowNumber> in graph page
+	  Then The user should be redirected to "<sheetName>" and <rowNumber> page in graph data structure
+	  Examples:
+	  |sheetName|rowNumber|
+	  |Sheet1|0|
+	  |Sheet1|1|
+	  |Sheet1|2|
+	  
+	  Scenario Outline: Verify that user is able to navigate to the tryEditor of sub links of graph page
+    Given The user is in the "<sheetName>" and <rowNumber> page in graph page
+    When The user clicks the tryEditor button in subpages of graph
+	  Then The user should be redirected to a page having an try Editor with a Run button to test in graph page
+	  Examples:
+	  |sheetName|rowNumber|
+	  |Sheet1|0|
+	  |Sheet1|1|
+	  
+	  
+	  Scenario Outline: Verify that user does not receives any error when click on Run button without entering code for different page of graph data structure
+    Given The user is in the tryEditor page of corresponding "<sheetName>" and <rowNumber> page in graph data structure
+    When The user clicks the Run button without entering the code in the Editor in graph page
+    Then The user should not see any error message or output in the Editor of graph page
+    Examples:
+	  |sheetName|rowNumber|
+	  |Sheet1|0|
+	  |Sheet1|1|
+	  
+	  
+	  Scenario Outline: Verify that user receives error for invalid python code in tryEditor page of graph subpages
+    Given The user is in the tryEditor page of "<sheetName>" and <rowNumber> of graph Page
+    When The user clicks the Run button the following "<sheetName>" and <rowNumber> in the Editor of corresponding sub page of graph
+    Then The user should see an error message in alert window in corresponding graph Page
+    Examples:
+    |sheetName|rowNumber|
+	  |Sheet2|0|
+	  |Sheet2|1|
+	  |Sheet2|2|
+	  |Sheet2|3|
+	  
+	  
+	  Scenario Outline: Verifying the ok button of error alert message in tryEditor Page of "<sheetName>" and <rowNumber> of graph page
+    Given The user is in the tryEditor page "<sheetName>" and <rowNumber> and writes an invalidcodes in Editor and click the Run button of corresponding graph Page
+    When The user clicks the ok button of error alert window of that graph Page
+	  Then The user should remain in the tryEditor page with Run button in corresponding graph Page
+	  Examples:
+	  |sheetName|rowNumber|
+	  |Sheet2|0|
+	  |Sheet2|1|
+	  |Sheet2|2|
+	  |Sheet2|3|
+	  
+	  
+	  
+	  Scenario Outline: Verify that user receives the output for valid python code in tryEditor page of graph subpages
+    Given The user is in the tryEditor page of "<sheetName>" and <rowNumber> of graph Page for valid code
+    When The user clicks the Run button the following "<sheetName>" and <rowNumber> with valid code in the Editor of corresponding sub page of graph
+    Then The user should able to see an "<sheetName>" and <rowNumber> in corresponding graph tryeditor page
+    Examples:
+    |sheetName|rowNumber|
+	  |Sheet3|0|
+	  |Sheet3|1|
+	  
+	  
