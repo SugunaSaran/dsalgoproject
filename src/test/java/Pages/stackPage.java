@@ -1,18 +1,21 @@
-
 package Pages;
 
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
+
+import DataProvider.ConfigFileReader;
 import DriverManager.DriverFactory;
 import Utilities.LoggerLoad;
 import freemarker.log.Logger;
 
 public class stackPage extends DriverFactory{
+	WebDriver driver; 
 	public stackPage() {
-		super();
+		this.driver=DriverFactory.getDriver();
 	}
-
+	
 	By operationsInStack=By.xpath("//a[@href='operations-in-stack']");
 	By implementation=By.xpath("//a[@href='implementation']");
 	By applications=By.xpath("//a[@href='stack-applications']");

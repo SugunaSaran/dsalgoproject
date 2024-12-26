@@ -1,10 +1,12 @@
 package Pages;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import DriverManager.DriverFactory;
 public class Graph extends DriverFactory {
+	WebDriver driver;
 	public Graph() {
-		super();
+		this.driver=DriverFactory.getDriver();
 		HomePage hp=new HomePage();
 		hp.clickGraphLink();
 	}

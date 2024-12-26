@@ -1,13 +1,15 @@
 package Pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 import DriverManager.DriverFactory;
 
 public class linkedListPage extends DriverFactory {
+	WebDriver driver;
 	public linkedListPage() {
-		super();
+		this.driver=DriverFactory.getDriver();
 	}
 	//Locators
 	By dropdown=By.xpath("//a[text()=\"Data Structures\"]");

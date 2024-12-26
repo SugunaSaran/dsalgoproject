@@ -2,13 +2,15 @@ package Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 
 import DriverManager.DriverFactory;
 
 public class ArrayEditorPage extends DriverFactory{
+	WebDriver driver;
 	public ArrayEditorPage() {
-		super();
+		this.driver=DriverFactory.getDriver();
 	}
 	//locators
 	

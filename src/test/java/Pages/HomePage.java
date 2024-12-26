@@ -1,11 +1,15 @@
 package Pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 import DriverManager.DriverFactory;
 
 public class HomePage extends DriverFactory{
+	WebDriver driver;
 	public HomePage() {
+		this.driver=DriverFactory.getDriver();
+		driver.get(configReader.getApplicationUrl());
 		By getStartedBtn=By.className("btn");
 		By loginBtn=By.xpath("//a[@href='/login']");
 		driver.findElement(getStartedBtn).click();
@@ -20,10 +24,7 @@ public class HomePage extends DriverFactory{
 	By stackdropdown=By.xpath("//a[@href='/stack']");
 	By queuedropdown=By.xpath("//a[@href='/queue']");
 	By btn_ArraygetStarted=By.xpath("//a[@href='array']");
-    By Graph=By.xpath("//a[@href='Graph']");
-	By Graphdropdown=By.xpath("//a[@href='/Graph']");
-	By Tree=By.xpath("//a[@href='Tree']");
-	By treedropdown=By.xpath("//a[@href='/tree']");
+	
 	public void clickStackLink() {
 		driver.findElement(stack).click();
 	}
@@ -46,21 +47,5 @@ public class HomePage extends DriverFactory{
 		driver.findElement(btn_ArraygetStarted).click();
 	}
 
-	public void clickGraphLink() {
-		driver.findElement(Graph).click();
-	}
 	
-	public void clickGraphFromDropDown() {
-		driver.findElement(datastructuresLink).click();
-		driver.findElement(Graphdropdown).click();
-	}
-	public void clickTreeLink() {
-		driver.findElement(Tree).click();
-	}
-	
-	public void clickTreeFromDropDown() {
-		driver.findElement(datastructuresLink).click();
-		driver.findElement(treedropdown).click();
-	}
-
 }

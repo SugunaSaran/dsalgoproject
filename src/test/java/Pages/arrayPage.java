@@ -1,12 +1,14 @@
 package Pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 
 import DriverManager.DriverFactory;
 
 public class arrayPage extends DriverFactory{
+	WebDriver driver;
 	public arrayPage() {
-		super();
+		this.driver=DriverFactory.getDriver();
 	}
 	By lnk_ArraysinPython =By.xpath("//a[@href='arrays-in-python']");
 	By lnk_ArraysUsingList=By.xpath("//a[text()='Arrays Using List']");

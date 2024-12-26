@@ -1,16 +1,18 @@
 package Pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 
 import DriverManager.DriverFactory;
 import Utilities.LoggerLoad;
 
 public class QueuePage extends DriverFactory{
-
+	WebDriver driver; 
 	public QueuePage() {
-		super();
+		this.driver=DriverFactory.getDriver();
 	}
+	
 	By implementationList=By.xpath("//a[@href='implementation-lists']");
 	By implementationCollections=By.xpath("//a[@href='implementation-collections']");
 	By implementationarray=By.xpath("//a[@href='Implementation-array']");

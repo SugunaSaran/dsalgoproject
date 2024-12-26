@@ -5,13 +5,11 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
-
-	    features = "src/test/resources/features/stackPage.feature",
+	    features = "src/test/resources/features",
 	     glue = {"stepdefinitions","hooks"},
-	     tags="@stackpage"
+	     tags="@queuepage and @stackpage"
  
            )
-
 	
 
 public class TestRunner extends AbstractTestNGCucumberTests {    
@@ -22,4 +20,3 @@ public class TestRunner extends AbstractTestNGCucumberTests {
 	    
 	}
 }
-

@@ -2,6 +2,7 @@
 
 package Pages;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 
 import DriverManager.DriverFactory;
@@ -9,10 +10,10 @@ import DriverManager.DriverFactory;
 public class treePJava extends DriverFactory{
 	private static final By OverviewofTrees = null;
 	private static final By ApplicationsofBinaryTrees = null;
-
+	WebDriver driver;
 
 	public treePJava() {
-		super();
+	this.driver=DriverFactory.getDriver();
 		HomePage hp=new HomePage();
 		hp.clickTreeLink();
 }
