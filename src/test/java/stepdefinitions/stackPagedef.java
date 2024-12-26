@@ -24,6 +24,7 @@ public class stackPagedef {
 	stackPage sp=new stackPage();
 	TryEditorPage tp=new TryEditorPage();
 	String excelDataPath=sp.getExcelPath();
+	
 	@Given("The user is in the Home page after sign-in for stack")
 	public void the_user_is_in_the_home_page_after_sign_in_for_stack() {
 	    hp=new HomePage();

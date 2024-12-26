@@ -3,6 +3,11 @@
   <groupId>SDET_BDD</groupId>
   <artifactId>SDET_BDD</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <!-- Properties section -->
+    <properties>
+        <dataprovider.threadCount>4</dataprovider.threadCount> <!-- Set your desired thread count here -->
+    </properties>
+
   <!-- Build plugin to force Maven JDK 1.8 compliance -->
 <build>
   <plugins>
@@ -13,12 +18,23 @@
       <configuration>
         <source>1.8</source>
         <target>1.8</target>
+        
       </configuration>
     </plugin>
+    <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.5.2</version>
+                <configuration>
+					<suiteXmlFiles>
+                    <suiteXmlFile>src/test/resources/testng2.xml</suiteXmlFile>  <!-- Path to your testng.xml -->
+					</suiteXmlFiles>
+                </configuration>
+            </plugin>
   </plugins>
 </build>
   <dependencies>
-	  <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
+ <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
 <dependency>
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-surefire-plugin</artifactId>
@@ -26,7 +42,7 @@
     
 </dependency>
 
-	  <dependency>
+	<dependency>
     <groupId>org.seleniumhq.selenium</groupId>
     <artifactId>selenium-java</artifactId>
     <version>4.27.0</version>

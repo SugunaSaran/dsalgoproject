@@ -1,11 +1,15 @@
 package Pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 import DriverManager.DriverFactory;
 
 public class HomePage extends DriverFactory{
+	WebDriver driver;
 	public HomePage() {
+		this.driver=DriverFactory.getDriver();
+		driver.get(configReader.getApplicationUrl());
 		By getStartedBtn=By.className("btn");
 		By loginBtn=By.xpath("//a[@href='/login']");
 		driver.findElement(getStartedBtn).click();
