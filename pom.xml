@@ -1,14 +1,10 @@
 
- <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+<project xmlns="https://maven.apache.org/POM/4.0.0" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>SDET_BDD</groupId>
   <artifactId>SDET_BDD</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <!-- Properties section -->
-    <properties>
-        <dataprovider.threadCount>4</dataprovider.threadCount> <!-- Set your desired thread count here -->
-    </properties>
-
   <!-- Build plugin to force Maven JDK 1.8 compliance -->
 <build>
   <plugins>
@@ -19,23 +15,12 @@
       <configuration>
         <source>1.8</source>
         <target>1.8</target>
-        
       </configuration>
     </plugin>
-    <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.5.2</version>
-                <configuration>
-					<suiteXmlFiles>
-                    <suiteXmlFile>src/test/resources/testng2.xml</suiteXmlFile>  <!-- Path to your testng.xml -->
-					</suiteXmlFiles>
-                </configuration>
-            </plugin>
   </plugins>
 </build>
   <dependencies>
- <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
+	  <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
 <dependency>
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-surefire-plugin</artifactId>
@@ -43,7 +28,7 @@
     
 </dependency>
 
-	<dependency>
+	  <dependency>
     <groupId>org.seleniumhq.selenium</groupId>
     <artifactId>selenium-java</artifactId>
     <version>4.27.0</version>
@@ -119,6 +104,18 @@
     <artifactId>extentreports</artifactId>
     <version>5.1.2</version>
 </dependency>
+<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
+
+
+<!-- https://mvnrepository.com/artifact/net.masterthought/cucumber-reporting -->
+<dependency>
+    <groupId>net.masterthought</groupId>
+    <artifactId>cucumber-reporting</artifactId>
+    <version>5.8.4</version>
+</dependency>
+
+
+
 <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-maven -->
 <dependency>
     <groupId>io.qameta.allure</groupId>
