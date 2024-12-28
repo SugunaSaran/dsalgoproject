@@ -2,9 +2,12 @@ package hooks;
 
 import DriverManager.DriverFactory;
 import Utilities.LoggerLoad;
+import Utilities.ScreenshotUtil;
 
 import java.time.Duration;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
 import com.aventstack.extentreports.ExtentReports;
@@ -38,7 +41,12 @@ public class DsalgoHooks extends DriverFactory {
 	    }
 
 	    @After
-	    public void tearDown() {
+	    public void tearDown(Scenario scenario) {
+	    	if (scenario.isFailed()) {
+
+	    		 String screenshotName = scenario.getName().replace(" ", "_");
+	             ScreenshotUtil.captureScreenshot(screenshotName);
+	    		}
 	    	//System.out.println("Active thread count after scenario: " + Thread.activeCount());
 	        DriverFactory.quitDriver();
 	    }

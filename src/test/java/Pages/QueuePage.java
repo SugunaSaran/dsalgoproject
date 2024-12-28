@@ -1,8 +1,11 @@
 
 package Pages;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 import DriverManager.DriverFactory;
@@ -42,6 +45,12 @@ public class QueuePage extends DriverFactory{
 			LoggerLoad.info("Clicking the practice questions link of stack page");
 		}
 		
+	}
+	public String validateQueuePageTitles() {
+		List<WebElement> list=driver.findElements(By.xpath("//a[@href='/tryEditor']"));
+		if(list.size()>0)
+		return driver.getTitle();
+		return null;
 	}
 	public String getExcelPath() {
 		return configReader.getQueueDataPath();
