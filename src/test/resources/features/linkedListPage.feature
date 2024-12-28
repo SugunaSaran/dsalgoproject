@@ -1,9 +1,9 @@
-
 @linkedlistpage
 Feature: Linked List
 
   Background: 
-Given The user is in the home page after sign-in
+    Given The user is in the home page after sign-in
+
   Scenario: Verify that user is able to navigate to Linked List structure page
     When The user clicks the Getting Started button in Linked List panel
     When The user selects linked list item from the drop down menu
@@ -24,31 +24,32 @@ Given The user is in the home page after sign-in
     When The user clicks the Run button without entering the code in the Editor for list
     Then The user should not get any error message in alert window in list
 
+  
   Scenario Outline: Verify that user receives error for invalid python code for Introduction page
     Given The user is in the tryEditor page for list
-    When The user clicks the Run button after entering "<invalid code>" in the Editor for list
-    Then The user should able to see an error message in alert window for list
+    When The user enters the invalid_code <rownumber> from sheetname "<Sheet1>" in Editor and click the Run button-list
+    Then The user should able to see an error message in alert window-list
 
     Examples: 
-      | invalid_code |
-      | hello        |
-      | hello world  |
-      | hai          |
-      | printf hello |
-      | pint hai     |
+      | Sheetname |  | rownumber |
+      | Sheet1    |  |         0 |
+      | Sheet1    |  |         1 |
+      | Sheet1    |  |         2 |
+      | Sheet1    |  |         3 |
+      | Sheet1    |  |         4 |
 
   Scenario Outline: Verify that user is able to see output for valid python code for Introduction page
     Given The user is in the tryEditor page for list
-    When The user write the "<valid_code>" in Editor and click the Run button for list
-    Then The user should able to see output in the console for list
+    When The user enters the valid_code <rownumber> from sheetname "<Sheet2>" in Editor and click the Run button-list
+    Then The user should able to see output <rownumber> in the console-list
 
     Examples: 
-      | valid_code           |
-      | print \\"hello\\"    |
-      | print \\"java\\"     |
-      | print \\"selenium\\" |
-      | print \\"cucumber\\" |
-      | print \\"python \\"  |
+      | Sheetname |  | rownumber |
+      | Sheet2    |  |         0 |
+      | Sheet2    |  |         1 |
+      | Sheet2    |  |         2 |
+      | Sheet2    |  |         3 |
+      | Sheet2    |  |         4 |
 
   Scenario: Verify that user is able to navigate to Creating Linked List page
     Given The user is in the Linked list page
@@ -67,29 +68,29 @@ Given The user is in the home page after sign-in
 
   Scenario Outline: Verify that user receives error for invalid python code for Creating Linked List page
     Given The user is in the tryEditor page for list
-    When The user clicks the Run button after entering "<invalid code>" in the Editor for list
-    Then The user should able to see an error message in alert window for list
+    When The user enters the invalid_code <rownumber> from sheetname "<Sheet1>" in Editor and click the Run button-list
+    Then The user should able to see an error message in alert window-list
 
     Examples: 
-      | invalid_code |
-      | hello        |
-      | hello world  |
-      | hai          |
-      | printf hello |
-      | pint hai     |
+      | Sheetname |  | rownumber |
+      | Sheet1    |  |         0 |
+      | Sheet1    |  |         1 |
+      | Sheet1    |  |         2 |
+      | Sheet1    |  |         3 |
+      | Sheet1    |  |         4 |
 
   Scenario Outline: Verify that user is able to see output for valid python code for creating linked list page
     Given The user is in the tryEditor page for list
-    When The user write the "<valid_code>" in Editor and click the Run button for list
-    Then The user should able to see output in the console for list
+    When The user enters the valid_code <rownumber> from sheetname "<Sheet2>" in Editor and click the Run button-list
+    Then The user should able to see output <rownumber> in the console-list
 
     Examples: 
-      | valid_code           |
-      | print \\"hello\\"    |
-      | print \\"java\\"     |
-      | print \\"selenium\\" |
-      | print \\"cucumber\\" |
-      | print \\"python \\"  |
+      | Sheetname |  | rownumber |
+      | Sheet2    |  |         0 |
+      | Sheet2    |  |         1 |
+      | Sheet2    |  |         2 |
+      | Sheet2    |  |         3 |
+      | Sheet2    |  |         4 |
 
   Scenario: Verify that user is able to navigate to Types of Linked List page
     Given The user is in the Linked list page
@@ -108,31 +109,30 @@ Given The user is in the home page after sign-in
 
   Scenario Outline: Verify that user receives error for invalid python code for Types of Linked List page
     Given The user is in the tryEditor page for Types of linked list page
-    When The user clicks the Run button after entering "<invalid code>" in the Editor for list
-    Then The user should able to see an error message in alert window for list
+    When The user enters the invalid_code <rownumber> from sheetname "<Sheet1>" in Editor and click the Run button-list
+    Then The user should able to see an error message in alert window-list
 
     Examples: 
-      | invalid_code |
-      | hello        |
-      | hello world  |
-      | hai          |
-      | printf hello |
-      | pint hai     |
+      | Sheetname |  | rownumber |
+      | Sheet1    |  |         0 |
+      | Sheet1    |  |         1 |
+      | Sheet1    |  |         2 |
+      | Sheet1    |  |         3 |
+      | Sheet1    |  |         4 |
 
   Scenario Outline: Verify that user is able to see output for valid python code for Types of linked list page
     Given The user is in the tryEditor page for Types of linked list page
-    When The user write the "<valid_code>" in Editor and click the Run button for list
-    Then The user should able to see output in the console for list
+    When The user enters the valid_code <rownumber> from sheetname "<Sheet2>" in Editor and click the Run button-list
+    Then The user should able to see output <rownumber> in the console-list
 
     Examples: 
-      | valid_code           |
-      | print \\"hello\\"    |
-      | print \\"java\\"     |
-      | print \\"selenium\\" |
-      | print \\"cucumber\\" |
-      | print \\"python \\"  |
+      | Sheetname |  | rownumber |
+      | Sheet2    |  |         0 |
+      | Sheet2    |  |         1 |
+      | Sheet2    |  |         2 |
+      | Sheet2    |  |         3 |
+      | Sheet2    |  |         4 |
 
-  
   Scenario: Verify that user is able to navigate to Implement linked List in Python page
     Given The user is in the Linked list page
     When The user clicks Implement Linked list in Python link
@@ -150,35 +150,35 @@ Given The user is in the home page after sign-in
 
   Scenario Outline: Verify that user receives error for invalid python code for Implement Linked List in Python page
     Given The user is in the tryEditor page for Implement Linked list in Python page
-    When The user clicks the Run button after entering "<invalid code>" in the Editor for list
-    Then The user should able to see an error message in alert window for list
+    When The user enters the invalid_code <rownumber> from sheetname "<Sheet1>" in Editor and click the Run button-list
+    Then The user should able to see an error message in alert window-list
 
     Examples: 
-      | invalid_code |
-      | hello        |
-      | hello world  |
-      | hai          |
-      | printf hello |
-      | pint hai     |
+      | Sheetname |  | rownumber |
+      | Sheet1    |  |         0 |
+      | Sheet1    |  |         1 |
+      | Sheet1    |  |         2 |
+      | Sheet1    |  |         3 |
+      | Sheet1    |  |         4 |
 
   Scenario Outline: Verify that user is able to see output for valid python code for Implement Linked List in Python page
     Given The user is in the tryEditor page for Implement Linked list in Python page
-    When The user write the "<valid_code>" in Editor and click the Run button for list
-    Then The user should able to see output in the console for list
+    When The user enters the valid_code <rownumber> from sheetname "<Sheet2>" in Editor and click the Run button-list
+    Then The user should able to see output <rownumber> in the console-list
 
     Examples: 
-      | valid_code           |
-      | print \\"hello\\"    |
-      | print \\"java\\"     |
-      | print \\"selenium\\" |
-      | print \\"cucumber\\" |
-      | print \\"python \\"  |
-     
-   Scenario: Verify that user is able to navigate to Traversal page
+      | Sheetname |  | rownumber |
+      | Sheet2    |  |         0 |
+      | Sheet2    |  |         1 |
+      | Sheet2    |  |         2 |
+      | Sheet2    |  |         3 |
+      | Sheet2    |  |         4 |
+
+  Scenario: Verify that user is able to navigate to Traversal page
     Given The user is in the Linked list page
     When The user clicks Traversal link
     Then The user should be redirected to Traversal page
- 
+
   Scenario: Verify that user is able to navigate to try Editor page for Traversal page
     Given The user is on the Traversal page
     When The user clicks Try Here button in Traversal page
@@ -191,35 +191,35 @@ Given The user is in the home page after sign-in
 
   Scenario Outline: Verify that user receives error for invalid python code for Traversal page
     Given The user is in the tryEditor page for Traversal page
-    When The user clicks the Run button after entering "<invalid code>" in the Editor for list
-    Then The user should able to see an error message in alert window for list
+    When The user enters the invalid_code <rownumber> from sheetname "<Sheet1>" in Editor and click the Run button-list
+    Then The user should able to see an error message in alert window-list
 
     Examples: 
-      | invalid_code |
-      | hello        |
-      | hello world  |
-      | hai          |
-      | printf hello |
-      | pint hai     |
- 
+      | Sheetname |  | rownumber |
+      | Sheet1    |  |         0 |
+      | Sheet1    |  |         1 |
+      | Sheet1    |  |         2 |
+      | Sheet1    |  |         3 |
+      | Sheet1    |  |         4 |
+
   Scenario Outline: Verify that user is able to see output for valid python code for Traversal page
     Given The user is in the tryEditor page for Traversal page
-    When The user write the "<valid_code>" in Editor and click the Run button for list
-    Then The user should able to see output in the console for list
+    When The user enters the valid_code <rownumber> from sheetname "<Sheet2>" in Editor and click the Run button-list
+    Then The user should able to see output <rownumber> in the console-list
 
     Examples: 
-      | valid_code           |
-      | print \\"hello\\"    |
-      | print \\"java\\"     |
-      | print \\"selenium\\" |
-      | print \\"cucumber\\" |
-      | print \\"python \\"  |
-      
-      Scenario: Verify that user is able to navigate to Insertion page
+      | Sheetname |  | rownumber |
+      | Sheet2    |  |         0 |
+      | Sheet2    |  |         1 |
+      | Sheet2    |  |         2 |
+      | Sheet2    |  |         3 |
+      | Sheet2    |  |         4 |
+
+  Scenario: Verify that user is able to navigate to Insertion page
     Given The user is in the Linked list page
     When The user clicks Insertion link
     Then The user should be redirected to Insertion page
- 
+
   Scenario: Verify that user is able to navigate to try Editor page for Insertion page
     Given The user is on the Insertion page
     When The user clicks Try Here button in Insertion page
@@ -232,68 +232,67 @@ Given The user is in the home page after sign-in
 
   Scenario Outline: Verify that user receives error for invalid python code for Insertion page
     Given The user is in the tryEditor page for Insertion page
-    When The user clicks the Run button after entering "<invalid code>" in the Editor for list
-    Then The user should able to see an error message in alert window for list
+    When The user enters the invalid_code <rownumber> from sheetname "<Sheet1>" in Editor and click the Run button-list
+    Then The user should able to see an error message in alert window-list
 
     Examples: 
-      | invalid_code |
-      | hello        |
-      | hello world  |
-      | hai          |
-      | printf hello |
-      | pint hai     |
- 
+      | Sheetname |  | rownumber |
+      | Sheet1    |  |         0 |
+      | Sheet1    |  |         1 |
+      | Sheet1    |  |         2 |
+      | Sheet1    |  |         3 |
+      | Sheet1    |  |         4 |
+
   Scenario Outline: Verify that user is able to see output for valid python code for Insertion page
     Given The user is in the tryEditor page for Insertion page
-    When The user write the "<valid_code>" in Editor and click the Run button for list
-    Then The user should able to see output in the console for list
+    When The user enters the valid_code <rownumber> from sheetname "<Sheet2>" in Editor and click the Run button-list
+    Then The user should able to see output <rownumber> in the console-list
 
     Examples: 
-      | valid_code           |
-      | print \\"hello\\"    |
-      | print \\"java\\"     |
-      | print \\"selenium\\" |
-      | print \\"cucumber\\" |
-      | print \\"python \\"  |
-    @list
-   Scenario: Verify that user is able to navigate to Deletion page
+      | Sheetname |  | rownumber |
+      | Sheet2    |  |         0 |
+      | Sheet2    |  |         1 |
+      | Sheet2    |  |         2 |
+      | Sheet2    |  |         3 |
+      | Sheet2    |  |         4 |
+
+  Scenario: Verify that user is able to navigate to Deletion page
     Given The user is in the Linked list page
     When The user clicks Deletion link
     Then The user should be redirected to Deletion page
- @list
+
   Scenario: Verify that user is able to navigate to try Editor page for Deletion page
     Given The user is on the Deletion page
     When The user clicks Try Here button in Deletion page
     Then The user should be redirected to a page having an try Editor with a Run button to test
-@list
+
   Scenario: Verify that user does not receive error when click on Run button without entering code for Deletion page
     Given The user is in the tryEditor page for Deletion page
     When The user clicks the Run button without entering the code in the Editor for list
     Then The user should not get any error message in alert window in list
-@list
+
   Scenario Outline: Verify that user receives error for invalid python code for Deletion page
     Given The user is in the tryEditor page for Deletion page
-    When The user clicks the Run button after entering "<invalid code>" in the Editor for list
-    Then The user should able to see an error message in alert window for list
+    When The user enters the invalid_code <rownumber> from sheetname "<Sheet1>" in Editor and click the Run button-list
+    Then The user should able to see an error message in alert window-list
 
     Examples: 
-      | invalid_code |
-      | hello        |
-      | hello world  |
-      | hai          |
-      | printf hello |
-      | pint hai     |
- @list
+      | Sheetname |  | rownumber |
+      | Sheet1    |  |         0 |
+      | Sheet1    |  |         1 |
+      | Sheet1    |  |         2 |
+      | Sheet1    |  |         3 |
+      | Sheet1    |  |         4 |
+
   Scenario Outline: Verify that user is able to see output for valid python code for Deletion page
     Given The user is in the tryEditor page for Deletion page
-    When The user write the "<valid_code>" in Editor and click the Run button for list
-    Then The user should able to see output in the console for list
+    When The user enters the valid_code <rownumber> from sheetname "<Sheet2>" in Editor and click the Run button-list
+    Then The user should able to see output <rownumber> in the console-list
 
     Examples: 
-      | valid_code           |
-      | print \\"hello\\"    |
-      | print \\"java\\"     |
-      | print \\"selenium\\" |
-      | print \\"cucumber\\" |
-      | print \\"python \\"  |
-      
+      | Sheetname |  | rownumber |
+      | Sheet2    |  |         0 |
+      | Sheet2    |  |         1 |
+      | Sheet2    |  |         2 |
+      | Sheet2    |  |         3 |
+      | Sheet2    |  |         4 |

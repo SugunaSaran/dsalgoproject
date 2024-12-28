@@ -7,11 +7,12 @@ import DriverManager.DriverFactory;
 import Pages.loginPage;
 import io.cucumber.java.en.Given;
 
-public class BackgroundStep extends DriverFactory{
+public class BackgroundStep extends DriverFactory {
 	WebDriver driver;
 	public BackgroundStep() {
 		this.driver=DriverFactory.getDriver();
 	}
+
 
 	@Given("The user is in the home page after sign-in")
 	public void the_user_is_in_the_home_page_after_sign_in() {
@@ -22,6 +23,8 @@ public class BackgroundStep extends DriverFactory{
 		loginPage lp=new loginPage(driver);
 		lp.enterLogin(configReader.getUserName(), configReader.getPassword());
 
-	}
+	
+	    	}
+
 
 }

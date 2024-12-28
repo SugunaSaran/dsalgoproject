@@ -11,8 +11,7 @@ import io.cucumber.testng.CucumberOptions;
 	     tags="@graphpage",
 	     plugin={"pretty","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
 	     publish=true
- 
-           )
+         )
 	
 
 public class TestRunner extends AbstractTestNGCucumberTests {
