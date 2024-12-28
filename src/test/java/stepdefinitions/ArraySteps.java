@@ -101,10 +101,7 @@ public void the_user_enters_the_invalid_code_from_sheetname_in_editor_and_click_
 	    @Then("The user should able to see an error message in alert window-Array")
 	    public void the_user_should_able_to_see_an_error_message_in_alert_window() {
 	    	
-	    	/*Alert alert = driver.switchTo().alert();
-	        Assert.assertTrue(alert.getText().contains("Error"));
-	        alert.accept();*/
-	    	tp.capture_alert();
+	        tp.capture_alert();
 	    	Assert.assertTrue(tp.isAlertPresent());
 
 	        }
