@@ -1,8 +1,14 @@
 
 package stepdefinitions;
 
+import java.io.IOException;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.testng.Assert;
 
+import DataProvider.ExcelReader;
 import Pages.TryEditorArrayPage;
 import Pages.arrayPage;
 import Pages.linkedListPage;
@@ -14,6 +20,8 @@ public class linkedlistPageDef {
 	linkedListPage lp=new linkedListPage();
 	arrayPage ap=new arrayPage();
 	TryEditorArrayPage tap=new TryEditorArrayPage();
+	String excelDataPath=ap.getExcelPath();
+
 
 	@When("The user clicks the Getting Started button in Linked List panel")
 	public void the_user_clicks_the_getting_started_button_in_linked_list_panel() {
@@ -77,27 +85,43 @@ public class linkedlistPageDef {
 	public void the_user_should_not_get_any_error_message_in_alert_window_in_list() {
 		Assert.assertEquals(false,tap.isAlertPresent());    }
 
-	@When("The user clicks the Run button after entering {string} in the Editor for list")
-	public void the_user_clicks_the_run_button_after_entering_in_the_editor_for_list(String invalid_code) {
-		tap.enter_input(invalid_code);
-		tap.click_run();
+	@When("The user enters the invalid_code {int} from sheetname {string} in Editor and click the Run button-list")
+	public void the_user_enters_the_invalid_code_from_sheetname_in_editor_and_click_the_run_button_list(Integer int1, String string) throws InvalidFormatException, IOException {
+		 ExcelReader reader=new ExcelReader();
+		    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet1");
+		    
+		    String invalidCode=data.get(int1).get("invalid_data");
+		    tap.enter_input(invalidCode);
+		    tap.click_run();
 
 	}
-	@Then("The user should able to see an error message in alert window for list")
-	public void the_user_should_able_to_see_an_error_message_in_alert_window_for_list() {
+	@Then("The user should able to see an error message in alert window-list")
+	public void the_user_should_able_to_see_an_error_message_in_alert_window_list() {
 		tap.capture_alert();
-		Assert.assertTrue(tap.isAlertPresent());
-	}
-	@When("The user write the {string} in Editor and click the Run button for list")
-	public void the_user_write_the_in_editor_and_click_the_run_button_for_list(String valid_code) {
-		tap.enter_input(valid_code);
-		tap.click_run();
+    	Assert.assertTrue(tap.isAlertPresent());
 
-	}
-	@Then("The user should able to see output in the console for list")
-	public void the_user_should_able_to_see_output_in_the_console_for_list() {
-		Assert.assertNotNull(tap.get_outputText());
-	}
+	    	}
+
+@When("The user enters the valid_code {int} from sheetname {string} in Editor and click the Run button-list")
+public void the_user_enters_the_valid_code_from_sheetname_in_editor_and_click_the_run_button_list(Integer int1, String string) throws InvalidFormatException, IOException {
+	ExcelReader reader=new ExcelReader();
+	    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet2");
+	    String validcode=data.get(int1).get("valid_data");
+	    tap.enter_input(validcode);
+	    tap.click_run();
+
+    
+}
+@Then("The user should able to see output {int} in the console-list")
+public void the_user_should_able_to_see_output_in_the_console_list(Integer int1) throws InvalidFormatException, IOException {
+	ExcelReader reader=new ExcelReader();
+	    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet2");
+	    
+	    String expectedResult=data.get(int1).get("Output");
+	    Assert.assertEquals(tap.get_outputText(), expectedResult);
+
+    }
+
 
 	@When("The user clicks Creating Linked List link")
 	public void the_user_clicks_creating_linked_list_link() {

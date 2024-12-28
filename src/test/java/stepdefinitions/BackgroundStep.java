@@ -7,9 +7,9 @@ import DriverManager.DriverFactory;
 import Pages.loginPage;
 import io.cucumber.java.en.Given;
 
-public class Backgroundstep extends DriverFactory {
+public class BackgroundStep extends DriverFactory {
 	WebDriver driver;
-	public Backgroundstep() {
+	public BackgroundStep() {
 		this.driver=DriverFactory.getDriver();
 	}
 
