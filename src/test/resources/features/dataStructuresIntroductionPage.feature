@@ -1,4 +1,4 @@
-@data
+@datapage
 Feature: Data Structures-Introduction
 
   Background: The user sign in to dsAlgo Portal
@@ -6,7 +6,7 @@ Feature: Data Structures-Introduction
 
   Scenario: Verify that user is able to navigate to Data Structures-Introduction page
     When The user clicks the Getting Started button in Data Structures-Introduction panel
-    Then The user should be directed to Linked list Data Structure Page
+    Then The user should be directed to  Data Structure introduction Page
 
   Scenario: Verify that user is able to navigate to Time Complexity page
     Given The user is in the Data Structures-Introduction page
@@ -48,7 +48,6 @@ Feature: Data Structures-Introduction
       | Sheet2    |  |         2 |
       | Sheet2    |  |         3 |
       | Sheet2    |  |         4 |
-
 
   Scenario: Verify that user is able to navigate to Practice Questions page
     Given The user is in the Time Complexity page
