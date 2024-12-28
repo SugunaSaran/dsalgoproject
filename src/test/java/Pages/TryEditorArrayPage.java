@@ -1,3 +1,4 @@
+
 package Pages;
 
 import org.openqa.selenium.Alert;
@@ -52,11 +53,14 @@ public class TryEditorArrayPage extends DriverFactory {
 		}
 		
 		
-		public String get_outputText()
+		public String get_outputText() 
 		{
+			
 			String consoleOutput=driver.findElement(outputText).getText();
 			return consoleOutput;
 		}
 		
+	}
+		
 
-}
+

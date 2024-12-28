@@ -34,10 +34,15 @@ public class DsalgoHooks extends DriverFactory {
 			driver.manage().deleteAllCookies();
 			driver.manage().timeouts().implicitlyWait( Duration.ofSeconds(configReader.getImplicitlyWait()));
 			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
+			//System.out.println("Active thread count before scenario: " + Thread.activeCount());
 	    }
 
 	    @After
 	    public void tearDown() {
+	    	//System.out.println("Active thread count after scenario: " + Thread.activeCount());
 	        DriverFactory.quitDriver();
 	    }
 }
+
+	
+		

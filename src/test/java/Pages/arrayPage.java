@@ -22,6 +22,10 @@ public class arrayPage extends DriverFactory{
 	public String validatePageTitle() {
 		return driver.getTitle();
 	}
+	public String getExcelPath() {
+		return configReader.getDataStructuresPath();
+	}
+
 
     public void navigate_ArraysUsingListPage() {
     	//JavascriptExecutor js=(JavascriptExecutor) driver;
@@ -50,4 +54,3 @@ public class arrayPage extends DriverFactory{
 
 
 	
-

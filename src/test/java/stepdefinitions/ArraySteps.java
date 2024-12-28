@@ -1,14 +1,16 @@
+
 package stepdefinitions;
+	import java.io.IOException;
+import java.util.List;
+import java.util.Map;
 
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.testng.Assert;
 
-
-
-	import org.testng.Assert;
-
-	import Pages.ArrayEditorPage;
-
-import Pages.HomePage;
-import Pages.TryEditorArrayPage;
+import DataProvider.ExcelReader;
+import Pages.ArrayEditorPage;
+	import Pages.HomePage;
+	import Pages.TryEditorArrayPage;
 	import Pages.arrayPage;
 	import Pages.arrayPracticeQuestionsPage;
 	import DriverManager.DriverFactory;
@@ -18,23 +20,16 @@ import Pages.TryEditorArrayPage;
 
 
 	public class ArraySteps extends DriverFactory {
-		public ArraySteps()
-		{
-			super();
-		}
-		HomePage hp=new HomePage();
+		HomePage ahp=new HomePage();
 	    arrayPage ap=new arrayPage();
 	    TryEditorArrayPage tp=new TryEditorArrayPage();
 	    arrayPracticeQuestionsPage pp=new arrayPracticeQuestionsPage();
 	    ArrayEditorPage ae=new ArrayEditorPage();
+	    String excelDataPath=ap.getExcelPath();
 
-	    @Given("The user is in the home page after signin for Array")
-	    public void the_user_is_in_the_home_page_after_signin_for_array() {
-		    Assert.assertEquals("NumpyNinja", ap.validatePageTitle());
-	    }
 	    @When("The user clicks Get Started button in Array panel")
 	    public void the_user_clicks_get_started_button_in_array_panel() {
-	    	hp.click_btn_Arraygetstarted();   
+	    	ahp.click_btn_Arraygetstarted();   
 	    	}
 	    @Then("The user should be redirected to Array page")
 	    public void the_user_should_be_redirected_to_array_page() {
@@ -43,7 +38,7 @@ import Pages.TryEditorArrayPage;
 	    @Given("The user is in the Array page")
 	    public void the_user_is_in_the_array_page() {
 	    	
-	    	hp.click_btn_Arraygetstarted();
+	    	ahp.click_btn_Arraygetstarted();
 	    }
 
 	    @When("The user clicks Arrays in Python link")
@@ -61,7 +56,7 @@ import Pages.TryEditorArrayPage;
 	        }
 	    @Given("The user is on the Arrays in Python page")
 	    public void the_user_is_on_the_arrays_in_python_page() {
-	    	hp.click_btn_Arraygetstarted();
+	    	ahp.click_btn_Arraygetstarted();
 	    	ap.navigate_arraysinPythonPage();
 	    	
 	        }
@@ -77,7 +72,7 @@ import Pages.TryEditorArrayPage;
 	        }
 	    @Given("The user is in the tryEditor page-Array")
 	    public void the_user_is_in_the_try_editor_page() {
-	    	hp.click_btn_Arraygetstarted();
+	    	ahp.click_btn_Arraygetstarted();
 	    	ap.navigate_arraysinPythonPage();
 	    	tp.click_tryEditor();
 	        }
@@ -90,12 +85,19 @@ import Pages.TryEditorArrayPage;
 	    	System.out.println("No alert window");
 	    	
 	        }
-	    @When("The user write the {string} in Editor and click the Run button-Array")
-	    public void the_user_write_the_in_editor_and_click_the_run_button(String invalid_code) {
-	    	tp.enter_input(invalid_code);
-	    	tp.click_run();
-	       }
 
+
+@When("The user enters the invalid_code {int} from sheetname {string} in Editor and click the Run button-Array")
+public void the_user_enters_the_invalid_code_from_sheetname_in_editor_and_click_the_run_button_array(Integer int1, String string) throws InvalidFormatException, IOException {
+	
+    ExcelReader reader=new ExcelReader();
+    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet1");
+    
+    String invalidCode=data.get(int1).get("invalid_data");
+    tp.enter_input(invalidCode);
+    tp.click_run();
+
+}
 	    @Then("The user should able to see an error message in alert window-Array")
 	    public void the_user_should_able_to_see_an_error_message_in_alert_window() {
 	    	
@@ -107,17 +109,26 @@ import Pages.TryEditorArrayPage;
 
 	        }
 
-	    @When("The user writes the valid input {string} in  python Editor and click the Run button-Array")
-	    public void the_user_writes_the_valid_input_print_selenium_in_python_editor_and_click_the_run_button(String valid_code) {
-	        tp.enter_input(valid_code);
-	        tp.click_run();
-	    }
-	    @Then("The user should able to see output in the console-Array")
-	    public void the_user_should_able_to_see_output_in_the_console() {
-	    	Assert.assertNotNull(tp.get_outputText());
-	    	
-	        }
-	    @When("The user clicks Arrays Using List link")
+
+         @When("The user enters the valid_code {int} from sheetname {string} in Editor and click the Run button-Array")
+         public void the_user_enters_the_valid_code_from_sheetname_in_editor_and_click_the_run_button_array(Integer int1, String string) throws InvalidFormatException, IOException {
+        	ExcelReader reader=new ExcelReader();
+     	    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet2");
+     	    String validcode=data.get(int1).get("valid_data");
+     	    tp.enter_input(validcode);
+     	    tp.click_run();
+           }
+
+         @Then("The user should able to see output {int} in the console-Array")
+         public void the_user_should_able_to_see_output_in_the_console_array(Integer int1) throws InvalidFormatException, IOException {
+        	 ExcelReader reader=new ExcelReader();
+     	    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet2");
+     	    
+     	    String expectedResult=data.get(int1).get("Output");
+     	    Assert.assertEquals(tp.get_outputText(), expectedResult);
+
+                      }	    
+         @When("The user clicks Arrays Using List link")
 	    public void the_user_clicks_arrays_using_list_link() {
 	    	
 	    	ap.navigate_ArraysUsingListPage();
@@ -129,7 +140,7 @@ import Pages.TryEditorArrayPage;
 	        }
 	    @Given("The user is on the Arrays Using List page")
 	    public void the_user_is_on_the_arrays_using_list_page() {
-	    	hp.click_btn_Arraygetstarted();
+	    	ahp.click_btn_Arraygetstarted();
 	    	ap.navigate_ArraysUsingListPage();
 	        }
 	    @When("The user clicks Try Here button in Arrays Using List page")
@@ -140,7 +151,7 @@ import Pages.TryEditorArrayPage;
 	    }
 	    @Given("The user is in the Arrays Using List tryEditor page")
 	    public void the_user_is_in_the_arrays_using_list_try_editor_page() {
-	    	hp.click_btn_Arraygetstarted();
+	    	ahp.click_btn_Arraygetstarted();
 	    	ap.navigate_ArraysUsingListPage();
 	    	tp.click_tryEditor();
 
@@ -157,7 +168,7 @@ import Pages.TryEditorArrayPage;
 	        }
 	    @Given("The user is on the Basic Operations in Lists page")
 	    public void the_user_is_on_the_basic_operations_in_lists_page() {
-	    	hp.click_btn_Arraygetstarted();
+	    	ahp.click_btn_Arraygetstarted();
 	    	ap.navigate_BasicOperationsinListsPage();
 	        }
 	    @When("The user clicks Try Here button in Basic Operations in Lists page")
@@ -168,7 +179,7 @@ import Pages.TryEditorArrayPage;
 
 	    @Given("The user is in the Basic Operations in Lists tryEditor page")
 	    public void the_user_is_in_the_basic_operations_in_lists_try_editor_page() {
-	    	hp.click_btn_Arraygetstarted();
+	    	ahp.click_btn_Arraygetstarted();
 	    	ap.navigate_BasicOperationsinListsPage();
 	    	tp.click_tryEditor();
 	        }
@@ -182,7 +193,7 @@ import Pages.TryEditorArrayPage;
 	        }
 	    @Given("The user is on the Applications of Array page")
 	    public void the_user_is_on_the_applications_of_array_page() {
-	    	hp.click_btn_Arraygetstarted();
+	    	ahp.click_btn_Arraygetstarted();
 	    	ap.navigate_ApplicationsofArrayPage();
 	        }
 	    @When("The user clicks Try Here button in Applications of Array page")
@@ -191,7 +202,7 @@ import Pages.TryEditorArrayPage;
 	        }
 	    @Given("The user is in the Applications of Array tryEditor page")
 	    public void the_user_is_in_the_applications_of_array_try_editor_page() {
-	    	hp.click_btn_Arraygetstarted();
+	    	ahp.click_btn_Arraygetstarted();
 	    	ap.navigate_ApplicationsofArrayPage();
 	    	tp.click_tryEditor();
 
@@ -209,7 +220,7 @@ import Pages.TryEditorArrayPage;
 	    }
 	    @Given("The user is on the practice question page-Array")
 	    public void the_user_is_on_the_practice_question_page() {
-	        hp.click_btn_Arraygetstarted();
+	        ahp.click_btn_Arraygetstarted();
 	        ap.navigate_arraysinPythonPage();
 	        ap.navigate_PracticeQuestionsPage();
 	    }
@@ -225,55 +236,78 @@ import Pages.TryEditorArrayPage;
 	     }
 	    @Given("The user is on the Search the array editor page")
 	    public void the_user_is_on_the_search_the_array_editor_page() {
-	    	hp.click_btn_Arraygetstarted();
+	    	ahp.click_btn_Arraygetstarted();
 	        ap.navigate_arraysinPythonPage();
 	        ap.navigate_PracticeQuestionsPage();
 	        pp.click_searchthearray();
 	    }
-	    @When("The user write the {string} in  practice page Editor and Click the Run button")
-	    public void the_user_write_the_in_practice_page_editor_and_click_the_run_button(String invalid_code) throws InterruptedException {
-	    	ae.Enter_inputCode(invalid_code);
-	    	ae.click_run();
-	       }
-	    @When("The user write the {string} in  practice page Editor page and Click the Run button")
-	    public void the_user_write_the_in_practice_page_editor_page_and_click_the_run_button(String valid_code) throws InterruptedException {
-	    	
 
-	    	ae.Enter_inputCode(valid_code);
-	    	Thread.sleep(3000);
-	    	ae.click_run();
+@When("The user enters the invalid_code {int} from sheetname {string} in practice page Editor and click the Run button")
+public void the_user_enters_the_invalid_code_from_sheetname_in_practice_page_editor_and_click_the_run_button(Integer int1, String string) throws InvalidFormatException, IOException {
+	ExcelReader reader=new ExcelReader();
+    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet1");
+    
+    String invalidCode=data.get(int1).get("invalid_data");
+    ae.Enter_inputCode(invalidCode);
+    ae.click_run();
 
-	        }
+     
+}
+@When("The user enters the valid_code {int} from sheetname {string} in practice page Editor and click the Run button-Array")
+public void the_user_enters_the_valid_code_from_sheetname_in_practice_page_editor_and_click_the_run_button_array(Integer int1, String string) throws InvalidFormatException, IOException {
+	ExcelReader reader=new ExcelReader();
+	    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet2");
+	    String validcode=data.get(int1).get("valid_data");
+	    ae.Enter_inputCode(validcode);
+	    ae.click_run();
+    
 
-	    @Then("The user should able to see output in the Practice page console")
-	    public void the_user_should_able_to_see_output_in_the_practice_page_console() {
-	    	Assert.assertNotNull(ae.get_outputText());
-	    	
-	        }
-	    @When("The user write the {string} in  practice page Editor and Click the submit button")
-	    public void the_user_write_the_in_practice_page_editor_and_click_the_submit_button(String invalid_code) {
-	    	ae.Enter_inputCode(invalid_code);
-	    	ae.click_submit();
+}
+@Then("The user should able to see output {int} in the practice page console")
+public void the_user_should_able_to_see_output_in_the_practice_page_console(Integer int1) throws InvalidFormatException, IOException {
+	ExcelReader reader=new ExcelReader();
+	    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet2");
+	    
+	    String expectedResult=data.get(int1).get("Output");
+	    Assert.assertEquals(tp.get_outputText(), expectedResult);
+    
+}
+@When("The user enters the invalid_code {int} from sheetname {string} in practice page Editor and click the Submit button")
+public void the_user_enters_the_invalid_code_from_sheetname_in_practice_page_editor_and_click_the_submit_button(Integer int1, String string) throws InvalidFormatException, IOException {
+	ExcelReader reader=new ExcelReader();
+    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet1");
+    
+    String invalidCode=data.get(int1).get("invalid_data");
+    ae.Enter_inputCode(invalidCode);
+    ae.click_submit();
 
-	    }
+}
 	    @Then("The user see an error message Error occurred during submission in console")
-	    public void the_user_see_an_error_message_error_occurred_during_submission_in_console() throws InterruptedException {
+	    public void the_user_see_an_error_message_error_occurred_during_submission_in_console() throws InterruptedException  {
 	    	Thread.sleep(2000);
-	    	Assert.assertEquals(ae.get_outputText()," No tests were collected" );   
+
+	    	Assert.assertEquals(ae.get_outputText(),"Error occurred during submission" );   
 	    }
 
-	    @When("The user write the {string} in Editor and Click the Submit button")
-	    public void the_user_write_the_in_editor_and_click_the_submit_button(String valid_code) {
-	    	
-	    	ae.Enter_inputCode(valid_code);
-	    	ae.click_submit();
-	    }
-	    @Then("The user see success message Submission successful")
-	    public void the_user_see_success_message_submission_successful() throws InterruptedException {
-	    	Thread.sleep(2000);
-	    	Assert.assertEquals(ae.get_outputText(),"submission successful" );
-	    }
 
+@When("The user enters the valid_code {int} from sheetname {string} in Editor and click the submit button")
+public void the_user_enters_the_valid_code_from_sheetname_in_editor_and_click_the_submit_button(Integer int1, String string) throws InvalidFormatException, IOException {
+	ExcelReader reader=new ExcelReader();
+    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet2");
+    String validcode=data.get(int1).get("valid_data");
+    ae.Enter_inputCode(validcode);
+    ae.click_submit();
+   
+
+}
+@Then("The user should able to see submission success message")
+public void the_user_should_able_to_see_submission_success_message() throws InterruptedException {
+	Thread.sleep(2000);
+	Assert.assertEquals(ae.get_outputText(),"submission successful" );
+
+    }
+
+	    
 	    @When("The user clicks Max consecutive ones link")
 	    public void the_user_clicks_max_consecutive_ones_link() {
 	    	pp.click_max();
@@ -286,7 +320,7 @@ import Pages.TryEditorArrayPage;
 	    }
 	    @Given("The user is on the Max consecutive ones editor page")
 	    public void the_user_is_on_the_max_consecutive_ones_editor_page() {
-	    	hp.click_btn_Arraygetstarted();
+	    	ahp.click_btn_Arraygetstarted();
 	        ap.navigate_arraysinPythonPage();
 	        ap.navigate_PracticeQuestionsPage();
 	        pp.click_max();
@@ -303,7 +337,7 @@ import Pages.TryEditorArrayPage;
 	    }
 	    @Given("The user is on the Find Numbers with Even Number of Digits editor page")
 	    public void the_user_is_on_the_find_numbers_with_even_number_of_digits_editor_page() {
-	    	hp.click_btn_Arraygetstarted();
+	    	ahp.click_btn_Arraygetstarted();
 	        ap.navigate_arraysinPythonPage();
 	        ap.navigate_PracticeQuestionsPage();
 	        pp.click_findnumbers();
@@ -320,7 +354,7 @@ import Pages.TryEditorArrayPage;
 	    }
 	    @Given("The user is on the Squares of a Sorted Array editor page")
 	    public void the_user_is_on_the_squares_of_a_sorted_array_editor_page() {
-	    	hp.click_btn_Arraygetstarted();
+	    	ahp.click_btn_Arraygetstarted();
 	        ap.navigate_arraysinPythonPage();
 	        ap.navigate_PracticeQuestionsPage();
 	        pp.click_squares();
@@ -336,7 +370,3 @@ import Pages.TryEditorArrayPage;
 
 
 	
-
-
-
-

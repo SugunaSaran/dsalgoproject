@@ -1,10 +1,12 @@
+
+@datastructureIntroduction
 Feature: Data Structures-Introduction
 
 Background: The user sign in to dsAlgo Portal
 Given The user is in the home page after sign in . 
 
 Scenario: Verify that user is able to navigate to Data Structures-Introduction page
-Given The user is in the home page after sign in 
+
 When The user clicks the Getting Started button in Data Structures-Introduction panel
 Then The user should be directed to Linked list Data Structure Page
 
@@ -38,4 +40,3 @@ Scenario: Verify that user is able to navigate to Practice Questions page
 Given The user is in the Time Complexity page 
 When The user clicks Practice Questions link
 Then The user should be redirected to Practice Questions page
-

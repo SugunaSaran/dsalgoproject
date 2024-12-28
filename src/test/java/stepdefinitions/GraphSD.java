@@ -1,11 +1,17 @@
 
+
 package stepdefinitions;
 
 
+import java.io.IOException;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.testng.Assert;
 
+import DataProvider.ExcelReader;
 import Pages.Graph;
-
 import Pages.HomePage;
 import Pages.TryEditorPage;
 import io.cucumber.java.en.Given;
@@ -13,168 +19,150 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class GraphSD {
-	HomePage hp;
-      Graph gp=new Graph();
+	HomePage hp=new HomePage();
+	Graph gp=new Graph();
 	TryEditorPage tp=new TryEditorPage();
-	@Given("The user is in the Graph page after Sign in")
-	public void the_user_is_in_the_graph_page_after_sign_in() {
-		 hp=new HomePage();
-	   
+	String excelDataPath=gp.getExcelPath();
+	
+	@When("The user selects graph item by clicking the Getting Started Link")
+	public void the_user_selects_graph_item_by_clicking_the_getting_started_link() {
+	   hp.clickGraphLink();
 	}
 
-	@When("The user clicks the Getting Started button in Graph Panel")
-	public void the_user_clicks_the_getting_started_button_in_graph_panel() {
-		hp.clickGraphLink();
-	    
-	}
-
-
-	@Then("The user should be directed to Graph Data StructurePage")
+	@Then("The user should be directed to graph Data Structure Page")
 	public void the_user_should_be_directed_to_graph_data_structure_page() {
-		 Assert.assertEquals("Graph", hp.validatePageTitle());
-		   
-	  
+	    Assert.assertEquals(hp.validatePageTitle(), "Graph");
 	}
-	@Given("The user is in the Graph data structure after Sign in")
-	public void the_user_is_in_the_graph_data_structure_after_sign_in() {
+
+	@Given("The user is in the graph page after Sign in")
+	public void the_user_is_in_the_graph_page_after_sign_in() {
+	   hp.clickGraphLink();
+	}
+
+	@When("The user clicks the following {string} and {int} in graph page")
+	public void the_user_clicks_the_following_and_in_graph_page(String string, Integer int1) throws InvalidFormatException, IOException {
+		ExcelReader reader=new ExcelReader();
+	    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet1");
+	    String pageName=data.get(int1).get("Links");
+	    gp.checkGraphPageLink(pageName);
+	}
+
+	@Then("The user should be redirected to {string} and {int} page in graph data structure")
+	public void the_user_should_be_redirected_to_and_page_in_graph_data_structure(String string, Integer int1) throws InvalidFormatException, IOException {
+		ExcelReader reader=new ExcelReader();
+	    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet1");
+	    String expectedPage=data.get(int1).get("Expected Result");
+	    Assert.assertEquals(hp.validatePageTitle(), expectedPage);
+	}
+
+	@Given("The user is in the {string} and {int} page in graph page")
+	public void the_user_is_in_the_and_page_in_graph_page(String string, Integer int1) throws InvalidFormatException, IOException {
+		ExcelReader reader=new ExcelReader();
+	    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet1");
+	    String pageName=data.get(int1).get("Links");
+	    hp.clickGraphLink();
+	    gp.checkGraphPageLink(pageName);
+	}
+
+	@When("The user clicks the tryEditor button in subpages of graph")
+	public void the_user_clicks_the_try_editor_button_in_subpages_of_graph() {
+	   gp.checkTryEditorLink();
+	}
+
+	@Then("The user should be redirected to a page having an try Editor with a Run button to test in graph page")
+	public void the_user_should_be_redirected_to_a_page_having_an_try_editor_with_a_run_button_to_test_in_graph_page() {
+		Assert.assertEquals(hp.validatePageTitle(), "Assessment");
+	}
+
+	@Given("The user is in the tryEditor page of corresponding {string} and {int} page in graph data structure")
+	public void the_user_is_in_the_try_editor_page_of_corresponding_and_page_in_graph_data_structure(String string, Integer int1) throws InvalidFormatException, IOException {
+		ExcelReader reader=new ExcelReader();
+	    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet1");
+	    String pageName=data.get(int1).get("Links");
+	    hp.clickGraphLink();
+	    gp.checkGraphPageLink(pageName);
+	    gp.checkTryEditorLink();
+	}
+
+	@When("The user clicks the Run button without entering the code in the Editor in graph page")
+	public void the_user_clicks_the_run_button_without_entering_the_code_in_the_editor_in_graph_page() {
+	    tp.checkCode(" ");
+	}
+
+	@Then("The user should not see any error message or output in the Editor of graph page")
+	public void the_user_should_not_see_any_error_message_or_output_in_the_editor_of_graph_page() {
+		 Assert.assertEquals(tp.isAlertPresent(), false);
+	}
+
+	@Given("The user is in the tryEditor page of {string} and {int} of graph Page")
+	public void the_user_is_in_the_try_editor_page_of_and_of_graph_page(String string, Integer int1) throws InvalidFormatException, IOException {
 		hp.clickGraphLink();
-	  
-	}
-
-	@When("The user clicks Graph page in graph Data structure in graph page")
-	public void the_user_clicks_graph_page_in_graph_data_structure() {
-		gp.checkGraphLink();
-	   
-	}
-
-	@Then("The user should be directed to Graph Page")
-	public void the_user_should_be_directed_to_graph_page() {
-		Assert.assertEquals("Graph", gp.validateGraphlink()); 
-	}
-
-	//Scenario: Verify that user is able to navigate to try Editor page for Graph page
-@Given("The user is on the Graph page from graph data strcture")
-public void the_user_is_on_the_graph_page_data_structure() {
-	hp.clickGraphLink();
-    gp.checkGraphLink();
-  
-}
-
-@When("The user clicks Try Here button in Graph page")
-public void the_user_clicks_try_here_button_in_graph_page() {
-	 gp.checkTryEditorLink();
-}
-@Then("The user should be redirected to a page having an try Editor with a Run button to test for Graph page")
-public void the_user_should_be_redirected_to_a_page_having_an_try_editor_with_a_run_button_to_test_Graph_Page() {
-    Assert.assertEquals(gp.validateGraphlink(), "Assessment");
-  
-}
-
-@Given("The user is in the tryEditor page for graph page")
-public void the_user_is_in_the_try_editor_page_in_graph_page() {
-    hp.clickGraphLink();
-    gp.checkGraphLink();
-    gp.checkTryEditorLink();
-  }
-
-@When("The user clicks the Run button without entering the code in the Editor in graph page")
-public void the_user_clicks_the_run_button_without_entering_the_code_in_the_editor_graph_page() {
-  tp.checkCode(" ");
- 
- }
-
-@Then("The user should not see any error message or output in graph page")
-public void the_user_should_not_see_any_error_message_or_output_graph_page() {
-	 Assert.assertEquals(false,tp.isAlertPresent());
- }
-
-@When("The user write the invalid code in Editor and click the Run button in graph page")
-public void the_user_write_the_invalid_code_in_editor_and_click_the_run_button_in_graph_page() {
-	tp.checkCode("system.out.println");
-  
-}
-
-@Then("The user should able to see an error message in alert window_in_graph_page")
-public void the_user_should_able_to_see_an_error_message_in_alert_window_for_graph_page() {
-    Assert.assertEquals(true, tp.isAlertPresent());
-  
-}
-//Scenario: Verify that user receives error for invalid python code for Graph page
-@Given("The user is in the tryEditor page and writes an invalid code in Editor and click the Run Button_in_graph_page")
-public void the_user_is_in_the_try_editor_page_and_writes_an_invalid_code_in_editor_and_click_the_run_button_graph_p() {
-	 	hp.clickGraphLink();
-	    gp.checkGraphLink();
+	    ExcelReader reader=new ExcelReader();
+	    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet2");
+	    String pageName=data.get(int1).get("Links");
+	    gp.checkGraphPageLink(pageName);
 	    gp.checkTryEditorLink();
-	    tp.checkCode("System");
-	    }
+	}
 
-@When("The user clicks the ok button of error alert window for graph page")
-public void the_user_clicks_the_ok_button_of_error_alert_window_graph_pag() {
-   tp.acceptAlert();	  
-}
+	@When("The user clicks the Run button the following {string} and {int} in the Editor of corresponding sub page of graph")
+	public void the_user_clicks_the_run_button_the_following_and_in_the_editor_of_corresponding_sub_page_of_graph(String string, Integer int1) throws InvalidFormatException, IOException {
+		ExcelReader reader=new ExcelReader();
+	    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet2");
+	    String invalidCode=data.get(int1).get("InvalidCode");
+	    tp.checkCode(invalidCode);
+	}
 
-@Then("The user should remain in the tryEditor page with Run button for G PAGE")
-public void the_user_should_remain_in_the_try_editor_page_with_run_button_Graph_pag() {
-	 Assert.assertEquals(gp.validateGraphlink(), "Assessment");
-  
-}
+	@Then("The user should see an error message in alert window in corresponding graph Page")
+	public void the_user_should_see_an_error_message_in_alert_window_in_corresponding_graph_page() {
+		Assert.assertEquals(tp.isAlertPresent(), true);
+	}
 
-@When("The user write the valid code in Editor and click the Run button g page")
-public void the_user_write_the_valid_code_in_editor_and_click_the_run_button_g_page() {
-	tp.checkCode("print('hi')");
-  
-}
-
-@Then("The user should able to see output in the console in graph page")
-public void the_user_should_able_to_see_output_in_the_console_graph_page() {
-	Assert.assertEquals(tp.validateOutput(), "hi");
-}
-
-
-
-@When("The user clicks Graph Representations page in graph Data structure")
-public void the_user_clicks_graph_representations_page_in_graph_data_structure() {
-	 Assert.assertEquals(gp.validateGraphRepresentationsLink(), "Graph Representation");
-	  
-    
-}
-
-@Then("The user should be directed to Graph Representations Page")
-public void the_user_should_be_directed_to_graph_representations_page() {
-    
-	hp.clickGraphLink();
-    gp.checkGraphRepresentation();
-  
-}
-//Scenario: Verify that user receives error for invalid python code for Graph page
-@Given("The user is in the tryEditor page and writes an invalid code in Editor and click the Run Button_graph_representation")
-public void the_user_is_in_the_try_editor_page_and_writes_an_invalid_code_in_editor_and_click_the_run_graph_Representation() {
-	 	hp.clickGraphLink();
-	    gp.checkGraphRepresentation();
+	@Given("The user is in the tryEditor page {string} and {int} and writes an invalidcodes in Editor and click the Run button of corresponding graph Page")
+	public void the_user_is_in_the_try_editor_page_and_and_writes_an_invalidcodes_in_editor_and_click_the_run_button_of_corresponding_graph_page(String string, Integer int1) throws InvalidFormatException, IOException {
+		hp.clickGraphLink();
+	    ExcelReader reader=new ExcelReader();
+	    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet2");
+	    String pageName=data.get(int1).get("Links");
+	    String invalidCode=data.get(int1).get("InvalidCode");
+	    gp.checkGraphPageLink(pageName);
 	    gp.checkTryEditorLink();
-	    tp.checkCode("system");
-	    }
+	    tp.checkCode(invalidCode);
+	}
 
-@When("The user clicks the ok button of error alert window for graph R")
-public void the_user_clicks_the_ok_button_of_error_alert_window_GRAPH_R() {
- tp.acceptAlert();	  
-}
+	@When("The user clicks the ok button of error alert window of that graph Page")
+	public void the_user_clicks_the_ok_button_of_error_alert_window_of_that_graph_page() {
+		tp.acceptAlert();
+	}
 
-@Then("The user should remain in the tryEditor page with Run button FOR GRAPH REPRESENTATION")
-public void the_user_should_remain_in_the_try_editor_page_with_run_button_GRAPH_REPRESENTATION() {
-	 Assert.assertEquals(gp.validateGraphRepresentationsLink(), "Assessment");
+	@Then("The user should remain in the tryEditor page with Run button in corresponding graph Page")
+	public void the_user_should_remain_in_the_try_editor_page_with_run_button_in_corresponding_graph_page() {
+		 Assert.assertEquals(hp.validatePageTitle(), "Assessment");
+	}
 
-}
+	@Given("The user is in the tryEditor page of {string} and {int} of graph Page for valid code")
+	public void the_user_is_in_the_try_editor_page_of_and_of_graph_page_for_valid_code(String string, Integer int1) throws InvalidFormatException, IOException {
+		hp.clickGraphLink();
+	    ExcelReader reader=new ExcelReader();
+	    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet3");
+	    String pageName=data.get(int1).get("Links");
+	    gp.checkGraphPageLink(pageName);
+	    gp.checkTryEditorLink();
+	}
 
-@When("The user write the valid code in Editor and click the Run button FOR GRAPH REPRESENTATION")
-public void the_user_write_the_valid_code_in_editor_and_click_the_run_button_GRAPH_REPRESENTATION() {
-	tp.checkCode("print('hi')");
+	@When("The user clicks the Run button the following {string} and {int} with valid code in the Editor of corresponding sub page of graph")
+	public void the_user_clicks_the_run_button_the_following_and_with_valid_code_in_the_editor_of_corresponding_sub_page_of_graph(String string, Integer int1) throws InvalidFormatException, IOException {
+		ExcelReader reader=new ExcelReader();
+	    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet3");
+	    String validcode=data.get(int1).get("ValidCode");
+	    tp.checkCode(validcode);
+	}
 
-}
-
-@Then("The user should able to see output in the console in graph representation")
-public void the_user_should_able_to_see_output_in_the_conso_graph_representation() {
-	Assert.assertEquals(tp.validateOutput(), "hi");
-}
+	@Then("The user should able to see an {string} and {int} in corresponding graph tryeditor page")
+	public void the_user_should_able_to_see_an_and_in_corresponding_graph_tryeditor_page(String string, Integer int1) throws InvalidFormatException, IOException {
+		ExcelReader reader=new ExcelReader();
+	    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet3");
+	    String expectedResult=data.get(int1).get("Expected Result");
+	    Assert.assertEquals(tp.validateOutput(), expectedResult);
+	}
 
 }

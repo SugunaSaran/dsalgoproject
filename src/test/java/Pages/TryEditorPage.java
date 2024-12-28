@@ -1,3 +1,4 @@
+
 package Pages;
 import java.time.Duration;
 
@@ -26,9 +27,10 @@ public class TryEditorPage extends DriverFactory{
 		if(code!=" ") {
 			Actions actions=new Actions(driver);
 			WebElement textEditor=driver.findElement(textArea);
-			actions.moveToElement(textEditor).click().sendKeys(code).build().perform();
-           }
-		   	driver.findElement(runBtn).click();
+			actions.moveToElement(textEditor).click().sendKeys(code).build().perform();              
+		}
+		   //driver.findElement(textArea).sendKeys(code);
+			driver.findElement(runBtn).click();
 		}
 	public String validateOutput() {
 			if(!isAlertPresent()) {
