@@ -16,7 +16,7 @@ Feature: Data Structures-Introduction
   Scenario: Verify that user is able to navigate to try Editor page for Time Complexity page
     Given The user is on the Time Complexity page
     When The user clicks Try Here button in Time Complexity page
-    Then The user should be redirected to a page having an try Editor with a Run button to test
+    Then The user should be redirected to a page having an try Editor with a Run button to test-Data structures
 
   Scenario: Verify that user does not receive error when click on Run button without entering code for Time Complexity page
     Given The user is in the tryEditor page of Time Complexity page

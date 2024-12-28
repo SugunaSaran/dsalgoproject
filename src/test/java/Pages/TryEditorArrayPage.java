@@ -5,6 +5,8 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import DriverManager.DriverFactory;
 
@@ -22,7 +24,10 @@ public class TryEditorArrayPage extends DriverFactory {
 		//Action Methods
 		public void enter_input(String code)
 		{
-			driver.findElement(textArea).sendKeys(code);
+			
+			Actions actions=new Actions(driver);
+			WebElement textEditor=driver.findElement(textArea);
+			actions.moveToElement(textEditor).click().sendKeys(code).build().perform(); 
 		}
 		public void click_run()
 		{
@@ -30,7 +35,10 @@ public class TryEditorArrayPage extends DriverFactory {
 		}
 		public void click_tryEditor()
 		{
-			driver.findElement(btn_tryEditor).click();
+		   By tryeditor=By.xpath("//a[@href='/tryEditor']");
+			Actions act=new Actions(driver);
+			act.moveToElement(driver.findElement(tryeditor)).perform();
+			driver.findElement(tryeditor).click();
 		}
 		
 		public boolean isAlertPresent(){
