@@ -3,10 +3,10 @@
 Feature: Data Structures-Introduction
 
 Background: The user sign in to dsAlgo Portal
-Given The user is in the home page after sign in 
+Given The user is in the home page after sign in . 
 
 Scenario: Verify that user is able to navigate to Data Structures-Introduction page
-Given The user is in the home page after sign in 
+
 When The user clicks the Getting Started button in Data Structures-Introduction panel
 Then The user should be directed to Linked list Data Structure Page
 

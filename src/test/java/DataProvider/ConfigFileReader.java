@@ -58,6 +58,11 @@ public class ConfigFileReader {
 		public String getQueueDataPath() {
 			return properties.getProperty("queuePageExcelPath");
 		}
+		public String getDataStructuresPath() {
+			return properties.getProperty("DataStructuresExcelPath");
+		}
+
+		
 		public long getImplicitlyWait() {		
 			String implicitlyWait = properties.getProperty("implicitlyWait");
 			if(implicitlyWait != null) return Long.parseLong(implicitlyWait);
