@@ -1,4 +1,4 @@
-@linkedlistpage
+@list
 Feature: Linked List
 
   Background: 
@@ -59,7 +59,7 @@ Feature: Linked List
   Scenario: Verify that user is able to navigate to try Editor page for Creating Linked List page
     Given The user is on the Creating Linked List page
     When The user clicks Try Here button in Creating Linked List page
-    Then The user should be redirected to a page having an try Editor with a Run button to test
+    Then The user should be redirected to a page having an try Editor with a Run button to test for list
 
   Scenario: Verify that user does not receive error when click on Run button without entering code for Creating Linked List page
     Given The user is in the tryEditor page for list
@@ -100,8 +100,7 @@ Feature: Linked List
   Scenario: Verify that user is able to navigate to try Editor page for Types of Linked List page
     Given The user is on the Types of Linked List page
     When The user clicks Try Here button in Types of Linked List page
-    Then The user should be redirected to a page having an try Editor with a Run button to test
-
+    Then The user should be redirected to a page having an try Editor with a Run button to test for list
   Scenario: Verify that user does not receive error when click on Run button without entering code for Types of Linked List page
     Given The user is in the tryEditor page for Types of linked list page
     When The user clicks the Run button without entering the code in the Editor for list
@@ -141,7 +140,7 @@ Feature: Linked List
   Scenario: Verify that user is able to navigate to try Editor page for Implement Linked List in Python page
     Given The user is on the Implement Linked list in Python page
     When The user clicks Try Here button in Implement Linked list in Python page
-    Then The user should be redirected to a page having an try Editor with a Run button to test
+    Then The user should be redirected to a page having an try Editor with a Run button to test for list
 
   Scenario: Verify that user does not receive error when click on Run button without entering code for Implement Linked List in Python page
     Given The user is in the tryEditor page for Implement Linked list in Python page
@@ -182,7 +181,7 @@ Feature: Linked List
   Scenario: Verify that user is able to navigate to try Editor page for Traversal page
     Given The user is on the Traversal page
     When The user clicks Try Here button in Traversal page
-    Then The user should be redirected to a page having an try Editor with a Run button to test
+    Then The user should be redirected to a page having an try Editor with a Run button to test for list
 
   Scenario: Verify that user does not receive error when click on Run button without entering code for Traversal page
     Given The user is in the tryEditor page for Traversal page
@@ -223,7 +222,7 @@ Feature: Linked List
   Scenario: Verify that user is able to navigate to try Editor page for Insertion page
     Given The user is on the Insertion page
     When The user clicks Try Here button in Insertion page
-    Then The user should be redirected to a page having an try Editor with a Run button to test
+    Then The user should be redirected to a page having an try Editor with a Run button to test for list
 
   Scenario: Verify that user does not receive error when click on Run button without entering code for Insertion page
     Given The user is in the tryEditor page for Insertion page
@@ -264,7 +263,7 @@ Feature: Linked List
   Scenario: Verify that user is able to navigate to try Editor page for Deletion page
     Given The user is on the Deletion page
     When The user clicks Try Here button in Deletion page
-    Then The user should be redirected to a page having an try Editor with a Run button to test
+    Then The user should be redirected to a page having an try Editor with a Run button to test for list
 
   Scenario: Verify that user does not receive error when click on Run button without entering code for Deletion page
     Given The user is in the tryEditor page for Deletion page
