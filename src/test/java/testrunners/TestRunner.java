@@ -8,7 +8,7 @@ import io.cucumber.testng.CucumberOptions;
 	    features = "src/test/resources/features",
 	     glue = {"stepdefinitions","hooks"},
 
-	     tags="@linkedlistpage"
+	     tags="@datapage"
 
 	    
  
