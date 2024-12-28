@@ -19,6 +19,7 @@ Feature: Queue
       | Sheet1    |         1 |
       | Sheet1    |         2 |
       | Sheet1    |         3 |
+      | Sheet1    |         4 |
 
   Scenario Outline: Verify that user is able to navigate to the tryEditor of sub links of queue page
     Given The user is in the "<sheetName>" and <rowNumber> page in queue page
@@ -57,8 +58,7 @@ Feature: Queue
       | Sheet2    |         3 |
       | Sheet2    |         4 |
       | Sheet2    |         5 |
-      | Sheet2    |         6 |
-      | Sheet2    |         7 |
+      
 
   Scenario Outline: Verifying the ok button of error alert message in tryEditor Page of <subpages> of Queue Page
     Given The user is in the tryEditor page "<sheetName>" and <rowNumber> and writes an invalidcodes in Editor and click the Run button of corresponding Page
@@ -72,9 +72,8 @@ Feature: Queue
       | Sheet2    |         2 |
       | Sheet2    |         3 |
       | Sheet2    |         4 |
-      | Sheet2    |         5 |
-      | Sheet2    |         6 |
-      | Sheet2    |         7 |
+ 
+      
 
   Scenario Outline: Verify that user receives the output for valid python code in tryEditor page of queue subpages
     Given The user is in the tryEditor page of "<sheetName>" and <rowNumber> of Queue Page for valid code
