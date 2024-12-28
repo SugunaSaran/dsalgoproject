@@ -1,3 +1,4 @@
+@linkedlistpage
 Feature: Linked List
 
   Background: 
@@ -36,7 +37,7 @@ Feature: Linked List
       | Sheet1    |  |         2 |
       | Sheet1    |  |         3 |
       | Sheet1    |  |         4 |
-@linkedlistpage
+
   Scenario Outline: Verify that user is able to see output for valid python code for Introduction page
     Given The user is in the tryEditor page for list
     When The user enters the valid_code <rownumber> from sheetname "<Sheet2>" in Editor and click the Run button-list
