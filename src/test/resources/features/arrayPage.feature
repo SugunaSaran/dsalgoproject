@@ -1,4 +1,3 @@
-@arraypage
 Feature: Array
 
   Background: 
@@ -36,7 +35,6 @@ Feature: Array
       | Sheet1    |  |         3 |
       | Sheet1    |  |         4 |
 
-  
   Scenario Outline: Verify that user is able to see output for valid python code for Arrays in Python page
     Given The user is in the tryEditor page-Array
     When The user enters the valid_code <rownumber> from sheetname "<Sheet2>" in Editor and click the Run button-Array
@@ -82,6 +80,7 @@ Feature: Array
     Given The user is in the Arrays Using List tryEditor page
     When The user enters the valid_code <rownumber> from sheetname "<Sheet2>" in Editor and click the Run button-Array
     Then The user should able to see output <rownumber> in the console-Array
+
     Examples: 
       | Sheetname |  | rownumber |
       | Sheet2    |  |         0 |
@@ -122,7 +121,8 @@ Feature: Array
     Given The user is in the Basic Operations in Lists tryEditor page
     When The user enters the valid_code <rownumber> from sheetname "<Sheet2>" in Editor and click the Run button-Array
     Then The user should able to see output <rownumber> in the console-Array
-Examples: 
+
+    Examples: 
       | Sheetname |  | rownumber |
       | Sheet2    |  |         0 |
       | Sheet2    |  |         1 |
@@ -147,7 +147,7 @@ Examples:
 
   Scenario Outline: Verify that user receives error for invalid python code for Applications of Array page
     Given The user is in the Applications of Array tryEditor page
-    When The user enters the invalid_code <rownumber> from sheetname "<Sheet1>" in Editor and click the Run button-Array  
+    When The user enters the invalid_code <rownumber> from sheetname "<Sheet1>" in Editor and click the Run button-Array
     Then The user should able to see an error message in alert window-Array
 
     Examples: 
@@ -162,6 +162,7 @@ Examples:
     Given The user is in the Applications of Array tryEditor page
     When The user enters the valid_code <rownumber> from sheetname "<Sheet2>" in Editor and click the Run button-Array
     Then The user should able to see output <rownumber> in the console-Array
+
     Examples: 
       | Sheetname |  | rownumber |
       | Sheet2    |  |         0 |
@@ -182,7 +183,7 @@ Examples:
 
   Scenario Outline: Verify that user receives error for invalid python code on running Search the array question
     Given The user is on the Search the array editor page
-    When The user enters the invalid_code <rownumber> from sheetname "<Sheet1>" in practice page Editor and click the Run button  
+    When The user enters the invalid_code <rownumber> from sheetname "<Sheet1>" in practice page Editor and click the Run button
     Then The user should able to see an error message in alert window-Array
 
     Examples: 
@@ -197,6 +198,7 @@ Examples:
     Given The user is on the Search the array editor page
     When The user enters the valid_code <rownumber> from sheetname "<Sheet2>" in practice page Editor and click the Run button-Array
     Then The user should able to see output <rownumber> in the practice page console
+
     Examples: 
       | Sheetname |  | rownumber |
       | Sheet2    |  |         0 |
@@ -207,7 +209,7 @@ Examples:
 
   Scenario Outline: Verify that user receives error on submitting invalid python code for Search the array question
     Given The user is on the Search the array editor page
-    When The user enters the invalid_code <rownumber> from sheetname "<Sheet1>" in practice page Editor and click the Submit button  
+    When The user enters the invalid_code <rownumber> from sheetname "<Sheet1>" in practice page Editor and click the Submit button
     Then The user see an error message Error occurred during submission in console
 
     Examples: 
@@ -218,10 +220,12 @@ Examples:
       | Sheet1    |  |         3 |
       | Sheet1    |  |         4 |
 
+  @arraypage
   Scenario Outline: Verify that user receives success message on submitting valid python code for Search the array question
     Given The user is on the Search the array editor page
     When The user enters the valid_code <rownumber> from sheetname "<Sheet2>" in Editor and click the submit button
     Then The user should able to see submission success message
+
     Examples: 
       | Sheetname |  | rownumber |
       | Sheet2    |  |         0 |
@@ -237,7 +241,7 @@ Examples:
 
   Scenario Outline: Verify that user receives error for invalid python code on running Max consecutive ones question
     Given The user is on the Max consecutive ones editor page
-    When The user enters the invalid_code <rownumber> from sheetname "<Sheet1>" in practice page Editor and click the Run button  
+    When The user enters the invalid_code <rownumber> from sheetname "<Sheet1>" in practice page Editor and click the Run button
     Then The user should able to see an error message in alert window-Array
 
     Examples: 
@@ -253,7 +257,7 @@ Examples:
     When The user enters the valid_code <rownumber> from sheetname "<Sheet2>" in practice page Editor and click the Run button-Array
     Then The user should able to see output <rownumber> in the practice page console
 
-Examples: 
+    Examples: 
       | Sheetname |  | rownumber |
       | Sheet2    |  |         0 |
       | Sheet2    |  |         1 |
@@ -261,10 +265,9 @@ Examples:
       | Sheet2    |  |         3 |
       | Sheet2    |  |         4 |
 
-
   Scenario Outline: Verify that user receives error on submitting invalid python code for Max consecutive ones question
     Given The user is on the Max consecutive ones editor page
-    When The user enters the invalid_code <rownumber> from sheetname "<Sheet1>" in practice page Editor and click the Submit button  
+    When The user enters the invalid_code <rownumber> from sheetname "<Sheet1>" in practice page Editor and click the Submit button
     Then The user see an error message Error occurred during submission in console
 
     Examples: 
@@ -279,6 +282,7 @@ Examples:
     Given The user is on the Max consecutive ones editor page
     When The user enters the valid_code <rownumber> from sheetname "<Sheet2>" in Editor and click the submit button
     Then The user should able to see submission success message
+
     Examples: 
       | Sheetname |  | rownumber |
       | Sheet2    |  |         0 |
@@ -294,8 +298,9 @@ Examples:
 
   Scenario Outline: Verify that user receives error for invalid python code on running Find Numbers with Even Number of Digits question
     Given The user is on the Find Numbers with Even Number of Digits editor page
-    When The user enters the invalid_code <rownumber> from sheetname "<Sheet1>" in practice page Editor and click the Run button  
+    When The user enters the invalid_code <rownumber> from sheetname "<Sheet1>" in practice page Editor and click the Run button
     Then The user should able to see an error message in alert window-Array
+
     Examples: 
       | Sheetname |  | rownumber |
       | Sheet1    |  |         0 |
@@ -319,7 +324,7 @@ Examples:
 
   Scenario Outline: Verify that user receives error on submitting invalid python code for Find Numbers with Even Number of Digits question
     Given The user is on the Find Numbers with Even Number of Digits editor page
-    When The user enters the invalid_code <rownumber> from sheetname "<Sheet1>" in practice page Editor and click the Submit button  
+    When The user enters the invalid_code <rownumber> from sheetname "<Sheet1>" in practice page Editor and click the Submit button
     Then The user see an error message Error occurred during submission in console
 
     Examples: 
@@ -334,6 +339,7 @@ Examples:
     Given The user is on the Find Numbers with Even Number of Digits editor page
     When The user enters the valid_code <rownumber> from sheetname "<Sheet2>" in Editor and click the submit button
     Then The user should able to see submission success message
+
     Examples: 
       | Sheetname |  | rownumber |
       | Sheet2    |  |         0 |
@@ -349,7 +355,7 @@ Examples:
 
   Scenario Outline: Verify that user receives error for invalid python code on running Squares of a Sorted Array question
     Given The user is on the Squares of a Sorted Array editor page
-    When The user enters the invalid_code <rownumber> from sheetname "<Sheet1>" in practice page Editor and click the Run button  
+    When The user enters the invalid_code <rownumber> from sheetname "<Sheet1>" in practice page Editor and click the Run button
     Then The user should able to see an error message in alert window-Array
 
     Examples: 
@@ -375,7 +381,7 @@ Examples:
 
   Scenario Outline: Verify that user receives error on submitting invalid python code for Squares of a Sorted Array
     Given The user is on the Squares of a Sorted Array editor page
-    When The user enters the invalid_code <rownumber> from sheetname "<Sheet1>" in practice page Editor and click the Submit button      
+    When The user enters the invalid_code <rownumber> from sheetname "<Sheet1>" in practice page Editor and click the Submit button
     Then The user see an error message Error occurred during submission in console
 
     Examples: 
@@ -385,11 +391,12 @@ Examples:
       | Sheet1    |  |         2 |
       | Sheet1    |  |         3 |
       | Sheet1    |  |         4 |
-
+@arraypage
   Scenario Outline: Verify that user receives success message on submitting valid python code for Squares of a Sorted Array
     Given The user is on the Squares of a Sorted Array editor page
     When The user enters the valid_code <rownumber> from sheetname "<Sheet2>" in Editor and click the submit button
     Then The user should able to see submission success message
+
     Examples: 
       | Sheetname |  | rownumber |
       | Sheet2    |  |         0 |
@@ -397,4 +404,3 @@ Examples:
       | Sheet2    |  |         2 |
       | Sheet2    |  |         3 |
       | Sheet2    |  |         4 |
-    

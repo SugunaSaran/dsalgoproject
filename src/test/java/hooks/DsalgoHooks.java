@@ -1,15 +1,11 @@
 package hooks;
 
-import DriverManager.DriverFactory;
-import Utilities.LoggerLoad;
-
 import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
-
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.reporter.*;
+import DriverManager.DriverFactory;
+import Utilities.LoggerLoad;
+import Utilities.ScreenshotUtil;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -36,13 +32,16 @@ public class DsalgoHooks extends DriverFactory {
 			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
 			//System.out.println("Active thread count before scenario: " + Thread.activeCount());
 	    }
-
-	    @After
-	    public void tearDown() {
-	    	//System.out.println("Active thread count after scenario: " + Thread.activeCount());
-	        DriverFactory.quitDriver();
+	@After
+	public void afterScenario(Scenario scenario) {
+	    WebDriver driver = DriverFactory.getDriver();
+	    if (scenario.isFailed()) {
+	        ScreenshotUtil.captureScreenshot(driver, scenario.getName());
 	    }
-}
+	   DriverFactory.quitDriver();
+	}
+    }
+
 
 	
 		
