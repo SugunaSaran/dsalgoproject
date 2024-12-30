@@ -194,6 +194,7 @@ Feature: Array
       | Sheet1    |  |         3 |
       | Sheet1    |  |         4 |
 
+  @arraypage
   Scenario Outline: Verify that user is able to run valid python code for Search the array question
     Given The user is on the Search the array editor page
     When The user enters the valid_code <rownumber> from sheetname "<Sheet2>" in practice page Editor and click the Run button-Array
@@ -220,7 +221,6 @@ Feature: Array
       | Sheet1    |  |         3 |
       | Sheet1    |  |         4 |
 
-  @arraypage
   Scenario Outline: Verify that user receives success message on submitting valid python code for Search the array question
     Given The user is on the Search the array editor page
     When The user enters the valid_code <rownumber> from sheetname "<Sheet2>" in Editor and click the submit button
@@ -391,7 +391,7 @@ Feature: Array
       | Sheet1    |  |         2 |
       | Sheet1    |  |         3 |
       | Sheet1    |  |         4 |
-@arraypage
+
   Scenario Outline: Verify that user receives success message on submitting valid python code for Squares of a Sorted Array
     Given The user is on the Squares of a Sorted Array editor page
     When The user enters the valid_code <rownumber> from sheetname "<Sheet2>" in Editor and click the submit button
