@@ -1,11 +1,10 @@
 package hooks;
-
-import java.time.Duration;
-
-import org.openqa.selenium.WebDriver;
 import DriverManager.DriverFactory;
 import Utilities.LoggerLoad;
 import Utilities.ScreenshotUtil;
+import java.time.Duration;
+
+import org.openqa.selenium.WebDriver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -14,12 +13,7 @@ public class DsalgoHooks extends DriverFactory {
 		
 	@Before
 	    public void setUp(Scenario scenario) {
-	        // Read the browser and URL from the config file
-			//String browser =System.getProperty("browser", "firefox");
-			//DriverFactory.SetBrowser(browser);
-		 	LoggerLoad.info("Loading the driver in  "+configReader.getBrowser());
-			System.out.println("Scenario name-Before Scenario: ");
-			System.out.println(scenario.getName());
+	       	LoggerLoad.info("Loading the driver in  "+configReader.getBrowser());
 			LoggerLoad.info("-------------------------------------------------------");
 			LoggerLoad.info("Scenario Name: "+scenario.getName());
 			LoggerLoad.info("-------------------------------------------------------");
@@ -32,15 +26,18 @@ public class DsalgoHooks extends DriverFactory {
 			driver.manage().deleteAllCookies();
 			driver.manage().timeouts().implicitlyWait( Duration.ofSeconds(configReader.getImplicitlyWait()));
 			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
-			//System.out.println("Active thread count before scenario: " + Thread.activeCount());
+		}
+
+	    @After
+	    public void tearDown(Scenario scenario) {
+	    	  WebDriver driver = DriverFactory.getDriver();
+	    	if (scenario.isFailed()) {
+
+	    		 String screenshotName = scenario.getName().replace(" ", "_");
+	    		 ScreenshotUtil.captureScreenshot(driver, screenshotName);
+	    		}
+	    	LoggerLoad.info("-------------------------------------------------------");
+	    	DriverFactory.quitDriver();
 	    }
-	@After
-	public void afterScenario(Scenario scenario) {
-	    WebDriver driver = DriverFactory.getDriver();
-	    if (scenario.isFailed()) {
-	        ScreenshotUtil.captureScreenshot(driver, scenario.getName());
-	    }
-	   DriverFactory.quitDriver();
-	}
-    }
+}
 

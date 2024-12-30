@@ -1,17 +1,11 @@
 
 package Pages;
-import java.time.Duration;
-
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
 import DriverManager.DriverFactory;
 
 public class TryEditorPage extends DriverFactory{
@@ -29,12 +23,10 @@ public class TryEditorPage extends DriverFactory{
 			WebElement textEditor=driver.findElement(textArea);
 			actions.moveToElement(textEditor).click().sendKeys(code).build().perform();              
 		}
-		   //driver.findElement(textArea).sendKeys(code);
-			driver.findElement(runBtn).click();
+		   driver.findElement(runBtn).click();
 		}
 	public String validateOutput() {
 			if(!isAlertPresent()) {
-			//System.out.println(driver.findElement(outputText).getText());
 			return driver.findElement(outputText).getText();
 		}
 			else
