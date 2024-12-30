@@ -14,7 +14,7 @@ package Utilities;
 	        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 	        try {
 	            // Save the screenshot with the scenario name
-	            FileUtils.copyFile(screenshot, new File("target/screenshots/" + scenarioName + ".png"));
+	            FileUtils.copyFile(screenshot, new File("target/screenshot/" + scenarioName + ".png"));
 	        } catch (IOException e) {
 	            e.printStackTrace();
 	        }

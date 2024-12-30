@@ -3,18 +3,53 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
+
+import DataProvider.BrowserConfig;
 import DataProvider.ConfigFileReader;
+
+import io.cucumber.java.BeforeAll;
+
+
+
 
 public class DriverFactory {
 	public static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 	public static ConfigFileReader configReader;
+	
+	/* @BeforeAll
+	
+		public static void before() throws Throwable {
+
+			//Get browser Type from config file
+
+		
+
+			ConfigReader.loadConfig();
+
+			//String browser = ConfigReader.getBrowserType();
+
+
+		
+
+		}*/
+	
 	public DriverFactory()
 	{
 		configReader=new ConfigFileReader();
+		
+
 	}
+	
+	public static void SetBrowser(String browser) {
+		BrowserConfig.setBrowserType(browser);
+	}
+
 	public static WebDriver getDriver() {
 		 if(driver.get()==null) {
-			 createDriver(configReader.getBrowser());
+			 createDriver(BrowserConfig.getBrowserType());
 			 }
 		 	
 		        return driver.get();

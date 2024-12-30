@@ -15,13 +15,15 @@ public class DsalgoHooks extends DriverFactory {
 	@Before
 	    public void setUp(Scenario scenario) {
 	        // Read the browser and URL from the config file
+			//String browser =System.getProperty("browser", "firefox");
+			//DriverFactory.SetBrowser(browser);
 		 	LoggerLoad.info("Loading the driver in  "+configReader.getBrowser());
 			System.out.println("Scenario name-Before Scenario: ");
 			System.out.println(scenario.getName());
 			LoggerLoad.info("-------------------------------------------------------");
 			LoggerLoad.info("Scenario Name: "+scenario.getName());
 			LoggerLoad.info("-------------------------------------------------------");
-	        
+			
 	        // Set the URL for navigation
 	        String url = configReader.getApplicationUrl();
 	        WebDriver driver = DriverFactory.getDriver();
@@ -42,6 +44,3 @@ public class DsalgoHooks extends DriverFactory {
 	}
     }
 
-
-	
-		
