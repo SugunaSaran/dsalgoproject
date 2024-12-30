@@ -1,12 +1,10 @@
 package hooks;
-
 import DriverManager.DriverFactory;
 import Utilities.LoggerLoad;
 import Utilities.ScreenshotUtil;
 import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
-
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -15,12 +13,11 @@ public class DsalgoHooks extends DriverFactory {
 		
 	@Before
 	    public void setUp(Scenario scenario) {
-	        // Read the browser and URL from the config file
-		 	LoggerLoad.info("Loading the driver in  "+configReader.getBrowser());
+	       	LoggerLoad.info("Loading the driver in  "+configReader.getBrowser());
 			LoggerLoad.info("-------------------------------------------------------");
 			LoggerLoad.info("Scenario Name: "+scenario.getName());
 			LoggerLoad.info("-------------------------------------------------------");
-	        
+			
 	        // Set the URL for navigation
 	        String url = configReader.getApplicationUrl();
 	        WebDriver driver = DriverFactory.getDriver();
@@ -33,15 +30,14 @@ public class DsalgoHooks extends DriverFactory {
 
 	    @After
 	    public void tearDown(Scenario scenario) {
+	    	  WebDriver driver = DriverFactory.getDriver();
 	    	if (scenario.isFailed()) {
 
 	    		 String screenshotName = scenario.getName().replace(" ", "_");
-	             ScreenshotUtil.captureScreenshot(screenshotName);
+	    		 ScreenshotUtil.captureScreenshot(driver, screenshotName);
 	    		}
 	    	LoggerLoad.info("-------------------------------------------------------");
 	    	DriverFactory.quitDriver();
 	    }
 }
 
-	
-		
