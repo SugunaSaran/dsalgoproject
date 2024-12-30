@@ -3,11 +3,11 @@ Feature: Stack
  
 Background: The user sign in to dsAlgo Portal 
 Given  The user is in the home page after sign-in
- 
+ 	@Test1
   Scenario: Verify that user is able to navigate to stack data structure page
     When The user selects stack item by clicking the Getting Started Link
     Then The user should be directed to stack Data Structure Page
-   
+  @Test1 
   Scenario Outline: Verify that user is able to navigate to the sub links of stack page
     Given The user is in the Stack page after Sign in
     When The user clicks the following "<sheetName>" and <rowNumber> in stack page
@@ -51,6 +51,7 @@ Given  The user is in the home page after sign-in
 	  |Sheet2|2|
 	  |Sheet2|3|
 	  |Sheet2|4|
+	  |Sheet2|5|
 	  
 	  Scenario Outline: Verifying the ok button of error alert message in tryEditor Page of "<sheetName>" and <rowNumber> of Stack page
     Given The user is in the tryEditor page "<sheetName>" and <rowNumber> and writes an invalidcodes in Editor and click the Run button of corresponding Stack Page

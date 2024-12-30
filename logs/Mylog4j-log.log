@@ -1,0 +1,48 @@
+[INFO ]2024-12-2919:46:19.459[TestNG-PoolService-1]Utilities.LoggerLoad1)-Loading the driver in  chrome
+[INFO ]2024-12-2919:46:19.459[TestNG-PoolService-2]Utilities.LoggerLoad1)-Loading the driver in  chrome
+[INFO ]2024-12-2919:46:19.459[TestNG-PoolService-3]Utilities.LoggerLoad1)-Loading the driver in  chrome
+[INFO ]2024-12-2919:46:19.459[TestNG-PoolService-0]Utilities.LoggerLoad1)-Loading the driver in  chrome
+[INFO ]2024-12-2919:46:19.459[TestNG-PoolService-4]Utilities.LoggerLoad1)-Loading the driver in  chrome
+[INFO ]2024-12-2919:46:19.463[TestNG-PoolService-2]Utilities.LoggerLoad1)--------------------------------------------------------
+[INFO ]2024-12-2919:46:19.463[TestNG-PoolService-0]Utilities.LoggerLoad1)--------------------------------------------------------
+[INFO ]2024-12-2919:46:19.463[TestNG-PoolService-4]Utilities.LoggerLoad1)--------------------------------------------------------
+[INFO ]2024-12-2919:46:19.464[TestNG-PoolService-2]Utilities.LoggerLoad1)-Scenario Name: Verify that user is able to navigate to the sub links of stack page
+[INFO ]2024-12-2919:46:19.464[TestNG-PoolService-2]Utilities.LoggerLoad1)--------------------------------------------------------
+[INFO ]2024-12-2919:46:19.464[TestNG-PoolService-0]Utilities.LoggerLoad1)-Scenario Name: Verify that user is able to navigate to stack data structure page
+[INFO ]2024-12-2919:46:19.464[TestNG-PoolService-4]Utilities.LoggerLoad1)-Scenario Name: Verify that user is able to navigate to the sub links of stack page
+[INFO ]2024-12-2919:46:19.465[TestNG-PoolService-4]Utilities.LoggerLoad1)--------------------------------------------------------
+[INFO ]2024-12-2919:46:19.463[TestNG-PoolService-3]Utilities.LoggerLoad1)--------------------------------------------------------
+[INFO ]2024-12-2919:46:19.465[TestNG-PoolService-3]Utilities.LoggerLoad1)-Scenario Name: Verify that user is able to navigate to the sub links of stack page
+[INFO ]2024-12-2919:46:19.466[TestNG-PoolService-3]Utilities.LoggerLoad1)--------------------------------------------------------
+[INFO ]2024-12-2919:46:19.463[TestNG-PoolService-1]Utilities.LoggerLoad1)--------------------------------------------------------
+[INFO ]2024-12-2919:46:19.465[TestNG-PoolService-0]Utilities.LoggerLoad1)--------------------------------------------------------
+[INFO ]2024-12-2919:46:19.466[TestNG-PoolService-1]Utilities.LoggerLoad1)-Scenario Name: Verify that user is able to navigate to the sub links of stack page
+[INFO ]2024-12-2919:46:19.466[TestNG-PoolService-1]Utilities.LoggerLoad1)--------------------------------------------------------
+[INFO ]2024-12-2919:46:31.828[TestNG-PoolService-2]Utilities.LoggerLoad1)-Clicking the implementation link of stack page
+[INFO ]2024-12-2919:46:31.831[TestNG-PoolService-1]Utilities.LoggerLoad1)-Clicking the operations-in-stack link of stack page
+[INFO ]2024-12-2919:46:31.928[TestNG-PoolService-3]Utilities.LoggerLoad1)-Clicking the applications link of stack page
+[INFO ]2024-12-2919:46:32.317[TestNG-PoolService-4]Utilities.LoggerLoad1)-Clicking the practice questions link of stack page
+[INFO ]2024-12-2919:52:52.728[TestNG-PoolService-3]Utilities.LoggerLoad1)-Loading the driver in  chrome
+[INFO ]2024-12-2919:52:52.728[TestNG-PoolService-5]Utilities.LoggerLoad1)-Loading the driver in  chrome
+[INFO ]2024-12-2919:52:52.728[TestNG-PoolService-4]Utilities.LoggerLoad1)-Loading the driver in  chrome
+[INFO ]2024-12-2919:52:52.728[TestNG-PoolService-1]Utilities.LoggerLoad1)-Loading the driver in  chrome
+[INFO ]2024-12-2919:52:52.733[TestNG-PoolService-4]Utilities.LoggerLoad1)--------------------------------------------------------
+[INFO ]2024-12-2919:52:52.733[TestNG-PoolService-3]Utilities.LoggerLoad1)--------------------------------------------------------
+[INFO ]2024-12-2919:52:52.733[TestNG-PoolService-4]Utilities.LoggerLoad1)-Scenario Name: Verify that user is able to navigate to the sub links of stack page
+[INFO ]2024-12-2919:52:52.733[TestNG-PoolService-1]Utilities.LoggerLoad1)--------------------------------------------------------
+[INFO ]2024-12-2919:52:52.733[TestNG-PoolService-3]Utilities.LoggerLoad1)-Scenario Name: Verify that user is able to navigate to the sub links of stack page
+[INFO ]2024-12-2919:52:52.733[TestNG-PoolService-5]Utilities.LoggerLoad1)--------------------------------------------------------
+[INFO ]2024-12-2919:52:52.733[TestNG-PoolService-4]Utilities.LoggerLoad1)--------------------------------------------------------
+[INFO ]2024-12-2919:52:52.728[TestNG-PoolService-2]Utilities.LoggerLoad1)-Loading the driver in  chrome
+[INFO ]2024-12-2919:52:52.733[TestNG-PoolService-3]Utilities.LoggerLoad1)--------------------------------------------------------
+[INFO ]2024-12-2919:52:52.733[TestNG-PoolService-1]Utilities.LoggerLoad1)-Scenario Name: Verify that user is able to navigate to stack data structure page
+[INFO ]2024-12-2919:52:52.734[TestNG-PoolService-2]Utilities.LoggerLoad1)--------------------------------------------------------
+[INFO ]2024-12-2919:52:52.733[TestNG-PoolService-5]Utilities.LoggerLoad1)-Scenario Name: Verify that user is able to navigate to the sub links of stack page
+[INFO ]2024-12-2919:52:52.734[TestNG-PoolService-2]Utilities.LoggerLoad1)-Scenario Name: Verify that user is able to navigate to the sub links of stack page
+[INFO ]2024-12-2919:52:52.734[TestNG-PoolService-5]Utilities.LoggerLoad1)--------------------------------------------------------
+[INFO ]2024-12-2919:52:52.734[TestNG-PoolService-2]Utilities.LoggerLoad1)--------------------------------------------------------
+[INFO ]2024-12-2919:52:52.734[TestNG-PoolService-1]Utilities.LoggerLoad1)--------------------------------------------------------
+[INFO ]2024-12-2919:53:06.146[TestNG-PoolService-3]Utilities.LoggerLoad1)-Clicking the implementation link of stack page
+[INFO ]2024-12-2919:53:06.269[TestNG-PoolService-2]Utilities.LoggerLoad1)-Clicking the operations-in-stack link of stack page
+[INFO ]2024-12-2919:53:06.387[TestNG-PoolService-4]Utilities.LoggerLoad1)-Clicking the applications link of stack page
+[INFO ]2024-12-2919:53:06.769[TestNG-PoolService-5]Utilities.LoggerLoad1)-Clicking the practice questions link of stack page

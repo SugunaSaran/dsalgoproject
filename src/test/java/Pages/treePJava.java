@@ -103,7 +103,7 @@ public class treePJava extends DriverFactory{
 	public void clickPracticeLink() {
 		driver.findElement(ImplementationOfBST).click();
 		driver.findElement(practice).click();
-
+		LoggerLoad.info("Clicking the practice questions link of tree page");
 
 	}
 	public String validateTreePageTitles() {

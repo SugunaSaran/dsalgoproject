@@ -3,16 +3,10 @@ package hooks;
 import DriverManager.DriverFactory;
 import Utilities.LoggerLoad;
 import Utilities.ScreenshotUtil;
-
 import java.time.Duration;
 
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.reporter.*;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -23,8 +17,6 @@ public class DsalgoHooks extends DriverFactory {
 	    public void setUp(Scenario scenario) {
 	        // Read the browser and URL from the config file
 		 	LoggerLoad.info("Loading the driver in  "+configReader.getBrowser());
-			System.out.println("Scenario name-Before Scenario: ");
-			System.out.println(scenario.getName());
 			LoggerLoad.info("-------------------------------------------------------");
 			LoggerLoad.info("Scenario Name: "+scenario.getName());
 			LoggerLoad.info("-------------------------------------------------------");
@@ -37,8 +29,7 @@ public class DsalgoHooks extends DriverFactory {
 			driver.manage().deleteAllCookies();
 			driver.manage().timeouts().implicitlyWait( Duration.ofSeconds(configReader.getImplicitlyWait()));
 			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
-			//System.out.println("Active thread count before scenario: " + Thread.activeCount());
-	    }
+		}
 
 	    @After
 	    public void tearDown(Scenario scenario) {
@@ -47,8 +38,8 @@ public class DsalgoHooks extends DriverFactory {
 	    		 String screenshotName = scenario.getName().replace(" ", "_");
 	             ScreenshotUtil.captureScreenshot(screenshotName);
 	    		}
-	    	//System.out.println("Active thread count after scenario: " + Thread.activeCount());
-	        DriverFactory.quitDriver();
+	    	LoggerLoad.info("-------------------------------------------------------");
+	    	DriverFactory.quitDriver();
 	    }
 }
 

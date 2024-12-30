@@ -41,6 +41,7 @@ public class Graph extends DriverFactory {
 	public void clickPracticeLink() {
 		driver.findElement(GraphLink).click();
 		driver.findElement(practice).click();
+		LoggerLoad.info("Clicking the practice questions link of graph page");
 	}
 	public String validateGraphPageTitles() {
 		List<WebElement> list=driver.findElements(By.xpath("//a[@href='/tryEditor']"));
