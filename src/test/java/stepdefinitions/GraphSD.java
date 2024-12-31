@@ -1,5 +1,6 @@
 
 
+
 package stepdefinitions;
 
 
@@ -52,7 +53,7 @@ public class GraphSD {
 		ExcelReader reader=new ExcelReader();
 	    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet1");
 	    String expectedPage=data.get(int1).get("Expected Result");
-	    Assert.assertEquals(gp.validateGraphPageTitles(), expectedPage);
+	    Assert.assertEquals(hp.validatePageTitle(), expectedPage);
 	}
 
 	@Given("The user is in the {string} and {int} page in graph page")
@@ -108,7 +109,7 @@ public class GraphSD {
 	public void the_user_clicks_the_run_button_the_following_and_in_the_editor_of_corresponding_sub_page_of_graph(String string, Integer int1) throws InvalidFormatException, IOException {
 		ExcelReader reader=new ExcelReader();
 	    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet2");
-	    String invalidCode=data.get(int1).get("InvalidCode");
+	    String invalidCode=data.get(int1).get("Invalid Code");
 	    tp.checkCode(invalidCode);
 	}
 
@@ -123,7 +124,7 @@ public class GraphSD {
 	    ExcelReader reader=new ExcelReader();
 	    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet2");
 	    String pageName=data.get(int1).get("Links");
-	    String invalidCode=data.get(int1).get("InvalidCode");
+	    String invalidCode=data.get(int1).get("Invalid Code");
 	    gp.checkGraphPageLink(pageName);
 	    gp.checkTryEditorLink();
 	    tp.checkCode(invalidCode);
