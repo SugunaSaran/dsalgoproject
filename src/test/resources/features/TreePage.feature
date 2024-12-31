@@ -47,7 +47,7 @@ Given  The user is in the home page after sign-in
 	  |Sheet1|10|
 	  |Sheet1|11|
 	  |Sheet1|12|
-	  
+	  @Test3
 	  Scenario Outline: Verify that user does not receives any error when click on Run button without entering code for different page of tree data structure
     Given The user is in the tryEditor page of corresponding "<sheetName>" and <rowNumber> page in tree data structure
     When The user clicks the Run button without entering the code in the Editor in tree page
@@ -67,7 +67,7 @@ Given  The user is in the home page after sign-in
 	  |Sheet1|10|
 	  |Sheet1|11|
 	  |Sheet1|12|
-	  
+	  @Test3
 	  Scenario Outline: Verify that user receives error for invalid python code in tryEditor page of tree subpages
     Given The user is in the tryEditor page of "<sheetName>" and <rowNumber> of Tree Page
     When The user clicks the Run button the following "<sheetName>" and <rowNumber> invalidcodes in the Editor of corresponding sub page of tree
