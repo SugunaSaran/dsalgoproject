@@ -8,12 +8,13 @@ import DataProvider.BrowserConfig;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
-
 @CucumberOptions(
+		//plugin = {"json:target/allure-results/cucumber.json"},
 	    features = "src/test/resources/features",
 	     glue = {"stepdefinitions","hooks"},
-	     tags="@Test1",
-	     plugin={"pretty","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
+	     tags="@stackpage or @queuepage",
+	     //plugin={"pretty","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
+	     //plugin = {"json:target/allure-results/cucumber.json"},
 	     publish=true
          )
 	
