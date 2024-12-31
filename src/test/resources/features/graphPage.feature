@@ -7,7 +7,7 @@ Given  The user is in the home page after sign-in
   Scenario: Verify that user is able to navigate to graph data structure page
     When The user selects graph item by clicking the Getting Started Link
     Then The user should be directed to graph Data Structure Page
- 
+   
   Scenario Outline: Verify that user is able to navigate to the sub links of graph page
     Given The user is in the graph page after Sign in
     When The user clicks the following "<sheetName>" and <rowNumber> in graph page

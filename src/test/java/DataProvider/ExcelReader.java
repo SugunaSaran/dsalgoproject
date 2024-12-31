@@ -1,6 +1,7 @@
 package DataProvider;
 
 import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.ss.util.CellUtil;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import java.io.File;
 import java.io.IOException;
@@ -41,6 +42,7 @@ private List<Map<String, String>> readSheet(Sheet sheet) {
 			for (int currentColumn = 0; currentColumn < totalColumn; currentColumn++) {
 
 				cell = row.getCell(currentColumn);
+				//cell=CellUtil.getCell(row,currentColumn);
 
 				String columnHeaderName = sheet.getRow(sheet.getFirstRowNum()).getCell(currentColumn).getStringCellValue();
 
