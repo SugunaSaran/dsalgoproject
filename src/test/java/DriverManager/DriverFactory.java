@@ -19,23 +19,6 @@ public class DriverFactory {
 	public static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 	public static ConfigFileReader configReader;
 	
-	/* @BeforeAll
-	
-		public static void before() throws Throwable {
-
-			//Get browser Type from config file
-
-		
-
-			ConfigReader.loadConfig();
-
-			//String browser = ConfigReader.getBrowserType();
-
-
-		
-
-		}*/
-	
 	public DriverFactory()
 	{
 		configReader=new ConfigFileReader();

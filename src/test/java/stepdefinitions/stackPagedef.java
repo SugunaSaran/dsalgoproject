@@ -56,7 +56,7 @@ public class stackPagedef {
 		ExcelReader reader=new ExcelReader();
 	    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet1");
 	    String expectedPage=data.get(int1).get("Expected Result");
-	    Assert.assertEquals(hp.validatePageTitle(), expectedPage);
+	    Assert.assertEquals(sp.validateStackPageTitles(),expectedPage);
 	}
 
 	@Given("The user is in the {string} and {int} page in stack page")
