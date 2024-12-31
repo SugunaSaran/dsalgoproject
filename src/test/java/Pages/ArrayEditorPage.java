@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 
 import DriverManager.DriverFactory;
+import Utilities.LoggerLoad;
 
 public class ArrayEditorPage extends DriverFactory{
 	WebDriver driver;
@@ -36,6 +37,7 @@ public class ArrayEditorPage extends DriverFactory{
 }
 	    public void click_run() {
 	    	driver.findElement(btn_run).click();
+	    	
 			
 		}
 	    public void click_submit() {

@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 import DriverManager.DriverFactory;
+import Utilities.LoggerLoad;
 
 public class TryEditorArrayPage extends DriverFactory {
 	WebDriver driver;
@@ -39,6 +40,8 @@ public class TryEditorArrayPage extends DriverFactory {
 			Actions act=new Actions(driver);
 			act.moveToElement(driver.findElement(tryeditor)).perform();
 			driver.findElement(tryeditor).click();
+			LoggerLoad.info("Clicking the try editor link of array page");
+
 		}
 		
 		public boolean isAlertPresent(){
