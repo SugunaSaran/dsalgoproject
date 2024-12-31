@@ -12,7 +12,7 @@ import io.cucumber.testng.CucumberOptions;
 		//plugin = {"json:target/allure-results/cucumber.json"},
 	    features = "src/test/resources/features",
 	     glue = {"stepdefinitions","hooks"},
-	     tags="@stackpage or @queuepage",
+	     //tags="@stackpage or @queuepage",
 	     //plugin={"pretty","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
 	     //plugin = {"json:target/allure-results/cucumber.json"},
 	     publish=true
