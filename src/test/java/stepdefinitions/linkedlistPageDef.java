@@ -298,6 +298,17 @@ public void the_user_should_able_to_see_output_in_the_console_list(Integer int1)
 		tap.click_tryEditor();
 	}
 
+@When("The user clicks Practice Questions link-list")
+public void the_user_clicks_practice_questions_link_list() {
+	lp.navigate_prcticePage();
+    }
+@Then("The user should be redirected to a page having an try Editor with a Run button to test in linked list page")
+public void the_user_should_be_redirected_to_a_page_having_an_try_editor_with_a_run_button_to_test_in_linked_list_page() {
+	Assert.assertEquals(ap.validatePageTitle(), "Assessment");    
+}
+
+
+
 
 
 

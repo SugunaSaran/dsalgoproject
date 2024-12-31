@@ -21,7 +21,8 @@ public class linkedListPage extends DriverFactory {
 	By lnk_Traversal=By.xpath("//a[text()=\"Traversal\"]");
 	By lnk_Insertion=By.xpath("//a[text()=\"Insertion\"]");
 	By lnk_Deletion=By.xpath("//a[text()=\"Deletion\"]");
-	
+	By lnk_practice=By.xpath("//a[text()=\"Practice Questions\"]");
+
 	//Action Methods
 	public void click_dropdown()
 	{
@@ -58,6 +59,10 @@ public class linkedListPage extends DriverFactory {
 	}
    public void navigate_DeletionPage() {
 	   driver.findElement(lnk_Deletion).click();
+		
+	}
+   public void navigate_prcticePage() {
+	   driver.findElement(lnk_practice).click();
 		
 	}
 
