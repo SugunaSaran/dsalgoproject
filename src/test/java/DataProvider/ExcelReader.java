@@ -1,10 +1,10 @@
 package DataProvider;
 
 import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.ss.util.CellUtil;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import java.io.File;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -42,9 +42,9 @@ private List<Map<String, String>> readSheet(Sheet sheet) {
 			for (int currentColumn = 0; currentColumn < totalColumn; currentColumn++) {
 
 				cell = row.getCell(currentColumn);
+				//cell=CellUtil.getCell(row,currentColumn);
 
-				String columnHeaderName = sheet.getRow(sheet.getFirstRowNum()).getCell(currentColumn)
-						.getStringCellValue();
+				String columnHeaderName = sheet.getRow(sheet.getFirstRowNum()).getCell(currentColumn).getStringCellValue();
 
 				columnMapdata.put(columnHeaderName, cell.getStringCellValue());
 			}

@@ -48,7 +48,7 @@ public class TreePage {
 		ExcelReader reader=new ExcelReader();
 	    List<Map<String, String>> data = reader.getData(excelPath, "Sheet1");
 	    String expectedPage=data.get(int1).get("Expected Result");
-	    Assert.assertEquals(hp.validatePageTitle(), expectedPage);
+	    Assert.assertEquals(tjp.validateTreePageTitles(), expectedPage);
 	}
 
 	@Given("The user is in the {string} and {int} page in tree page")

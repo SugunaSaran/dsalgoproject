@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="DsAlgoProject">
-<!--	<test thread-count="4" name="Testfirefox"  parallel="tests">
-
-		<parameter name="browser" value="firefox" />
-
-		<classes>
-
-			<class name="testrunners.TestRunner"></class>
-
-		</classes>
+<!--<test thread-count="4" name="Testfirefox"  parallel="tests">
+<parameter name="browser" value="firefox" />
+<classes>
+<class name="testrunners.TestRunner"></class>
+</classes>
+>>>>>>> 785e779001669383506a6ce7000e005b37a27384
 
 	</test> < Test -->
 <test thread-count="4" name="TestChrome"  parallel="tests">
@@ -34,4 +31,5 @@
 		</classes>
 
 	</test> < Test -->
+
 </suite> <!-- DsAlgoProject -->

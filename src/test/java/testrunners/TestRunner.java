@@ -4,27 +4,28 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
-
 import DataProvider.BrowserConfig;
-import DataProvider.ConfigFileReader;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
-@CucumberOptions(
-		features = "src/test/resources/features", 
-		glue = { "stepdefinitions",
-		"hooks" }, 
-		tags="@Test3",
-plugin = { "pretty","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" }, publish = true)
 
+@CucumberOptions(features = "src/test/resources/features", glue = { "stepdefinitions",
+		"hooks" }, tags = "@list", plugin = { "pretty",
+				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" }, publish = true)
+
+
+
+
+
+         
+	
 public class TestRunner extends AbstractTestNGCucumberTests {
 
 	@BeforeTest
 
-	@Parameters({ "browser" })
+	@Parameters({"browser"})
 
-	public void defineBrowser(String browser) throws Throwable {
+	public void defineBrowser(@Optional("chrome")String browser) throws Throwable {
 
 		BrowserConfig.setBrowserType(browser);
 		System.out.println(browser);
@@ -32,7 +33,7 @@ public class TestRunner extends AbstractTestNGCucumberTests {
 	}
 
 	@Override
-	@DataProvider(parallel = true)
+	@DataProvider(parallel = false)
 	public Object[][] scenarios() {
 		return super.scenarios();
 
