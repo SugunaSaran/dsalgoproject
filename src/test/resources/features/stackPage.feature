@@ -19,7 +19,7 @@ Given  The user is in the home page after sign-in
 	  |Sheet1|2|
 	  |Sheet1|3|
 	  
-	  
+	  @Test1
 	  Scenario Outline: Verify that user is able to navigate to the tryEditor of sub links of stack page
     Given The user is in the "<sheetName>" and <rowNumber> page in stack page
     When The user clicks the tryEditor button in subpages of stack
