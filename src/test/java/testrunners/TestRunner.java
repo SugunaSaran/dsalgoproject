@@ -10,7 +10,7 @@ import io.cucumber.testng.CucumberOptions;
 
 
 @CucumberOptions(features = "src/test/resources/features", glue = { "stepdefinitions",
-		"hooks" }, tags = "@list", plugin = { "pretty",
+		"hooks" }, tags = "@treepage", plugin = { "pretty",
 				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" }, publish = true)
 
 
