@@ -145,6 +145,14 @@ public class dataStructuresPageDef {
 	@Then("The user should be redirected to Practice Questions page-data")
 	public void the_user_should_be_redirected_to_practice_questions_page_data() {
 		Assert.assertEquals("Practice Questions", ap.validatePageTitle());
+	}
+
+@Then("The user should be redirected to a page having an try Editor with a Run button to test in Array page")
+public void the_user_should_be_redirected_to_a_page_having_an_try_editor_with_a_run_button_to_test_in_array_page() {
+	Assert.assertEquals(ap.validatePageTitle(), "Assessment");
+    
+}
+
 	    	}
 
 
@@ -157,4 +165,4 @@ public class dataStructuresPageDef {
 
 
 
-}
+

@@ -1,4 +1,4 @@
-@list
+
 Feature: Linked List
 
   Background: 
@@ -24,7 +24,6 @@ Feature: Linked List
     When The user clicks the Run button without entering the code in the Editor for list
     Then The user should not get any error message in alert window in list
 
-  
   Scenario Outline: Verify that user receives error for invalid python code for Introduction page
     Given The user is in the tryEditor page for list
     When The user enters the invalid_code <rownumber> from sheetname "<Sheet1>" in Editor and click the Run button-list
@@ -101,6 +100,7 @@ Feature: Linked List
     Given The user is on the Types of Linked List page
     When The user clicks Try Here button in Types of Linked List page
     Then The user should be redirected to a page having an try Editor with a Run button to test for list
+
   Scenario: Verify that user does not receive error when click on Run button without entering code for Types of Linked List page
     Given The user is in the tryEditor page for Types of linked list page
     When The user clicks the Run button without entering the code in the Editor for list
@@ -295,3 +295,9 @@ Feature: Linked List
       | Sheet2    |  |         2 |
       | Sheet2    |  |         3 |
       | Sheet2    |  |         4 |
+@list
+      Scenario: Verify that user is able to navigate to Practice Questions page
+    Given The user is on the Introduction page
+    When The user clicks Practice Questions link-list
+    Then The user should be redirected to a page having an try Editor with a Run button to test in linked list page
+      

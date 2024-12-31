@@ -52,4 +52,4 @@ Feature: Data Structures-Introduction
   Scenario: Verify that user is able to navigate to Practice Questions page
     Given The user is in the Time Complexity page
     When The user clicks Practice Questions link-data
-    Then The user should be redirected to Practice Questions page-data
+    Then The user should be redirected to a page having an try Editor with a Run button to test in Array page
