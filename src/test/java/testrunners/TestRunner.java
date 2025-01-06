@@ -9,12 +9,17 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 
-@CucumberOptions(features = "src/test/resources/features", glue = { "stepdefinitions",
-		"hooks" }, tags="@Test3",plugin = { "pretty",
-				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" }, publish = true)
-      
-	
+@CucumberOptions(features = "src/test/resources/features", 
+glue = { "stepdefinitions","hooks" }, 
+plugin = { "pretty","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" }, 
+publish = true)
+
+
 public class TestRunner extends AbstractTestNGCucumberTests {
+
+
+
+
 
 	@BeforeTest
 
@@ -26,6 +31,8 @@ public class TestRunner extends AbstractTestNGCucumberTests {
 		System.out.println(browser);
 
 	}
+
+
 
 	@Override
 	@DataProvider(parallel = true)

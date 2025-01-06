@@ -1,4 +1,4 @@
-@graphpage
+
 Feature: Graph
  
 Background: The user sign in to dsAlgo Portal 
@@ -46,9 +46,7 @@ Given  The user is in the home page after sign-in
     |sheetName|rowNumber|
 	  |GraphPage|0|
 	  |GraphPage|1|
-	  
-	  
-	 
+
 	  Scenario Outline: Verifying the ok button of error alert message in tryEditor Page of "<sheetName>" and <rowNumber> of graph page
     Given The user is in the tryEditor page "<sheetName>" and <rowNumber> and writes an invalidcodes in Editor and click the Run button of corresponding graph Page
     When The user clicks the ok button of error alert window of that graph Page

@@ -2,15 +2,17 @@ package stepdefinitions;
 
 import org.testng.Assert;
 
-import DataProvider.ConfigFileReader;
+
 import DriverManager.DriverFactory;
 import io.cucumber.java.en.*;
 import Pages.*;
 
 public class loginSD extends DriverFactory {
 
+
 	loginPage loginObj = new loginPage(DriverFactory.getDriver());
 	
+
 	@Given("The user is on the DSAlgo Signin Page")
 	public void the_user_is_on_the_ds_algo_signin_page() {
 		//driver.findElement(By.xpath("//button[@class='btn']")).click();
@@ -89,4 +91,6 @@ public class loginSD extends DriverFactory {
 
 
 
+
 }
+
