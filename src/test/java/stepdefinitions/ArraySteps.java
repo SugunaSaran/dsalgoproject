@@ -68,7 +68,7 @@ import Pages.ArrayEditorPage;
 
 	    @Then("The user should be redirected to a page having an try Editor with a Run button to test-Array")
 	    public void the_user_should_be_redirected_to_a_page_having_an_try_editor_with_a_run_button_to_test() {
-	    	System.out.println("The user is in try editor page");
+	    	Assert.assertEquals(ap.validatePageTitle(), "Assessment");    
 	        }
 	    @Given("The user is in the tryEditor page-Array")
 	    public void the_user_is_in_the_try_editor_page() {
@@ -82,7 +82,8 @@ import Pages.ArrayEditorPage;
 	        }
 	    @Then("The user should not get any error message in alert window-Array")
 	    public void the_user_should_not_get_any_error_message_in_alert_window() {
-	    	System.out.println("No alert window");
+	    	Assert.assertEquals(tp.isAlertPresent(), false);
+
 	    	
 	        }
 
