@@ -10,17 +10,17 @@ import io.cucumber.testng.CucumberOptions;
 
 
 @CucumberOptions(features = "src/test/resources/features", glue = { "stepdefinitions",
-		"hooks" }, plugin = { "pretty",
+
+		"hooks" }, tags = "@graph",  plugin = { "pretty",
+
 				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" }, publish = true)
 
-
-
-
-
-         
-	
 public class TestRunner extends AbstractTestNGCucumberTests {
 
+
+	
+
+	
 	@BeforeTest
 
 	@Parameters({"browser"})
@@ -31,6 +31,8 @@ public class TestRunner extends AbstractTestNGCucumberTests {
 		System.out.println(browser);
 
 	}
+
+
 
 	@Override
 	@DataProvider(parallel = true)
