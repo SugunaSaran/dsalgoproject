@@ -41,14 +41,14 @@ public class queuePagedef {
 	@When("The user clicks the following {string} and {int} in queue page")
 	public void the_user_clicks_the_following_and_in_queue_page(String string,Integer int1) throws IOException, InvalidFormatException {
 	    ExcelReader reader=new ExcelReader();
-	    List<Map<String, String>> data = reader.getData(excelPath, "Sheet1");
+	    List<Map<String, String>> data = reader.getData(excelPath, "QueuePage");
 	    String pageName=data.get(int1).get("links");
 	    qp.checkQueuePageLink(pageName);
 	}
 	@Then("The user should be redirected to {string} and {int} page in queue data structure")
 	public void the_user_should_be_redirected_to_and_page_in_queue_data_structure(String string, Integer int1) throws InvalidFormatException, IOException {
 		ExcelReader reader=new ExcelReader();
-	    List<Map<String, String>> data = reader.getData(excelPath, "Sheet1");
+	    List<Map<String, String>> data = reader.getData(excelPath, "QueuePage");
 	    String expectedPage=data.get(int1).get("Expected Result");
 	    Assert.assertEquals(qp.validateQueuePageTitles(), expectedPage);
 	}
@@ -57,7 +57,7 @@ public class queuePagedef {
 	public void the_user_is_in_the_and_page_in_queue_page(String string, Integer int1) throws InvalidFormatException, IOException {
 	    hp.clickQueueFromDropDown();
 	    ExcelReader reader=new ExcelReader();
-	    List<Map<String, String>> data = reader.getData(excelPath, "Sheet1");
+	    List<Map<String, String>> data = reader.getData(excelPath, "QueuePage");
 	    String pageName=data.get(int1).get("links");
 	    qp.checkQueuePageLink(pageName);
 	}
@@ -76,8 +76,9 @@ public class queuePagedef {
 	public void the_user_is_in_the_try_editor_page_of_corresponding_and_page_in_queue_data_structure(String string, Integer int1) throws InvalidFormatException, IOException {
 	    hp.clickQueueFromDropDown();
 	    ExcelReader reader=new ExcelReader();
-	    List<Map<String, String>> data = reader.getData(excelPath, "Sheet1");
+	    List<Map<String, String>> data = reader.getData(excelPath, "QueuePage");
 	    String pageName=data.get(int1).get("links");
+	    System.out.println("Page name is "+pageName);
 	    qp.checkQueuePageLink(pageName);
 	    qp.checkTryEditorLink();
 	}
@@ -96,8 +97,8 @@ public class queuePagedef {
 	public void the_user_is_in_the_try_editor_page_of_and_of_queue_page(String string, Integer int1) throws InvalidFormatException, IOException {
 		hp.clickQueueFromDropDown();
 	    ExcelReader reader=new ExcelReader();
-	    List<Map<String, String>> data = reader.getData(excelPath, "Sheet2");
-	    String pageName=data.get(int1).get("Links");
+	    List<Map<String, String>> data = reader.getData(excelPath, "QueuePage");
+	    String pageName=data.get(int1).get("links");
 	    qp.checkQueuePageLink(pageName);
 	    qp.checkTryEditorLink();
 	}
@@ -105,7 +106,7 @@ public class queuePagedef {
 	@When("The user clicks the Run button the following {string} and {int} invalidcodes in the Editor of corresponding sub page of queue")
 	public void the_user_clicks_the_run_button_the_following_and_invalidcodes_in_the_editor_of_corresponding_sub_page_of_queue(String string, Integer int1) throws InvalidFormatException, IOException {
 		ExcelReader reader=new ExcelReader();
-	    List<Map<String, String>> data = reader.getData(excelPath, "Sheet2");
+	    List<Map<String, String>> data = reader.getData(excelPath, "QueuePage");
 	    String invalidcode=data.get(int1).get("InvalidCode");
 	    tp.checkCode(invalidcode);
 	}
@@ -119,8 +120,8 @@ public class queuePagedef {
 	public void the_user_is_in_the_try_editor_page_and_and_writes_an_invalidcodes_in_editor_and_click_the_run_button_of_corresponding_page(String string, Integer int1) throws InvalidFormatException, IOException {
 		hp.clickQueueFromDropDown();
 	    ExcelReader reader=new ExcelReader();
-	    List<Map<String, String>> data = reader.getData(excelPath, "Sheet2");
-	    String pageName=data.get(int1).get("Links");
+	    List<Map<String, String>> data = reader.getData(excelPath, "QueuePage");
+	    String pageName=data.get(int1).get("links");
 	    String invalidCode=data.get(int1).get("InvalidCode");
 	    qp.checkQueuePageLink(pageName);
 	    qp.checkTryEditorLink();
@@ -140,15 +141,15 @@ public class queuePagedef {
 	public void the_user_is_in_the_try_editor_page_of_and_of_queue_page_for_valid_code(String string, Integer int1) throws InvalidFormatException, IOException {
 		hp.clickQueueFromDropDown();
 	    ExcelReader reader=new ExcelReader();
-	    List<Map<String, String>> data = reader.getData(excelPath, "Sheet3");
-	    String pageName=data.get(int1).get("Links");
+	    List<Map<String, String>> data = reader.getData(excelPath, "QueuePage");
+	    String pageName=data.get(int1).get("links");
 	    qp.checkQueuePageLink(pageName);
 	    qp.checkTryEditorLink();
 	}
 	@When("The user clicks the Run button the following {string} and {int} in the Editor of corresponding sub page of queue")
 	public void the_user_clicks_the_run_button_the_following_and_in_the_editor_of_corresponding_sub_page_of_queue(String string, Integer int1) throws InvalidFormatException, IOException {
 		ExcelReader reader=new ExcelReader();
-	    List<Map<String, String>> data = reader.getData(excelPath, "Sheet3");
+	    List<Map<String, String>> data = reader.getData(excelPath, "QueuePage");
 	    String validcode=data.get(int1).get("ValidCode");
 	    tp.checkCode(validcode);
 	}
@@ -156,8 +157,8 @@ public class queuePagedef {
 	@Then("The user should able to see an {string} and {int} in corresponding tryEditor page")
 	public void the_user_should_able_to_see_an_and_in_corresponding_try_editor_page(String string, Integer int1) throws InvalidFormatException, IOException {
 		ExcelReader reader=new ExcelReader();
-	    List<Map<String, String>> data = reader.getData(excelPath, "Sheet3");
-	    String expectedResult=data.get(int1).get("Expected Result");
+	    List<Map<String, String>> data = reader.getData(excelPath, "QueuePage");
+	    String expectedResult=data.get(int1).get("Expected Result for Code");
 	    Assert.assertEquals(tp.validateOutput(),expectedResult);
 	}
 

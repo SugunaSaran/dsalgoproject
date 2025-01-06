@@ -9,7 +9,7 @@
 >>>>>>> 785e779001669383506a6ce7000e005b37a27384
 
 	</test> < Test -->
-<test thread-count="4" name="TestChrome"  parallel="tests">
+<test thread-count="5" name="TestChrome"  parallel="tests">
 
 		<parameter name="browser" value="chrome" />
 	

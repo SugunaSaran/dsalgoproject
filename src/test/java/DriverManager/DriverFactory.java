@@ -17,13 +17,9 @@ import io.cucumber.java.BeforeAll;
 
 public class DriverFactory {
 	public static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
-	public static ConfigFileReader configReader;
-	
-	public DriverFactory()
-	{
+	public ConfigFileReader configReader;
+	public DriverFactory() {
 		configReader=new ConfigFileReader();
-		
-
 	}
 	
 	public static void SetBrowser(String browser) {
@@ -64,5 +60,5 @@ public class DriverFactory {
 	        }
 	    }
 	    
-
+	    
 }

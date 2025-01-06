@@ -46,22 +46,12 @@ public class ConfigFileReader {
 		public String getPassword() {
 			return properties.getProperty("password");
 		}
-		public String getStackDataPath() {
-			return properties.getProperty("stackPageExcelPath");
+		public String getExcelDataPath() {
+		
+				return properties.getProperty("ExcelInputFile");
+			
 		}
-		public String getTreeDataPath() {
-			return properties.getProperty("treePageExcelPath");
-		}
-		public String getGraphDataPath() {
-			return properties.getProperty("graphPageExcelPath");
-		}
-		public String getQueueDataPath() {
-			return properties.getProperty("queuePageExcelPath");
-		}
-		public String getDataStructuresPath() {
-			return properties.getProperty("DataStructuresExcelPath");
-		}
-
+		
 		
 		public long getImplicitlyWait() {		
 			String implicitlyWait = properties.getProperty("implicitlyWait");

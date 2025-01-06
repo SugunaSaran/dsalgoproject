@@ -13,13 +13,6 @@ public class HomePage extends DriverFactory{
 	WebDriver driver;
 	public HomePage() {
 		this.driver=DriverFactory.getDriver();
-		/*driver.get(configReader.getApplicationUrl());
-		By getStartedBtn=By.className("btn");
-		By loginBtn=By.xpath("//a[@href='/login']");
-		driver.findElement(getStartedBtn).click();
-		driver.findElement(loginBtn).click();
-		loginPage lp=new loginPage(driver);
-		lp.enterLogin(configReader.getUserName(), configReader.getPassword());*/
 	}
 	By graph=By.xpath("//a[@href='graph']");
 	By stack=By.xpath("//a[@href='stack']");

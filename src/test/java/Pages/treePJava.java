@@ -7,12 +7,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
+import DataProvider.ConfigFileReader;
 import DriverManager.DriverFactory;
 import Utilities.LoggerLoad;
 
 public class treePJava extends DriverFactory{
-	//private static final By OverviewofTrees = null;
-	//private static final By ApplicationsofBinaryTrees = null;
+	String excelPath;
 	WebDriver driver;
 
 	public treePJava() {
@@ -113,6 +113,6 @@ public class treePJava extends DriverFactory{
 		return null;
 	}
 	public String getExcelPath() {
-		return configReader.getTreeDataPath();
+		return configReader.getExcelDataPath();
 	}
 }
