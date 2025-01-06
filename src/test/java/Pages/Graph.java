@@ -6,10 +6,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+
+import DataProvider.ConfigFileReader;
 import DriverManager.DriverFactory;
 import Utilities.LoggerLoad;
 public class Graph extends DriverFactory {
 	WebDriver driver;
+	String excelPath;
 	public Graph() {
 		this.driver=DriverFactory.getDriver();
 		}
@@ -50,7 +53,7 @@ public class Graph extends DriverFactory {
 		return null;
 	}
 	public String getExcelPath() {
-		return configReader.getGraphDataPath();
+		return configReader.getExcelDataPath();
 	}
 	
 	}

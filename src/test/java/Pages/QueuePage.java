@@ -8,11 +8,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
+import DataProvider.ConfigFileReader;
 import DriverManager.DriverFactory;
 import Utilities.LoggerLoad;
 
 public class QueuePage extends DriverFactory{
 	WebDriver driver; 
+	String excelPath;
 	public QueuePage() {
 		this.driver=DriverFactory.getDriver();
 	}
@@ -53,7 +55,7 @@ public class QueuePage extends DriverFactory{
 		return null;
 	}
 	public String getExcelPath() {
-		return configReader.getQueueDataPath();
+		return configReader.getExcelDataPath();
 	}
 	public void checkTryEditorLink() {
 		LoggerLoad.info("clicking the tryEditor link");

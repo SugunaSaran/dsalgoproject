@@ -1,8 +1,6 @@
-
-
-
 package stepdefinitions;
 import Pages.HomePage;
+
 import Pages.TryEditorPage;
 import Pages.stackPage;
 
@@ -17,17 +15,10 @@ import DataProvider.ExcelReader;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-
-
-
 public class stackPagedef {
 	HomePage hp=new HomePage();
 	stackPage sp=new stackPage();
 	TryEditorPage tp=new TryEditorPage();
-	String excelDataPath=sp.getExcelPath();
-	
-	
-
 	@When("The user selects stack item by clicking the Getting Started Link")
 	public void the_user_selects_stack_item_by_clicking_the_getting_started_link() {
 	    hp.clickStackLink();
@@ -46,7 +37,7 @@ public class stackPagedef {
 	@When("The user clicks the following {string} and {int} in stack page")
 	public void the_user_clicks_the_following_and_in_stack_page(String string, Integer int1) throws InvalidFormatException, IOException {
 		ExcelReader reader=new ExcelReader();
-	    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet1");
+	    List<Map<String, String>> data = reader.getData(sp.excelPath, "StackPage");
 	    String pageName=data.get(int1).get("Links");
 	    sp.checkStackPageLink(pageName);
 	}
@@ -54,7 +45,7 @@ public class stackPagedef {
 	@Then("The user should be redirected to {string} and {int} page in stack data structure")
 	public void the_user_should_be_redirected_to_and_page_in_stack_data_structure(String string, Integer int1) throws InvalidFormatException, IOException {
 		ExcelReader reader=new ExcelReader();
-	    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet1");
+	    List<Map<String, String>> data = reader.getData(sp.excelPath, "StackPage");
 	    String expectedPage=data.get(int1).get("Expected Result");
 	    Assert.assertEquals(sp.validateStackPageTitles(),expectedPage);
 	}
@@ -62,7 +53,7 @@ public class stackPagedef {
 	@Given("The user is in the {string} and {int} page in stack page")
 	public void the_user_is_in_the_and_page_in_stack_page(String string, Integer int1) throws InvalidFormatException, IOException {
 		ExcelReader reader=new ExcelReader();
-	    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet1");
+	    List<Map<String, String>> data = reader.getData(sp.excelPath, "StackPage");
 	    String pageName=data.get(int1).get("Links");
 	    hp.clickStackLink();
 	    sp.checkStackPageLink(pageName);
@@ -81,7 +72,7 @@ public class stackPagedef {
 	@Given("The user is in the tryEditor page of corresponding {string} and {int} page in stack data structure")
 	public void the_user_is_in_the_try_editor_page_of_corresponding_and_page_in_stack_data_structure(String string, Integer int1) throws InvalidFormatException, IOException {
 		ExcelReader reader=new ExcelReader();
-	    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet1");
+	    List<Map<String, String>> data = reader.getData(sp.excelPath, "StackPage");
 	    String pageName=data.get(int1).get("Links");
 	    hp.clickStackLink();
 	    sp.checkStackPageLink(pageName);
@@ -103,7 +94,7 @@ public class stackPagedef {
 	public void the_user_is_in_the_try_editor_page_of_and_of_stack_page(String string, Integer int1) throws InvalidFormatException, IOException {
 	    hp.clickStackLink();
 	    ExcelReader reader=new ExcelReader();
-	    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet2");
+	    List<Map<String, String>> data = reader.getData(sp.excelPath, "StackPage");
 	    String pageName=data.get(int1).get("Links");
 	    sp.checkStackPageLink(pageName);
 	    sp.checkTryEditorLink();
@@ -113,7 +104,7 @@ public class stackPagedef {
 	@When("The user clicks the Run button the following {string} and {int} in the Editor of corresponding sub page of stack")
 	public void the_user_clicks_the_run_button_the_following_and_in_the_editor_of_corresponding_sub_page_of_stack(String string, Integer int1) throws InvalidFormatException, IOException {
 		ExcelReader reader=new ExcelReader();
-	    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet2");
+	    List<Map<String, String>> data = reader.getData(sp.excelPath, "StackPage");
 	    String invalidCode=data.get(int1).get("InvalidCode");
 	    tp.checkCode(invalidCode);
 	}
@@ -127,7 +118,7 @@ public class stackPagedef {
 	public void the_user_is_in_the_try_editor_page_and_and_writes_an_invalidcodes_in_editor_and_click_the_run_button_of_corresponding_stack_page(String string, Integer int1) throws InvalidFormatException, IOException {
 	    hp.clickStackLink();
 	    ExcelReader reader=new ExcelReader();
-	    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet2");
+	    List<Map<String, String>> data = reader.getData(sp.excelPath, "StackPage");
 	    String pageName=data.get(int1).get("Links");
 	    String invalidCode=data.get(int1).get("InvalidCode");
 	    sp.checkStackPageLink(pageName);
@@ -148,7 +139,7 @@ public class stackPagedef {
 	public void the_user_is_in_the_try_editor_page_of_and_of_stack_page_for_valid_code(String string, Integer int1) throws InvalidFormatException, IOException {
 	    hp.clickStackLink();
 	    ExcelReader reader=new ExcelReader();
-	    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet3");
+	    List<Map<String, String>> data = reader.getData(sp.excelPath, "StackPage");
 	    String pageName=data.get(int1).get("Links");
 	    sp.checkStackPageLink(pageName);
 	    sp.checkTryEditorLink();
@@ -157,7 +148,7 @@ public class stackPagedef {
 	@When("The user clicks the Run button the following {string} and {int} with valid code in the Editor of corresponding sub page of stack")
 	public void the_user_clicks_the_run_button_the_following_and_with_valid_code_in_the_editor_of_corresponding_sub_page_of_stack(String string, Integer int1) throws InvalidFormatException, IOException {
 		ExcelReader reader=new ExcelReader();
-	    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet3");
+	    List<Map<String, String>> data = reader.getData(sp.excelPath, "StackPage");
 	    String validcode=data.get(int1).get("ValidCode");
 	    tp.checkCode(validcode);
 	}
@@ -165,8 +156,8 @@ public class stackPagedef {
 	@Then("The user should able to see an {string} and {int} in corresponding stack tryeditor page")
 	public void the_user_should_able_to_see_an_and_in_corresponding_stack_tryeditor_page(String string, Integer int1) throws InvalidFormatException, IOException {
 		ExcelReader reader=new ExcelReader();
-	    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet3");
-	    String expectedResult=data.get(int1).get("Expected Result");
+	    List<Map<String, String>> data = reader.getData(sp.excelPath, "StackPage");
+	    String expectedResult=data.get(int1).get("Expected Result for Code");
 	    Assert.assertEquals(tp.validateOutput(), expectedResult);
 	}
 

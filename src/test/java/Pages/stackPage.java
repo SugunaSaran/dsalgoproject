@@ -16,7 +16,8 @@ import Utilities.LoggerLoad;
 import freemarker.log.Logger;
 
 public class stackPage extends DriverFactory{
-	WebDriver driver; 
+	WebDriver driver;
+	public String excelPath=configReader.getExcelDataPath();
 	public stackPage() {
 		this.driver=DriverFactory.getDriver();
 	}
@@ -47,9 +48,7 @@ public class stackPage extends DriverFactory{
 		return driver.getTitle();
 		return null;
 	}
-	public String getExcelPath() {
-		return configReader.getStackDataPath();
-	}
+	
 	public void checkApplicationsLink() {
 		Actions act=new Actions(driver);
 		act.moveToElement(driver.findElement(applications)).perform();

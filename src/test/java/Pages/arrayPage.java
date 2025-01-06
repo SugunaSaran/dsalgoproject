@@ -1,3 +1,4 @@
+
 package Pages;
 
 import org.openqa.selenium.By;
@@ -25,8 +26,7 @@ public class arrayPage extends DriverFactory{
 		return driver.getTitle();
 	}
 	public String getExcelPath() {
-		return configReader.getDataStructuresPath();
-		
+		return configReader.getExcelDataPath();
 	}
 
 
