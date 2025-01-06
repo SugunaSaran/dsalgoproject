@@ -6,6 +6,7 @@
 <classes>
 <class name="testrunners.TestRunner"></class>
 </classes>
+>>>>>>> 785e779001669383506a6ce7000e005b37a27384
 
 	</test> < Test -->
 <test thread-count="4" name="TestChrome"  parallel="tests">
@@ -29,5 +30,6 @@
 
 		</classes>
 
-	</test> <Test -->
+	</test> < Test -->
+
 </suite> <!-- DsAlgoProject -->

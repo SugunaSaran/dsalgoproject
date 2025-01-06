@@ -37,7 +37,7 @@ Given  The user is in the home page after sign-in
 	  |Sheet1|0|
 	  |Sheet1|1|
 	  
-	  
+	  @Test2
 	  Scenario Outline: Verify that user receives error for invalid python code in tryEditor page of graph subpages
     Given The user is in the tryEditor page of "<sheetName>" and <rowNumber> of graph Page
     When The user clicks the Run button the following "<sheetName>" and <rowNumber> in the Editor of corresponding sub page of graph
@@ -49,7 +49,7 @@ Given  The user is in the home page after sign-in
 	  |Sheet2|2|
 	  |Sheet2|3|
 	  
-	  @graph
+
 	  Scenario Outline: Verifying the ok button of error alert message in tryEditor Page of "<sheetName>" and <rowNumber> of graph page
     Given The user is in the tryEditor page "<sheetName>" and <rowNumber> and writes an invalidcodes in Editor and click the Run button of corresponding graph Page
     When The user clicks the ok button of error alert window of that graph Page
