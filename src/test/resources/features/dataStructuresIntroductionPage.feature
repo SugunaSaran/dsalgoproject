@@ -1,4 +1,4 @@
-@datapage
+@data
 Feature: Data Structures-Introduction
 
   Background: The user sign in to dsAlgo Portal
@@ -30,12 +30,12 @@ Feature: Data Structures-Introduction
 
     Examples: 
       | Sheetname |  | rownumber |
-      | Sheet1    |  |         0 |
-      | Sheet1    |  |         1 |
-      | Sheet1    |  |         2 |
-      | Sheet1    |  |         3 |
-      | Sheet1    |  |         4 |
-
+      | Invalid   |  |         0 |
+      | Invalid   |  |         1 |
+      | Invalid   |  |         2 |
+      | Invalid   |  |         3 |
+      | Invalid   |  |         4 |
+      
   Scenario Outline: Verify that user is able to see output for valid python code for Time Complexity page
     Given The user is in the tryEditor page of Time Complexity page
     When The user enters the valid_code <rownumber> from sheetname "<Sheet2>" in Editor and click the Run button-data
@@ -43,11 +43,11 @@ Feature: Data Structures-Introduction
 
     Examples: 
       | Sheetname |  | rownumber |
-      | Sheet2    |  |         0 |
-      | Sheet2    |  |         1 |
-      | Sheet2    |  |         2 |
-      | Sheet2    |  |         3 |
-      | Sheet2    |  |         4 |
+      | Valid     |  |         0 |
+      | Valid    |   |         1 |
+      | Valid    |   |         2 |
+      | Valid    |   |         3 |
+      | Valid    |   |         4 |
 
   Scenario: Verify that user is able to navigate to Practice Questions page
     Given The user is in the Time Complexity page

@@ -110,7 +110,7 @@ public class dataStructuresPageDef {
 	@When("The user enters the invalid_code {int} from sheetname {string} in Editor and click the Run button-data")
 	public void the_user_enters_the_invalid_code_from_sheetname_in_editor_and_click_the_run_button_data(Integer int1, String string) throws InvalidFormatException, IOException {
 		 ExcelReader reader=new ExcelReader();
-		    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet1");
+		    List<Map<String, String>> data = reader.getData(excelDataPath, "Invalid");
 		    
 		    String invalidCode=data.get(int1).get("invalid_data");
 		    tp.enter_input(invalidCode);
@@ -124,7 +124,7 @@ public class dataStructuresPageDef {
 	@When("The user enters the valid_code {int} from sheetname {string} in Editor and click the Run button-data")
 	public void the_user_enters_the_valid_code_from_sheetname_in_editor_and_click_the_run_button_data(Integer int1, String string) throws InvalidFormatException, IOException {
 		ExcelReader reader=new ExcelReader();
-	    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet2");
+	    List<Map<String, String>> data = reader.getData(excelDataPath, "Valid");
 	    String validcode=data.get(int1).get("valid_data");
 	    tp.enter_input(validcode);
 	    tp.click_run();
@@ -133,7 +133,7 @@ public class dataStructuresPageDef {
 	@Then("The user should able to see output {int} in the console-data")
 	public void the_user_should_able_to_see_output_in_the_console_data(Integer int1) throws InvalidFormatException, IOException {
 		ExcelReader reader=new ExcelReader();
-	    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet2");
+	    List<Map<String, String>> data = reader.getData(excelDataPath, "Valid");
 	    
 	    String expectedResult=data.get(int1).get("Output");
 	    Assert.assertEquals(tp.get_outputText(), expectedResult);
