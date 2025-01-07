@@ -12,14 +12,18 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(features = "src/test/resources/features", 
 glue = { "stepdefinitions","hooks" }, 
 plugin = { "pretty","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" }, 
-tags="@data",
+tags="@array",
 publish = true)
 
 
 public class TestRunner extends AbstractTestNGCucumberTests {
 
+   @Override
+	@DataProvider(parallel = true)
+	public Object[][] scenarios() {
+		return super.scenarios();
 
-
+	}
 
 
 	@BeforeTest
@@ -32,14 +36,6 @@ public class TestRunner extends AbstractTestNGCucumberTests {
 		System.out.println(browser);
 
 	}
-
-
-
-	@Override
-	@DataProvider(parallel = true)
-	public Object[][] scenarios() {
-		return super.scenarios();
-
-	}
+   
 
 }

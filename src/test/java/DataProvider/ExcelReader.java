@@ -27,33 +27,23 @@ public class ExcelReader {
 
 		Row row;
 		Cell cell;
-		
 		if(sheet==null)
 			return null;
-
 		totalRow = sheet.getLastRowNum();
-
-		List<Map<String, String>> excelRows = new ArrayList<Map<String, String>>();
-
-		for (int currentRow = 1; currentRow <= totalRow; currentRow++) {
-
-			row = sheet.getRow(currentRow);
+        List<Map<String, String>> excelRows = new ArrayList<Map<String, String>>();
+        for (int currentRow = 1; currentRow <= totalRow; currentRow++) {
+        row = sheet.getRow(currentRow);
 			if (row != null) {
-
 				int totalColumn = row.getLastCellNum();
-
 				LinkedHashMap<String, String> columnMapdata = new LinkedHashMap<String, String>();
-
 				for (int currentColumn = 0; currentColumn < totalColumn; currentColumn++) {
-
-					cell = row.getCell(currentColumn);
+                 cell = row.getCell(currentColumn);
 					if (cell != null && cell.getStringCellValue() !=null) {
-						// cell=CellUtil.getCell(row,currentColumn);
-
+						
 						String columnHeaderName = sheet.getRow(sheet.getFirstRowNum()).getCell(currentColumn)
 								.getStringCellValue();
 
-						columnMapdata.put(columnHeaderName, cell.getStringCellValue());
+columnMapdata.put(columnHeaderName, cell.getStringCellValue());
 					}
 
 				}
