@@ -1,8 +1,13 @@
 package stepdefinitions;
 
+import java.io.IOException;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.testng.Assert;
 
-
+import DataProvider.ExcelReader;
 import DriverManager.DriverFactory;
 import io.cucumber.java.en.*;
 import Pages.*;
@@ -50,6 +55,25 @@ public class loginSD extends DriverFactory {
 		String expectedMessage= "You are logged in";
 		Assert.assertEquals(expectedMessage, actualMessage);
 	}
+	
+	
+	@When("The user clicks login button after entering invalid {string} and invalid {int}")
+	public void the_user_clicks_login_button_after_entering_invalid_and_invalid(String string, Integer int1)  throws InvalidFormatException, IOException {
+		ExcelReader reader=new ExcelReader();
+	    List<Map<String, String>> data = reader.getData(loginObj.excelPath, "Login_Invalid");
+	    String username=data.get(int1).get("UserName");
+	    String password=data.get(int1).get("Password");
+	    loginObj.clkSignin();
+		loginObj.enterLogin(username, password);
+	}
+	@Then("The user see the warning messsage Invalid Username and Password")
+	public void the_user_see_the_warning_messsage_invalid_username_and_password() throws InvalidFormatException, IOException {
+		ExcelReader reader=new ExcelReader();
+	    List<Map<String, String>> data = reader.getData(loginObj.excelPath, "Login_Invalid");
+	    String expectedMessage=data.get(0).get("Message");
+		String actualMessage = loginObj.getErrorMsg();
+		Assert.assertEquals(expectedMessage, actualMessage);
+	}
 
 
 	@When("The user clicks the getStarted of {string}")
@@ -89,7 +113,21 @@ public class loginSD extends DriverFactory {
 		Assert.assertNotNull(actualMessage);;
 	}
 
-
+	@When("User enter empty username or  password")
+	public void user_enter_empty_username_or_password() {
+		String username ="";
+		String password="";
+		loginObj.clkSignin();
+		loginObj.enterLogin(username, password);
+		
+		
+		
+	}
+	@Then("The user sees a message {string}")
+	public void the_user_sees_a_message(String string) {
+		
+		Assert.assertEquals("Login", loginObj.validatePageTitle());
+	}
 
 
 }
