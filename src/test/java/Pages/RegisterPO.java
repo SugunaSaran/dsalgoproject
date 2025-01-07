@@ -9,6 +9,7 @@ import DriverManager.DriverFactory;
 public class RegisterPO extends DriverFactory{
 
 	WebDriver driver;
+	public String excelPath=configReader.getExcelDataPath();
 	public RegisterPO(WebDriver driver)
 	{
 		this.driver = DriverFactory.getDriver();

@@ -31,9 +31,10 @@ import org.openqa.selenium.WebElement;
 
 import DriverManager.DriverFactory;
 
-public class loginPage {
+public class loginPage extends DriverFactory{
 	
 	WebDriver driver;
+	public String excelPath=configReader.getExcelDataPath();
 	By txt_UserName = By.name("username");
 	By txt_Password = By.name("password");
 	By btn_login = By.xpath("//input[@value='Login']");
