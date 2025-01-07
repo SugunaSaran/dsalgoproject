@@ -92,7 +92,7 @@ import Pages.ArrayEditorPage;
 public void the_user_enters_the_invalid_code_from_sheetname_in_editor_and_click_the_run_button_array(Integer int1, String string) throws InvalidFormatException, IOException {
 	
     ExcelReader reader=new ExcelReader();
-    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet1");
+    List<Map<String, String>> data = reader.getData(excelDataPath, "Invalid");
     
     String invalidCode=data.get(int1).get("invalid_data");
     tp.enter_input(invalidCode);
@@ -111,7 +111,7 @@ public void the_user_enters_the_invalid_code_from_sheetname_in_editor_and_click_
          @When("The user enters the valid_code {int} from sheetname {string} in Editor and click the Run button-Array")
          public void the_user_enters_the_valid_code_from_sheetname_in_editor_and_click_the_run_button_array(Integer int1, String string) throws InvalidFormatException, IOException {
         	ExcelReader reader=new ExcelReader();
-     	    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet2");
+     	    List<Map<String, String>> data = reader.getData(excelDataPath, "Valid");
      	    String validcode=data.get(int1).get("valid_data");
      	    tp.enter_input(validcode);
      	    tp.click_run();
@@ -120,7 +120,7 @@ public void the_user_enters_the_invalid_code_from_sheetname_in_editor_and_click_
          @Then("The user should able to see output {int} in the console-Array")
          public void the_user_should_able_to_see_output_in_the_console_array(Integer int1) throws InvalidFormatException, IOException {
         	 ExcelReader reader=new ExcelReader();
-     	    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet2");
+     	    List<Map<String, String>> data = reader.getData(excelDataPath, "Valid");
      	    
      	    String expectedResult=data.get(int1).get("Output");
      	    Assert.assertEquals(tp.get_outputText(), expectedResult);
@@ -243,7 +243,7 @@ public void the_user_enters_the_invalid_code_from_sheetname_in_editor_and_click_
 @When("The user enters the invalid_code {int} from sheetname {string} in practice page Editor and click the Run button")
 public void the_user_enters_the_invalid_code_from_sheetname_in_practice_page_editor_and_click_the_run_button(Integer int1, String string) throws InvalidFormatException, IOException {
 	ExcelReader reader=new ExcelReader();
-    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet1");
+    List<Map<String, String>> data = reader.getData(excelDataPath, "Invalid");
     
     String invalidCode=data.get(int1).get("invalid_data");
     ae.Enter_inputCode(invalidCode);
@@ -254,7 +254,7 @@ public void the_user_enters_the_invalid_code_from_sheetname_in_practice_page_edi
 @When("The user enters the valid_code {int} from sheetname {string} in practice page Editor and click the Run button-Array")
 public void the_user_enters_the_valid_code_from_sheetname_in_practice_page_editor_and_click_the_run_button_array(Integer int1, String string) throws InvalidFormatException, IOException {
 	ExcelReader reader=new ExcelReader();
-	    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet2");
+	    List<Map<String, String>> data = reader.getData(excelDataPath, "Valid");
 	    String validcode=data.get(int1).get("valid_data");
 	    ae.Enter_inputCode(validcode);
 	    ae.click_run();
@@ -264,7 +264,7 @@ public void the_user_enters_the_valid_code_from_sheetname_in_practice_page_edito
 @Then("The user should able to see output {int} in the practice page console")
 public void the_user_should_able_to_see_output_in_the_practice_page_console(Integer int1) throws InvalidFormatException, IOException {
 	ExcelReader reader=new ExcelReader();
-	    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet2");
+	    List<Map<String, String>> data = reader.getData(excelDataPath, "Valid");
 	    
 	    String expectedResult=data.get(int1).get("Output");
 	    Assert.assertEquals(tp.get_outputText(), expectedResult);
@@ -273,7 +273,7 @@ public void the_user_should_able_to_see_output_in_the_practice_page_console(Inte
 @When("The user enters the invalid_code {int} from sheetname {string} in practice page Editor and click the Submit button")
 public void the_user_enters_the_invalid_code_from_sheetname_in_practice_page_editor_and_click_the_submit_button(Integer int1, String string) throws InvalidFormatException, IOException {
 	ExcelReader reader=new ExcelReader();
-    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet1");
+    List<Map<String, String>> data = reader.getData(excelDataPath, "Invalid");
     
     String invalidCode=data.get(int1).get("invalid_data");
     ae.Enter_inputCode(invalidCode);
@@ -291,7 +291,7 @@ public void the_user_enters_the_invalid_code_from_sheetname_in_practice_page_edi
 @When("The user enters the valid_code {int} from sheetname {string} in Editor and click the submit button")
 public void the_user_enters_the_valid_code_from_sheetname_in_editor_and_click_the_submit_button(Integer int1, String string) throws InvalidFormatException, IOException {
 	ExcelReader reader=new ExcelReader();
-    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet2");
+    List<Map<String, String>> data = reader.getData(excelDataPath, "Valid");
     String validcode=data.get(int1).get("valid_data");
     ae.Enter_inputCode(validcode);
     ae.click_submit();

@@ -1,3 +1,4 @@
+@array
 Feature: Array
 
   Background: 
@@ -29,11 +30,11 @@ Feature: Array
 
     Examples: 
       | Sheetname |  | rownumber |
-      | Sheet1    |  |         0 |
-      | Sheet1    |  |         1 |
-      | Sheet1    |  |         2 |
-      | Sheet1    |  |         3 |
-      | Sheet1    |  |         4 |
+      | Invalid   |  |         0 |
+      | Invalid   |  |         1 |
+      | Invalid   |  |         2 |
+      | Invalid   |  |         3 |
+      | Invalid   |  |         4 |
 
   Scenario Outline: Verify that user is able to see output for valid python code for Arrays in Python page
     Given The user is in the tryEditor page-Array
@@ -42,11 +43,11 @@ Feature: Array
 
     Examples: 
       | Sheetname |  | rownumber |
-      | Sheet2    |  |         0 |
-      | Sheet2    |  |         1 |
-      | Sheet2    |  |         2 |
-      | Sheet2    |  |         3 |
-      | Sheet2    |  |         4 |
+      | Valid     |  |         0 |
+      | Valid    |   |         1 |
+      | Valid    |   |         2 |
+      | Valid    |   |         3 |
+      | Valid    |   |         4 |
 
   Scenario: Verify that user is able to navigate to Arrays Using List page
     Given The user is in the Array page
@@ -70,11 +71,11 @@ Feature: Array
 
     Examples: 
       | Sheetname |  | rownumber |
-      | Sheet1    |  |         0 |
-      | Sheet1    |  |         1 |
-      | Sheet1    |  |         2 |
-      | Sheet1    |  |         3 |
-      | Sheet1    |  |         4 |
+      | Invalid   |  |         0 |
+      | Invalid   |  |         1 |
+      | Invalid   |  |         2 |
+      | Invalid   |  |         3 |
+      | Invalid   |  |         4 |
 
   Scenario Outline: Verify that user is able to see output for valid python code for Arrays Using List page
     Given The user is in the Arrays Using List tryEditor page
@@ -83,11 +84,11 @@ Feature: Array
 
     Examples: 
       | Sheetname |  | rownumber |
-      | Sheet2    |  |         0 |
-      | Sheet2    |  |         1 |
-      | Sheet2    |  |         2 |
-      | Sheet2    |  |         3 |
-      | Sheet2    |  |         4 |
+      | Valid     |  |         0 |
+      | Valid    |   |         1 |
+      | Valid    |   |         2 |
+      | Valid    |   |         3 |
+      | Valid    |   |         4 |
 
   Scenario: Verify that user is able to navigate to Basic Operations in Lists page
     Given The user is in the Array page
@@ -111,24 +112,24 @@ Feature: Array
 
     Examples: 
       | Sheetname |  | rownumber |
-      | Sheet1    |  |         0 |
-      | Sheet1    |  |         1 |
-      | Sheet1    |  |         2 |
-      | Sheet1    |  |         3 |
-      | Sheet1    |  |         4 |
+      | Invalid   |  |         0 |
+      | Invalid   |  |         1 |
+      | Invalid   |  |         2 |
+      | Invalid   |  |         3 |
+      | Invalid   |  |         4 |
 
   Scenario Outline: Verify that user is able to see output for valid python code for Basic Operations in Lists page
     Given The user is in the Basic Operations in Lists tryEditor page
     When The user enters the valid_code <rownumber> from sheetname "<Sheet2>" in Editor and click the Run button-Array
     Then The user should able to see output <rownumber> in the console-Array
 
-    Examples: 
+Examples: 
       | Sheetname |  | rownumber |
-      | Sheet2    |  |         0 |
-      | Sheet2    |  |         1 |
-      | Sheet2    |  |         2 |
-      | Sheet2    |  |         3 |
-      | Sheet2    |  |         4 |
+      | Valid     |  |         0 |
+      | Valid    |   |         1 |
+      | Valid    |   |         2 |
+      | Valid    |   |         3 |
+      | Valid    |   |         4 |
 
   Scenario: Verify that user is able to navigate to Applications of Array page
     Given The user is in the Array page
@@ -152,11 +153,11 @@ Feature: Array
 
     Examples: 
       | Sheetname |  | rownumber |
-      | Sheet1    |  |         0 |
-      | Sheet1    |  |         1 |
-      | Sheet1    |  |         2 |
-      | Sheet1    |  |         3 |
-      | Sheet1    |  |         4 |
+      | Invalid   |  |         0 |
+      | Invalid   |  |         1 |
+      | Invalid   |  |         2 |
+      | Invalid   |  |         3 |
+      | Invalid   |  |         4 |
 
   Scenario Outline: Verify that user is able to see output for valid python code for Applications of Array  page
     Given The user is in the Applications of Array tryEditor page
@@ -165,11 +166,11 @@ Feature: Array
 
     Examples: 
       | Sheetname |  | rownumber |
-      | Sheet2    |  |         0 |
-      | Sheet2    |  |         1 |
-      | Sheet2    |  |         2 |
-      | Sheet2    |  |         3 |
-      | Sheet2    |  |         4 |
+      | Valid     |  |         0 |
+      | Valid    |   |         1 |
+      | Valid    |   |         2 |
+      | Valid    |   |         3 |
+      | Valid    |   |         4 |
 
   Scenario: Verify that user is able to navigate to Practice Questions page
     Given The user is on the Arrays in Python page
@@ -188,13 +189,13 @@ Feature: Array
 
     Examples: 
       | Sheetname |  | rownumber |
-      | Sheet1    |  |         0 |
-      | Sheet1    |  |         1 |
-      | Sheet1    |  |         2 |
-      | Sheet1    |  |         3 |
-      | Sheet1    |  |         4 |
+      | Invalid   |  |         0 |
+      | Invalid   |  |         1 |
+      | Invalid   |  |         2 |
+      | Invalid   |  |         3 |
+      | Invalid   |  |         4 |
 
-  @arraypage
+  
   Scenario Outline: Verify that user is able to run valid python code for Search the array question
     Given The user is on the Search the array editor page
     When The user enters the valid_code <rownumber> from sheetname "<Sheet2>" in practice page Editor and click the Run button-Array
@@ -202,11 +203,11 @@ Feature: Array
 
     Examples: 
       | Sheetname |  | rownumber |
-      | Sheet2    |  |         0 |
-      | Sheet2    |  |         1 |
-      | Sheet2    |  |         2 |
-      | Sheet2    |  |         3 |
-      | Sheet2    |  |         4 |
+      | Valid     |  |         0 |
+      | Valid    |   |         1 |
+      | Valid    |   |         2 |
+      | Valid    |   |         3 |
+      | Valid    |   |         4 |
 
   Scenario Outline: Verify that user receives error on submitting invalid python code for Search the array question
     Given The user is on the Search the array editor page
@@ -215,11 +216,11 @@ Feature: Array
 
     Examples: 
       | Sheetname |  | rownumber |
-      | Sheet1    |  |         0 |
-      | Sheet1    |  |         1 |
-      | Sheet1    |  |         2 |
-      | Sheet1    |  |         3 |
-      | Sheet1    |  |         4 |
+      | Invalid   |  |         0 |
+      | Invalid   |  |         1 |
+      | Invalid   |  |         2 |
+      | Invalid   |  |         3 |
+      | Invalid   |  |         4 |
 
   Scenario Outline: Verify that user receives success message on submitting valid python code for Search the array question
     Given The user is on the Search the array editor page
@@ -228,11 +229,11 @@ Feature: Array
 
     Examples: 
       | Sheetname |  | rownumber |
-      | Sheet2    |  |         0 |
-      | Sheet2    |  |         1 |
-      | Sheet2    |  |         2 |
-      | Sheet2    |  |         3 |
-      | Sheet2    |  |         4 |
+      | Valid     |  |         0 |
+      | Valid    |   |         1 |
+      | Valid    |   |         2 |
+      | Valid    |   |         3 |
+      | Valid    |   |         4 |
 
   Scenario: Verify that user is able to navigate to Max consecutive ones Page from Practice question page
     Given The user is on the practice question page-Array
@@ -246,11 +247,11 @@ Feature: Array
 
     Examples: 
       | Sheetname |  | rownumber |
-      | Sheet1    |  |         0 |
-      | Sheet1    |  |         1 |
-      | Sheet1    |  |         2 |
-      | Sheet1    |  |         3 |
-      | Sheet1    |  |         4 |
+      | Invalid   |  |         0 |
+      | Invalid   |  |         1 |
+      | Invalid   |  |         2 |
+      | Invalid   |  |         3 |
+      | Invalid   |  |         4 |
 
   Scenario Outline: Verify that user is able to run valid python code for Max consecutive ones question
     Given The user is on the Max consecutive ones editor page
@@ -259,11 +260,11 @@ Feature: Array
 
     Examples: 
       | Sheetname |  | rownumber |
-      | Sheet2    |  |         0 |
-      | Sheet2    |  |         1 |
-      | Sheet2    |  |         2 |
-      | Sheet2    |  |         3 |
-      | Sheet2    |  |         4 |
+      | Valid     |  |         0 |
+      | Valid    |   |         1 |
+      | Valid    |   |         2 |
+      | Valid    |   |         3 |
+      | Valid    |   |         4 |
 
   Scenario Outline: Verify that user receives error on submitting invalid python code for Max consecutive ones question
     Given The user is on the Max consecutive ones editor page
@@ -272,11 +273,11 @@ Feature: Array
 
     Examples: 
       | Sheetname |  | rownumber |
-      | Sheet1    |  |         0 |
-      | Sheet1    |  |         1 |
-      | Sheet1    |  |         2 |
-      | Sheet1    |  |         3 |
-      | Sheet1    |  |         4 |
+      | Invalid   |  |         0 |
+      | Invalid   |  |         1 |
+      | Invalid   |  |         2 |
+      | Invalid   |  |         3 |
+      | Invalid   |  |         4 |
 
   Scenario Outline: Verify that user receives success message on submitting valid python code for Max consecutive ones question
     Given The user is on the Max consecutive ones editor page
@@ -285,11 +286,11 @@ Feature: Array
 
     Examples: 
       | Sheetname |  | rownumber |
-      | Sheet2    |  |         0 |
-      | Sheet2    |  |         1 |
-      | Sheet2    |  |         2 |
-      | Sheet2    |  |         3 |
-      | Sheet2    |  |         4 |
+      | Valid     |  |         0 |
+      | Valid    |   |         1 |
+      | Valid    |   |         2 |
+      | Valid    |   |         3 |
+      | Valid    |   |         4 |
 
   Scenario: Verify that user is able to navigate to Find Numbers with Even Number of Digits Page from Practice question page
     Given The user is on the practice question page-Array
@@ -303,11 +304,11 @@ Feature: Array
 
     Examples: 
       | Sheetname |  | rownumber |
-      | Sheet1    |  |         0 |
-      | Sheet1    |  |         1 |
-      | Sheet1    |  |         2 |
-      | Sheet1    |  |         3 |
-      | Sheet1    |  |         4 |
+      | Invalid   |  |         0 |
+      | Invalid   |  |         1 |
+      | Invalid   |  |         2 |
+      | Invalid   |  |         3 |
+      | Invalid   |  |         4 |
 
   Scenario Outline: Verify that user is able to run valid python code for Find Numbers with Even Number of Digits question
     Given The user is on the Find Numbers with Even Number of Digits editor page
@@ -316,11 +317,11 @@ Feature: Array
 
     Examples: 
       | Sheetname |  | rownumber |
-      | Sheet2    |  |         0 |
-      | Sheet2    |  |         1 |
-      | Sheet2    |  |         2 |
-      | Sheet2    |  |         3 |
-      | Sheet2    |  |         4 |
+      | Valid     |  |         0 |
+      | Valid    |   |         1 |
+      | Valid    |   |         2 |
+      | Valid    |   |         3 |
+      | Valid    |   |         4 |
 
   Scenario Outline: Verify that user receives error on submitting invalid python code for Find Numbers with Even Number of Digits question
     Given The user is on the Find Numbers with Even Number of Digits editor page
@@ -329,11 +330,11 @@ Feature: Array
 
     Examples: 
       | Sheetname |  | rownumber |
-      | Sheet1    |  |         0 |
-      | Sheet1    |  |         1 |
-      | Sheet1    |  |         2 |
-      | Sheet1    |  |         3 |
-      | Sheet1    |  |         4 |
+      | Invalid   |  |         0 |
+      | Invalid   |  |         1 |
+      | Invalid   |  |         2 |
+      | Invalid   |  |         3 |
+      | Invalid   |  |         4 |
 
   Scenario Outline: Verify that user receives success message on submitting valid python code for Find Numbers with Even Number of Digits question
     Given The user is on the Find Numbers with Even Number of Digits editor page
@@ -342,11 +343,11 @@ Feature: Array
 
     Examples: 
       | Sheetname |  | rownumber |
-      | Sheet2    |  |         0 |
-      | Sheet2    |  |         1 |
-      | Sheet2    |  |         2 |
-      | Sheet2    |  |         3 |
-      | Sheet2    |  |         4 |
+      | Valid     |  |         0 |
+      | Valid    |   |         1 |
+      | Valid    |   |         2 |
+      | Valid    |   |         3 |
+      | Valid    |   |         4 |
 
   Scenario: Verify that user is able to navigate to Squares of a Sorted Array Page from Practice question page
     Given The user is on the practice question page-Array
@@ -360,11 +361,11 @@ Feature: Array
 
     Examples: 
       | Sheetname |  | rownumber |
-      | Sheet1    |  |         0 |
-      | Sheet1    |  |         1 |
-      | Sheet1    |  |         2 |
-      | Sheet1    |  |         3 |
-      | Sheet1    |  |         4 |
+      | Invalid   |  |         0 |
+      | Invalid   |  |         1 |
+      | Invalid   |  |         2 |
+      | Invalid   |  |         3 |
+      | Invalid   |  |         4 |
 
   Scenario Outline: Verify that user is able to run valid python code for Squares of a Sorted Array question
     Given The user is on the Squares of a Sorted Array editor page
@@ -373,11 +374,11 @@ Feature: Array
 
     Examples: 
       | Sheetname |  | rownumber |
-      | Sheet2    |  |         0 |
-      | Sheet2    |  |         1 |
-      | Sheet2    |  |         2 |
-      | Sheet2    |  |         3 |
-      | Sheet2    |  |         4 |
+      | Valid     |  |         0 |
+      | Valid    |   |         1 |
+      | Valid    |   |         2 |
+      | Valid    |   |         3 |
+      | Valid    |   |         4 |
 
   Scenario Outline: Verify that user receives error on submitting invalid python code for Squares of a Sorted Array
     Given The user is on the Squares of a Sorted Array editor page
@@ -386,11 +387,11 @@ Feature: Array
 
     Examples: 
       | Sheetname |  | rownumber |
-      | Sheet1    |  |         0 |
-      | Sheet1    |  |         1 |
-      | Sheet1    |  |         2 |
-      | Sheet1    |  |         3 |
-      | Sheet1    |  |         4 |
+      | Invalid   |  |         0 |
+      | Invalid   |  |         1 |
+      | Invalid   |  |         2 |
+      | Invalid   |  |         3 |
+      | Invalid   |  |         4 |
 
   Scenario Outline: Verify that user receives success message on submitting valid python code for Squares of a Sorted Array
     Given The user is on the Squares of a Sorted Array editor page
@@ -399,8 +400,8 @@ Feature: Array
 
     Examples: 
       | Sheetname |  | rownumber |
-      | Sheet2    |  |         0 |
-      | Sheet2    |  |         1 |
-      | Sheet2    |  |         2 |
-      | Sheet2    |  |         3 |
-      | Sheet2    |  |         4 |
+      | Valid     |  |         0 |
+      | Valid    |   |         1 |
+      | Valid    |   |         2 |
+      | Valid    |   |         3 |
+      | Valid    |   |         4 |

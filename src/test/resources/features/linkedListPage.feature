@@ -1,4 +1,4 @@
-
+@list
 Feature: Linked List
 
   Background: 
@@ -31,11 +31,11 @@ Feature: Linked List
 
     Examples: 
       | Sheetname |  | rownumber |
-      | Sheet1    |  |         0 |
-      | Sheet1    |  |         1 |
-      | Sheet1    |  |         2 |
-      | Sheet1    |  |         3 |
-      | Sheet1    |  |         4 |
+      | Invalid   |  |         0 |
+      | Invalid   |  |         1 |
+      | Invalid   |  |         2 |
+      | Invalid   |  |         3 |
+      | Invalid   |  |         4 |
 
   Scenario Outline: Verify that user is able to see output for valid python code for Introduction page
     Given The user is in the tryEditor page for list
@@ -44,11 +44,11 @@ Feature: Linked List
 
     Examples: 
       | Sheetname |  | rownumber |
-      | Sheet2    |  |         0 |
-      | Sheet2    |  |         1 |
-      | Sheet2    |  |         2 |
-      | Sheet2    |  |         3 |
-      | Sheet2    |  |         4 |
+      | Valid     |  |         0 |
+      | Valid    |   |         1 |
+      | Valid    |   |         2 |
+      | Valid    |   |         3 |
+      | Valid    |   |         4 |
 
   Scenario: Verify that user is able to navigate to Creating Linked List page
     Given The user is in the Linked list page
@@ -72,12 +72,11 @@ Feature: Linked List
 
     Examples: 
       | Sheetname |  | rownumber |
-      | Sheet1    |  |         0 |
-      | Sheet1    |  |         1 |
-      | Sheet1    |  |         2 |
-      | Sheet1    |  |         3 |
-      | Sheet1    |  |         4 |
-
+      | Invalid   |  |         0 |
+      | Invalid   |  |         1 |
+      | Invalid   |  |         2 |
+      | Invalid   |  |         3 |
+      | Invalid   |  |         4 |
   Scenario Outline: Verify that user is able to see output for valid python code for creating linked list page
     Given The user is in the tryEditor page for list
     When The user enters the valid_code <rownumber> from sheetname "<Sheet2>" in Editor and click the Run button-list
@@ -85,11 +84,11 @@ Feature: Linked List
 
     Examples: 
       | Sheetname |  | rownumber |
-      | Sheet2    |  |         0 |
-      | Sheet2    |  |         1 |
-      | Sheet2    |  |         2 |
-      | Sheet2    |  |         3 |
-      | Sheet2    |  |         4 |
+      | Valid     |  |         0 |
+      | Valid    |   |         1 |
+      | Valid    |   |         2 |
+      | Valid    |   |         3 |
+      | Valid    |   |         4 |
 
   Scenario: Verify that user is able to navigate to Types of Linked List page
     Given The user is in the Linked list page
@@ -113,12 +112,11 @@ Feature: Linked List
 
     Examples: 
       | Sheetname |  | rownumber |
-      | Sheet1    |  |         0 |
-      | Sheet1    |  |         1 |
-      | Sheet1    |  |         2 |
-      | Sheet1    |  |         3 |
-      | Sheet1    |  |         4 |
-
+      | Invalid   |  |         0 |
+      | Invalid   |  |         1 |
+      | Invalid   |  |         2 |
+      | Invalid   |  |         3 |
+      | Invalid   |  |         4 |
   Scenario Outline: Verify that user is able to see output for valid python code for Types of linked list page
     Given The user is in the tryEditor page for Types of linked list page
     When The user enters the valid_code <rownumber> from sheetname "<Sheet2>" in Editor and click the Run button-list
@@ -126,11 +124,11 @@ Feature: Linked List
 
     Examples: 
       | Sheetname |  | rownumber |
-      | Sheet2    |  |         0 |
-      | Sheet2    |  |         1 |
-      | Sheet2    |  |         2 |
-      | Sheet2    |  |         3 |
-      | Sheet2    |  |         4 |
+      | Valid     |  |         0 |
+      | Valid    |   |         1 |
+      | Valid    |   |         2 |
+      | Valid    |   |         3 |
+      | Valid    |   |         4 |
 
   Scenario: Verify that user is able to navigate to Implement linked List in Python page
     Given The user is in the Linked list page
@@ -154,24 +152,23 @@ Feature: Linked List
 
     Examples: 
       | Sheetname |  | rownumber |
-      | Sheet1    |  |         0 |
-      | Sheet1    |  |         1 |
-      | Sheet1    |  |         2 |
-      | Sheet1    |  |         3 |
-      | Sheet1    |  |         4 |
-
+      | Invalid   |  |         0 |
+      | Invalid   |  |         1 |
+      | Invalid   |  |         2 |
+      | Invalid   |  |         3 |
+      | Invalid   |  |         4 |
   Scenario Outline: Verify that user is able to see output for valid python code for Implement Linked List in Python page
     Given The user is in the tryEditor page for Implement Linked list in Python page
     When The user enters the valid_code <rownumber> from sheetname "<Sheet2>" in Editor and click the Run button-list
     Then The user should able to see output <rownumber> in the console-list
 
-    Examples: 
+Examples: 
       | Sheetname |  | rownumber |
-      | Sheet2    |  |         0 |
-      | Sheet2    |  |         1 |
-      | Sheet2    |  |         2 |
-      | Sheet2    |  |         3 |
-      | Sheet2    |  |         4 |
+      | Valid     |  |         0 |
+      | Valid    |   |         1 |
+      | Valid    |   |         2 |
+      | Valid    |   |         3 |
+      | Valid    |   |         4 |
 
   Scenario: Verify that user is able to navigate to Traversal page
     Given The user is in the Linked list page
@@ -195,12 +192,11 @@ Feature: Linked List
 
     Examples: 
       | Sheetname |  | rownumber |
-      | Sheet1    |  |         0 |
-      | Sheet1    |  |         1 |
-      | Sheet1    |  |         2 |
-      | Sheet1    |  |         3 |
-      | Sheet1    |  |         4 |
-
+      | Invalid   |  |         0 |
+      | Invalid   |  |         1 |
+      | Invalid   |  |         2 |
+      | Invalid   |  |         3 |
+      | Invalid   |  |         4 |
   Scenario Outline: Verify that user is able to see output for valid python code for Traversal page
     Given The user is in the tryEditor page for Traversal page
     When The user enters the valid_code <rownumber> from sheetname "<Sheet2>" in Editor and click the Run button-list
@@ -208,11 +204,11 @@ Feature: Linked List
 
     Examples: 
       | Sheetname |  | rownumber |
-      | Sheet2    |  |         0 |
-      | Sheet2    |  |         1 |
-      | Sheet2    |  |         2 |
-      | Sheet2    |  |         3 |
-      | Sheet2    |  |         4 |
+      | Valid     |  |         0 |
+      | Valid    |   |         1 |
+      | Valid    |   |         2 |
+      | Valid    |   |         3 |
+      | Valid    |   |         4 |
 
   Scenario: Verify that user is able to navigate to Insertion page
     Given The user is in the Linked list page
@@ -236,12 +232,11 @@ Feature: Linked List
 
     Examples: 
       | Sheetname |  | rownumber |
-      | Sheet1    |  |         0 |
-      | Sheet1    |  |         1 |
-      | Sheet1    |  |         2 |
-      | Sheet1    |  |         3 |
-      | Sheet1    |  |         4 |
-
+      | Invalid   |  |         0 |
+      | Invalid   |  |         1 |
+      | Invalid   |  |         2 |
+      | Invalid   |  |         3 |
+      | Invalid   |  |         4 |
   Scenario Outline: Verify that user is able to see output for valid python code for Insertion page
     Given The user is in the tryEditor page for Insertion page
     When The user enters the valid_code <rownumber> from sheetname "<Sheet2>" in Editor and click the Run button-list
@@ -277,12 +272,11 @@ Feature: Linked List
 
     Examples: 
       | Sheetname |  | rownumber |
-      | Sheet1    |  |         0 |
-      | Sheet1    |  |         1 |
-      | Sheet1    |  |         2 |
-      | Sheet1    |  |         3 |
-      | Sheet1    |  |         4 |
-
+      | Invalid   |  |         0 |
+      | Invalid   |  |         1 |
+      | Invalid   |  |         2 |
+      | Invalid   |  |         3 |
+      | Invalid   |  |         4 |
   Scenario Outline: Verify that user is able to see output for valid python code for Deletion page
     Given The user is in the tryEditor page for Deletion page
     When The user enters the valid_code <rownumber> from sheetname "<Sheet2>" in Editor and click the Run button-list
@@ -290,12 +284,12 @@ Feature: Linked List
 
     Examples: 
       | Sheetname |  | rownumber |
-      | Sheet2    |  |         0 |
-      | Sheet2    |  |         1 |
-      | Sheet2    |  |         2 |
-      | Sheet2    |  |         3 |
-      | Sheet2    |  |         4 |
-@list
+      | Valid     |  |         0 |
+      | Valid    |   |         1 |
+      | Valid    |   |         2 |
+      | Valid    |   |         3 |
+      | Valid    |   |         4 |
+
       Scenario: Verify that user is able to navigate to Practice Questions page
     Given The user is on the Introduction page
     When The user clicks Practice Questions link-list

@@ -88,10 +88,12 @@ public class linkedlistPageDef {
 	@When("The user enters the invalid_code {int} from sheetname {string} in Editor and click the Run button-list")
 	public void the_user_enters_the_invalid_code_from_sheetname_in_editor_and_click_the_run_button_list(Integer int1, String string) throws InvalidFormatException, IOException {
 		 ExcelReader reader=new ExcelReader();
-		    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet1");
+		 if(reader!=null) {
+		    List<Map<String, String>> data = reader.getData(excelDataPath, "Invalid");
 		    
 		    String invalidCode=data.get(int1).get("invalid_data");
 		    tap.enter_input(invalidCode);
+		 }
 		    tap.click_run();
 
 	}
@@ -105,7 +107,7 @@ public class linkedlistPageDef {
 @When("The user enters the valid_code {int} from sheetname {string} in Editor and click the Run button-list")
 public void the_user_enters_the_valid_code_from_sheetname_in_editor_and_click_the_run_button_list(Integer int1, String string) throws InvalidFormatException, IOException {
 	ExcelReader reader=new ExcelReader();
-	    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet2");
+	    List<Map<String, String>> data = reader.getData(excelDataPath, "Valid");
 	    String validcode=data.get(int1).get("valid_data");
 	    tap.enter_input(validcode);
 	    tap.click_run();
@@ -115,7 +117,7 @@ public void the_user_enters_the_valid_code_from_sheetname_in_editor_and_click_th
 @Then("The user should able to see output {int} in the console-list")
 public void the_user_should_able_to_see_output_in_the_console_list(Integer int1) throws InvalidFormatException, IOException {
 	ExcelReader reader=new ExcelReader();
-	    List<Map<String, String>> data = reader.getData(excelDataPath, "Sheet2");
+	    List<Map<String, String>> data = reader.getData(excelDataPath, "Valid");
 	    
 	    String expectedResult=data.get(int1).get("Output");
 	    Assert.assertEquals(tap.get_outputText(), expectedResult);
