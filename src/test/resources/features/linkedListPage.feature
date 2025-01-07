@@ -1,4 +1,4 @@
-@list
+@mytest
 Feature: Linked List
 
   Background: 
